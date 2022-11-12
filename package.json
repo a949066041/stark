@@ -4,9 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve:all": "concurrently pnpm:serve:project-*",
+    "serve:project-sneaky": "pnpm --filter @stark/project-sneaky serve",
+    "serve:project-nightclub": "pnpm --filter @stark/project-nightclub serve"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.5.0"
+  }
 }
