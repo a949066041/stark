@@ -1,14 +1,14 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 16:35:07
- * @LastEditTime: 2022-11-11 17:35:08
+ * @LastEditTime: 2022-11-12 19:16:05
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\menu.store.ts
  */
 import { defineStore, _GettersTree } from "pinia";
-import { RouteMeta } from "vue-router";
-import { EnhanceRouter } from "..";
+import { RouteMeta, RouteRecordRaw } from "vue-router";
+import { EnhanceRouter, IEnhanceRouter } from "..";
 
 interface MenuStoreState {
   _menu: EnhanceRouter[];
@@ -16,6 +16,7 @@ interface MenuStoreState {
 
 interface MenuStoreGetter extends _GettersTree<MenuStoreState> {
   menu: (state: MenuStoreState) => IMenu[];
+  router: (state: MenuStoreState) => RouteRecordRaw[];
 }
 
 interface MenuStoreAction {
@@ -28,6 +29,7 @@ export interface IMenu {
   is_router: boolean;
   meta?: RouteMeta | { title: string; permission: string[] };
   children: IMenu[];
+  path?: string;
 }
 
 export const useMenuStore = defineStore<
@@ -40,7 +42,8 @@ export const useMenuStore = defineStore<
     _menu: []
   }),
   getters: {
-    menu: (state) => cycleMenu(state._menu, "root")
+    menu: (state) => cycleMenu(state._menu, "root"),
+    router: (state) => getRouter(state._menu)
   },
   actions: {
     set_menu(menu: EnhanceRouter[]) {
@@ -48,6 +51,20 @@ export const useMenuStore = defineStore<
     }
   }
 });
+
+function getRouter(menu: EnhanceRouter[]): Array<RouteRecordRaw> {
+  const routers: IEnhanceRouter[] = menu.filter(
+    (item) => item.is_router
+  ) as IEnhanceRouter[];
+  return routers.map((item) => {
+    return {
+      path: item.path,
+      name: item.name,
+      component: item.component,
+      meta: item.meta
+    };
+  });
+}
 
 function cycleMenu(menu: EnhanceRouter[], find_name: string): IMenu[] {
   const menus = menu
@@ -61,7 +78,8 @@ function cycleMenu(menu: EnhanceRouter[], find_name: string): IMenu[] {
         parent_name: item.parent_name,
         meta: { ...item.meta },
         is_router: item.is_router,
-        children: child_menu
+        children: child_menu,
+        path: item.is_router ? item.path : undefined
       };
 
       return _menu;

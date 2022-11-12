@@ -1,21 +1,22 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 15:36:21
- * @LastEditTime: 2022-11-11 17:00:03
+ * @LastEditTime: 2022-11-12 19:12:43
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\router\util.ts
  */
 import { _RouteRecordBase } from "vue-router";
 
-interface IEnhanceRouter extends _RouteRecordBase {
+export interface IEnhanceRouter extends _RouteRecordBase {
   name: string;
   parent_name?: string;
   is_router: true;
   sort?: number;
+  component: any;
 }
 
-interface EnhanceMenu {
+export interface EnhanceMenu {
   name: string;
   parent_name: string;
   is_router: false;

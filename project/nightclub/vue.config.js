@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-11-12 14:48:33
+ * @LastEditTime: 2022-11-12 19:00:44
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\nightclub\vue.config.js
@@ -17,7 +17,15 @@ const public_path = path.resolve(__dirname, "../../public/");
 const dist_path = path.resolve(__dirname, "dist");
 module.exports = defineConfig({
   transpileDependencies: true,
-  devServer: { port: 4301 },
+  devServer: {
+    port: 4301,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers":
+        "X-Requested-With, content-type, Authorization"
+    }
+  },
   publicPath: "http://localhost:4301",
   chainWebpack: (config) => {
     config.plugin("html").tap(([options]) => [

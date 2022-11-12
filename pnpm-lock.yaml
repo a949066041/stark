@@ -90,6 +90,7 @@ importers:
       element-plus: ^2.2.20
       pinia: ^2.0.23
       postcss: ^8.4.19
+      rxjs: ^7.5.7
       sass: ^1.32.7
       sass-loader: ^12.0.0
       tailwindcss: ^3.2.3
@@ -105,6 +106,7 @@ importers:
       core-js: 3.26.0
       element-plus: 2.2.20_vue@3.2.44
       pinia: 2.0.23_4bwjhaig4xggmhazfdpgxvirne
+      rxjs: 7.5.7
       vue: 3.2.44
       vue-router: 4.1.6_vue@3.2.44
     devDependencies:
@@ -4610,7 +4612,7 @@ packages:
     dev: true
 
   /hash-sum/1.0.2:
-    resolution: {integrity: sha512-fUs4B4L+mlt8/XAtSOGMUO1TXmAelItBPtJG7CyHJfYTdDjwisntGO2JQz7oUsatOY9o68+57eziUVNw/mRHmA==}
+    resolution: {integrity: sha1-M7QHd3VMZDJXPBIMw4CLvRDUfwQ=}
     dev: true
 
   /hash-sum/2.0.0:
@@ -6896,6 +6898,12 @@ packages:
       queue-microtask: 1.2.3
     dev: true
 
+  /rxjs/7.5.7:
+    resolution: {integrity: sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA==}
+    dependencies:
+      tslib: 2.4.1
+    dev: false
+
   /safe-buffer/5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: true
@@ -7678,7 +7686,6 @@ packages:
 
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
-    dev: true
 
   /tty-browserify/0.0.0:
     resolution: {integrity: sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=}
