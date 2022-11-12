@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 13:44:35
- * @LastEditTime: 2022-11-11 15:23:46
+ * @LastEditTime: 2022-11-12 12:58:14
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\login\login.vue
@@ -64,7 +64,7 @@ function handleLogin() {
 </script>
 <style lang="scss" scoped>
 .login-left {
-  @apply basis-1/2 bg-blue-400 h-full rounded-r-3xl flex flex-row justify-center items-center;
+  @apply basis-1/2 bg-blue-400 h-full rounded-r-3xl flex flex-row justify-center items-center overflow-hidden;
 }
 
 .login-box {
