@@ -30,7 +30,8 @@
     "*.jsx": "${capture}.js",
     "*.tsx": "${capture}.ts",
     "tsconfig.json": "tsconfig.*.json,auto-imports.d.ts,components.d.ts",
-    "package.json": "package-lock.json,pnpm-workspace.yaml, yarn.lock, pnpm-lock.yaml,babel.config.js,.browserslistrc"
+    "package.json": "package-lock.json,pnpm-workspace.yaml, yarn.lock, pnpm-lock.yaml",
+    "vue.config.js": "babel.config.js,.browserslistrc,postcss.config.js,tailwind.config.js"
   },
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
