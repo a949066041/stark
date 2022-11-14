@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
+    "@stark/jarvis": "workspace:^1.0.0",
     "@types/webpack-env": "^1.18.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",

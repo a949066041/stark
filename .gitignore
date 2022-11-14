@@ -1,5 +1,6 @@
 node_modules
 dist
+.wireit
 
 auto-imports.d.ts
 components.d.ts

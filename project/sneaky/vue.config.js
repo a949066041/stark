@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-11-12 14:40:21
+ * @LastEditTime: 2022-11-14 20:53:37
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\sneaky\vue.config.js
@@ -12,12 +12,15 @@ const AutoImport = require("unplugin-auto-import/webpack");
 const Components = require("unplugin-vue-components/webpack");
 const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
 const { ModuleFederationPlugin } = require("webpack").container;
+const { WebpackConfig } = require("@stark/jarvis");
 
 const public_path = path.resolve(__dirname, "../../public/");
 const dist_path = path.resolve(__dirname, "dist");
+
+const webpack_config = new WebpackConfig("localhost");
 module.exports = defineConfig({
   transpileDependencies: true,
-  devServer: { port: 4300 },
+  devServer: { port: webpack_config.sneaky_config.port },
   chainWebpack: (config) => {
     config.plugin("html").tap(([options]) => [
       Object.assign(options, {
@@ -56,7 +59,9 @@ module.exports = defineConfig({
       new ModuleFederationPlugin({
         name: "sneaky",
         remotes: {
-          nightclub: "nightclub@http://localhost:4301/remote-entry.js"
+          nightclub: webpack_config.get_remote_url(
+            webpack_config.nightclub_config
+          )
         },
         shared: {
           vue: { requiredVersion: "^3.0.0", eager: true }

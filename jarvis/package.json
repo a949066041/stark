@@ -1,0 +1,17 @@
+{
+  "name": "@stark/jarvis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tslib": "^2.4.1",
+    "typescript": "~4.5.5"
+  }
+}

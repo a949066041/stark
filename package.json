@@ -6,12 +6,22 @@
   "scripts": {
     "serve:all": "concurrently pnpm:serve:project-*",
     "serve:project-sneaky": "pnpm --filter @stark/project-sneaky serve",
-    "serve:project-nightclub": "pnpm --filter @stark/project-nightclub serve"
+    "serve:project-nightclub": "pnpm --filter @stark/project-nightclub serve",
+    "prepare": "wireit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^7.5.0"
+    "concurrently": "^7.5.0",
+    "wireit": "^0.7.2"
+  },
+  "wireit": {
+    "prepare": {
+      "command": "echo success",
+      "dependencies": [
+        "./jarvis:build"
+      ]
+    }
   }
 }

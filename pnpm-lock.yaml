@@ -5,8 +5,10 @@ importers:
   .:
     specifiers:
       concurrently: ^7.5.0
+      wireit: ^0.7.2
     devDependencies:
       concurrently: 7.5.0
+      wireit: 0.7.2
 
   common/arc:
     specifiers:
@@ -27,10 +29,19 @@ importers:
       vue: 3.2.44
       vue-router: 4.1.6_vue@3.2.44
 
+  jarvis:
+    specifiers:
+      tslib: ^2.4.1
+      typescript: ~4.5.5
+    devDependencies:
+      tslib: 2.4.1
+      typescript: 4.5.5
+
   project/nightclub:
     specifiers:
       '@babel/core': ^7.20.2
       '@stark/common-arc': workspace:^0.1.0
+      '@stark/jarvis': workspace:^1.0.0
       '@types/webpack-env': ^1.18.0
       '@vue/cli-plugin-babel': ~5.0.0
       '@vue/cli-plugin-router': ~5.0.0
@@ -61,6 +72,7 @@ importers:
       vue-router: 4.1.6_vue@3.2.44
     devDependencies:
       '@babel/core': 7.20.2
+      '@stark/jarvis': link:../../jarvis
       '@types/webpack-env': 1.18.0
       '@vue/cli-plugin-babel': 5.0.8_lfo5qcnp2uojstlqxdmiuhb33i
       '@vue/cli-plugin-router': 5.0.8_@vue+cli-service@5.0.8
@@ -82,6 +94,7 @@ importers:
     specifiers:
       '@babel/core': ^7.20.2
       '@stark/common-arc': workspace:^0.1.0
+      '@stark/jarvis': workspace:^1.0.0
       '@types/webpack-env': ^1.18.0
       '@vue/cli-plugin-babel': ~5.0.0
       '@vue/cli-plugin-router': ~5.0.0
@@ -114,6 +127,7 @@ importers:
       vue-router: 4.1.6_vue@3.2.44
     devDependencies:
       '@babel/core': 7.20.2
+      '@stark/jarvis': link:../../jarvis
       '@types/webpack-env': 1.18.0
       '@vue/cli-plugin-babel': 5.0.8_lfo5qcnp2uojstlqxdmiuhb33i
       '@vue/cli-plugin-router': 5.0.8_@vue+cli-service@5.0.8
@@ -3958,7 +3972,7 @@ packages:
     dev: true
 
   /emojis-list/2.1.0:
-    resolution: {integrity: sha1-TapNnbAPmBmIDHn6RXrlsJof04k=}
+    resolution: {integrity: sha512-knHEZMgs8BB+MInokmNTg/OyPlAddghe1YBgNwJBc5zsJi/uyIcXoSDsL/W9ymOsBoBGdPIHXYJ9+qKFwRwDng==}
     engines: {node: '>= 0.10'}
     dev: true
 
@@ -4645,7 +4659,7 @@ packages:
     dev: true
 
   /hash-sum/1.0.2:
-    resolution: {integrity: sha1-M7QHd3VMZDJXPBIMw4CLvRDUfwQ=}
+    resolution: {integrity: sha512-fUs4B4L+mlt8/XAtSOGMUO1TXmAelItBPtJG7CyHJfYTdDjwisntGO2JQz7oUsatOY9o68+57eziUVNw/mRHmA==}
     dev: true
 
   /hash-sum/2.0.0:
@@ -5169,7 +5183,7 @@ packages:
     dev: true
 
   /json5/0.5.1:
-    resolution: {integrity: sha1-Hq3nrMASA0rYTiOWdn6tn6VJWCE=}
+    resolution: {integrity: sha512-4xrs1aW+6N5DalkqSVA8fxh458CXvR99WU8WLKmq4v8eWAL86Xo3BVqyd3SkA9wEVjCMqyvvRRkshAdOnBp5rw==}
     hasBin: true
     dev: true
 
@@ -5260,7 +5274,7 @@ packages:
     dev: true
 
   /loader-utils/0.2.17:
-    resolution: {integrity: sha1-+G5jdNQyBabmxg6RlvF8Apm/s0g=}
+    resolution: {integrity: sha512-tiv66G0SmiOx+pLWMtGEkfSEejxvb6N6uRrQjfWJIT79W9GMpgKeCAmm9aVBKtd4WEgntciI8CsGqjpDoCWJug==}
     dependencies:
       big.js: 3.2.0
       emojis-list: 2.1.0
@@ -5578,7 +5592,7 @@ packages:
     dev: true
 
   /minimist/0.0.10:
-    resolution: {integrity: sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=}
+    resolution: {integrity: sha512-iotkTvxc+TwOm5Ieim8VnSNvCDjCK9S8G3scJ50ZthspSxa7jx50jkhYduuAtAjvfDUwSgOwf8+If99AlOEhyw==}
     dev: true
 
   /minimist/1.2.7:
@@ -6608,6 +6622,14 @@ packages:
       webpack: 5.75.0
     dev: true
 
+  /proper-lockfile/4.1.2:
+    resolution: {integrity: sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==}
+    dependencies:
+      graceful-fs: 4.2.10
+      retry: 0.12.0
+      signal-exit: 3.0.7
+    dev: true
+
   /proxy-addr/2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
@@ -6899,6 +6921,11 @@ packages:
   /ret/0.1.15:
     resolution: {integrity: sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==}
     engines: {node: '>=0.12'}
+    dev: true
+
+  /retry/0.12.0:
+    resolution: {integrity: sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==}
+    engines: {node: '>= 4'}
     dev: true
 
   /retry/0.13.1:
@@ -8408,6 +8435,18 @@ packages:
   /window-size/0.1.0:
     resolution: {integrity: sha1-VDjNLqk7IC76Ohn+iIeu58lPnJ0=}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /wireit/0.7.2:
+    resolution: {integrity: sha512-Zjq50QH5hguk64hXfJmJJpLGgi8TUy7780w0u2VXK325qWxJtw1fP6HhOYcdjTWeoYLWQDDkTytQ119y/UMseg==}
+    engines: {node: '>=14.14.0'}
+    hasBin: true
+    dependencies:
+      braces: 3.0.2
+      chokidar: 3.5.3
+      fast-glob: 3.2.12
+      jsonc-parser: 3.2.0
+      proper-lockfile: 4.1.2
     dev: true
 
   /wordwrap/0.0.2:
