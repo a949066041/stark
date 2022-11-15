@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-11-14 20:53:37
+ * @LastEditTime: 2022-11-15 15:34:28
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\sneaky\vue.config.js
@@ -64,7 +64,7 @@ module.exports = defineConfig({
           )
         },
         shared: {
-          vue: { requiredVersion: "^3.0.0", eager: true }
+          vue: { requiredVersion: "^3.0.0", singleton: true }
         }
       })
     ]

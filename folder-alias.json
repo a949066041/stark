@@ -1,1 +1,14 @@
-{}
+{
+    "common/arc": {
+        "description": "方舟核心"
+    },
+    "jarvis": {
+        "description": "J.A.R.V.I.S"
+    },
+    "project/nightclub": {
+        "description": "夜店"
+    },
+    "project/sneaky": {
+        "description": "鬼祟"
+    }
+}

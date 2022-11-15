@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-11-14 20:52:07
+ * @LastEditTime: 2022-11-15 15:34:38
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\nightclub\vue.config.js
@@ -75,6 +75,9 @@ module.exports = defineConfig({
         library: { type: "var", name: webpack_config.nightclub_config.name },
         exposes: {
           "./router": "./src/router/index.ts"
+        },
+        shared: {
+          vue: { requiredVersion: "^3.0.0", singleton: true }
         }
       })
     ]
