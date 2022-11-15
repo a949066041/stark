@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-12 18:47:05
- * @LastEditTime: 2022-11-15 17:06:03
+ * @LastEditTime: 2022-11-15 17:28:03
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\test.vue
@@ -21,4 +21,9 @@ defineExpose({
   handleClick,
   name: "[nightclub]Test"
 });
+</script>
+<script lang="ts">
+export default {
+  name: "[nightclub]Test"
+};
 </script>

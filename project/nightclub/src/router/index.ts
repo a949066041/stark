@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 13:25:33
- * @LastEditTime: 2022-11-12 19:02:49
+ * @LastEditTime: 2022-11-15 17:27:00
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\nightclub\src\router\index.ts
@@ -58,9 +58,11 @@ const router_list: EnhanceRouter[] = [
     }
   },
   {
-    is_router: false,
+    is_router: true,
     parent_name: "root",
     name: "Test2",
+    path: "test-2",
+    component: () => import("../views/test2.vue"),
     meta: {
       title: "[nightclub]测试2",
       permission: []
