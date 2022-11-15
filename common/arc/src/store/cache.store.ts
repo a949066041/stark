@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-15 16:25:57
- * @LastEditTime: 2022-11-15 17:42:25
+ * @LastEditTime: 2022-11-15 20:54:39
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\cache.store.ts
@@ -10,7 +10,7 @@
 import { defineStore, _GettersTree } from "pinia";
 import { RouteLocationNormalizedLoaded } from "vue-router";
 
-interface TagItem {
+export interface TagItem {
   name: string;
   link: string;
 
