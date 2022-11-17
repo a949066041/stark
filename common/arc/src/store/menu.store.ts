@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 16:35:07
- * @LastEditTime: 2022-11-12 19:16:05
+ * @LastEditTime: 2022-11-17 22:21:28
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\menu.store.ts
@@ -12,15 +12,18 @@ import { EnhanceRouter, IEnhanceRouter } from "..";
 
 interface MenuStoreState {
   _menu: EnhanceRouter[];
+  _collapse: boolean;
 }
 
 interface MenuStoreGetter extends _GettersTree<MenuStoreState> {
   menu: (state: MenuStoreState) => IMenu[];
   router: (state: MenuStoreState) => RouteRecordRaw[];
+  collapse: (state: MenuStoreState) => boolean;
 }
 
 interface MenuStoreAction {
   set_menu: (menu: EnhanceRouter[]) => void;
+  toggle_menu: () => void;
 }
 
 export interface IMenu {
@@ -39,15 +42,20 @@ export const useMenuStore = defineStore<
   MenuStoreAction
 >("arc_menu", {
   state: () => ({
-    _menu: []
+    _menu: [],
+    _collapse: false
   }),
   getters: {
     menu: (state) => cycleMenu(state._menu, "root"),
-    router: (state) => getRouter(state._menu)
+    router: (state) => getRouter(state._menu),
+    collapse: (state) => state._collapse
   },
   actions: {
     set_menu(menu: EnhanceRouter[]) {
       this._menu = menu;
+    },
+    toggle_menu() {
+      this._collapse = !this.collapse;
     }
   }
 });

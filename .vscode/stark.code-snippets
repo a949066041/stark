@@ -21,7 +21,7 @@
     "body": [
       "<template></template>",
       "<script lang=\"ts\" setup></script>",
-      "<script lang=\"scss\"></script>"
+      "<style lang=\"scss\"></style>"
     ],
     "description": "simple setup component"
   }

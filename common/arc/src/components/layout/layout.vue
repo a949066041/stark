@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 15:20:20
- * @LastEditTime: 2022-11-15 21:21:01
+ * @LastEditTime: 2022-11-17 22:42:05
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\layout.vue
@@ -9,7 +9,8 @@
 <template>
   <div class="flex flex-row self-stretch">
     <layout-menu />
-    <div class="bg-red-200 flex flex-1 flex-col h-screen">
+    <div class="flex flex-1 flex-col h-screen">
+      <layout-top-bar />
       <layout-tag />
       <div>
         <router-view v-slot="{ Component }">
@@ -26,6 +27,7 @@ import { nextTick, onMounted, reactive, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import LayoutMenu from "./components/menu.vue";
 import LayoutTag from "./components/tag.vue";
+import LayoutTopBar from "./components/top-bar.vue";
 import { useCacheStore } from "../../store";
 
 const views = ref([]);

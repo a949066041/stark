@@ -1,0 +1,15 @@
+{
+  "name": "@stark/common-iron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/iron/index.ts",
+  "scripts": {
+    "build": "latte"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@kaffee/latte": "^1.1.0"
+  }
+}

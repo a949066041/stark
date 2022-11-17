@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-11-15 15:34:38
+ * @LastEditTime: 2022-11-17 22:14:29
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\nightclub\vue.config.js
@@ -18,6 +18,8 @@ const public_path = path.resolve(__dirname, "../../public/");
 const dist_path = path.resolve(__dirname, "dist");
 const webpack_config = new WebpackConfig("localhost");
 
+const customElement = new Set(["latte-svg"]);
+
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
@@ -31,6 +33,18 @@ module.exports = defineConfig({
   },
   publicPath: webpack_config.get_public_path(webpack_config.nightclub_config),
   chainWebpack: (config) => {
+    config.module
+      .rule("vue")
+      .use("vue-loader")
+      .tap((options) => {
+        if (options.compilerOptions === undefined) {
+          options.compilerOptions = {};
+        }
+        options.compilerOptions.isCustomElement = (tag) =>
+          customElement.has(tag);
+        return options;
+      });
+
     config.plugin("html").tap(([options]) => [
       Object.assign(options, {
         template: path.resolve(public_path, "index.html")
@@ -77,7 +91,8 @@ module.exports = defineConfig({
           "./router": "./src/router/index.ts"
         },
         shared: {
-          vue: { requiredVersion: "^3.0.0", singleton: true }
+          vue: { requiredVersion: "^3.0.0", singleton: true },
+          pinia: { singleton: true }
         }
       })
     ]

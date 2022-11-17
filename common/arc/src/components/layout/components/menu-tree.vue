@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 17:29:28
- * @LastEditTime: 2022-11-12 19:10:03
+ * @LastEditTime: 2022-11-17 22:31:32
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\menu-tree.vue
@@ -10,11 +10,25 @@
   <template v-for="_menu in menu">
     <el-sub-menu v-if="_menu.children.length > 0" :index="_menu.name">
       <template #title>
+        <latte-svg
+          class="fill-slate-800 mr-2"
+          width="16px"
+          height="16px"
+          namespace="iron"
+          name="outdent"
+        />
         <span>{{ _menu.meta?.title }}</span>
       </template>
       <menu-tree :menu="_menu.children" />
     </el-sub-menu>
     <el-menu-item v-else :index="_menu.name" @click="handleClickMenu(_menu)">
+      <latte-svg
+        class="fill-slate-800 mr-2"
+        width="16px"
+        height="16px"
+        namespace="iron"
+        name="outdent"
+      />
       <template #title>
         <span>{{ _menu.meta?.title }}</span>
       </template>

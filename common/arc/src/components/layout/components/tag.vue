@@ -1,13 +1,13 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-15 21:02:40
- * @LastEditTime: 2022-11-15 21:25:13
+ * @LastEditTime: 2022-11-17 22:43:29
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\tag.vue
 -->
 <template>
-  <div class="w-full pl-4 flex flex-row items-center h-12">
+  <div class="tag-container">
     <el-tag
       class="cursor-pointer mr-1 select-none"
       size="large"
@@ -34,4 +34,9 @@ function handleTagClick(path: string) {
   $router.push(path);
 }
 </script>
-<script lang="scss"></script>
+<style lang="scss">
+.tag-container {
+  @apply w-full pl-4 flex flex-row items-center h-12;
+  border-bottom: solid 1px var(--el-menu-border-color);
+}
+</style>

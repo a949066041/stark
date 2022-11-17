@@ -1,0 +1,59 @@
+<!--
+ * @Author: Rikka
+ * @Date: 2022-11-17 19:23:22
+ * @LastEditTime: 2022-11-17 22:41:03
+ * @LastEditors: Rikka
+ * @Description: 
+ * @FilePath: \stark\common\arc\src\components\layout\components\top-bar.vue
+-->
+<template>
+  <div class="topbar-container">
+    <div>
+      <latte-svg
+        class="fill-slate-800 cursor-pointer"
+        width="24px"
+        height="24px"
+        namespace="iron"
+        :name="menu_collapse ? 'indent' : 'outdent'"
+        @click="handleChangeMenu()"
+      />
+    </div>
+    <div>
+      <div class="avatar" ref="avatarRef">
+        <el-popover :virtual-ref="avatarRef" trigger="click" virtual-triggering>
+          <el-button size="small" class="w-full">退出</el-button>
+        </el-popover>
+      </div>
+    </div>
+  </div>
+</template>
+<script lang="ts" setup>
+import { useMenuStore } from "../../../store";
+import { computed, ref } from "vue";
+import { storeToRefs } from "pinia";
+
+const avatarRef = ref();
+
+const menuStore = useMenuStore();
+const menu = storeToRefs(menuStore);
+const menu_collapse = menu.collapse;
+
+function handleChangeMenu() {
+  menuStore.toggle_menu();
+}
+</script>
+<style lang="scss" scoped>
+.topbar-container {
+  @apply flex flex-row justify-between items-center bg-gray-50 p-1;
+  border-bottom: solid 1px var(--el-menu-border-color);
+}
+.avatar {
+  @apply h-10 w-10 rounded-full cursor-pointer;
+
+  background: {
+    image: url("../../../assets/avatar.png");
+    repeat: center;
+    size: contain;
+  }
+}
+</style>

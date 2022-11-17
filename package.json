@@ -20,7 +20,8 @@
     "prepare": {
       "command": "echo success",
       "dependencies": [
-        "./jarvis:build"
+        "./jarvis:build",
+        "./common/iron:build"
       ]
     }
   }

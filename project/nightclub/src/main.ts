@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-11-12 19:21:40
+ * @LastEditTime: 2022-11-17 21:54:28
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\nightclub\src\main.ts
@@ -14,6 +14,7 @@ const app = createApp(App);
 const pinia = createPinia();
 const menuStore = useMenuStore(pinia);
 app.use(pinia);
+
 menuStore.set_menu(router_list);
 app.use(router(menuStore.router));
 app.mount("#app");
