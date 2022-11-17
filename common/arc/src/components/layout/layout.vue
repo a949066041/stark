@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 15:20:20
- * @LastEditTime: 2022-11-17 22:42:05
+ * @LastEditTime: 2022-11-17 23:09:46
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\layout.vue
@@ -56,4 +56,4 @@ onMounted(() => {
   });
 });
 </script>
-<style lang="scss"></style>
+<style lang="scss" scoped></style>

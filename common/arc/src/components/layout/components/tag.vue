@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-15 21:02:40
- * @LastEditTime: 2022-11-17 22:43:29
+ * @LastEditTime: 2022-11-17 23:09:00
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\tag.vue
@@ -34,7 +34,7 @@ function handleTagClick(path: string) {
   $router.push(path);
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .tag-container {
   @apply w-full pl-4 flex flex-row items-center h-12;
   border-bottom: solid 1px var(--el-menu-border-color);
