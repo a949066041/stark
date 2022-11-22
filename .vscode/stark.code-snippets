@@ -19,8 +19,19 @@
     "scope": "vue",
     "prefix": "setup-component",
     "body": [
-      "<template></template>",
-      "<script lang=\"ts\" setup></script>",
+      "<template>",
+      "  <div class=\"stark-container\">123</div>",
+      "</template>",
+      "<script lang=\"ts\" setup>",
+      "defineExpose({",
+      "  name: \"[${1}]${2}\"",
+      "});",
+      "</script>",
+      "<script lang=\"ts\">",
+      "export default {",
+      "  name: \"[${1}]${2}\"",
+      "};",
+      "</script>",
       "<style lang=\"scss\" scoped></style>"
     ],
     "description": "simple setup component"

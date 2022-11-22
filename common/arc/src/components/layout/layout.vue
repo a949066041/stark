@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 15:20:20
- * @LastEditTime: 2022-11-17 23:09:46
+ * @LastEditTime: 2022-11-22 20:57:50
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\layout.vue
@@ -12,7 +12,7 @@
     <div class="flex flex-1 flex-col h-screen">
       <layout-top-bar />
       <layout-tag />
-      <div>
+      <div class="flex-1">
         <router-view v-slot="{ Component }">
           <keep-alive :include="cacheList">
             <component :is="Component" ref="views" />
