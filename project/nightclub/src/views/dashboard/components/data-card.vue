@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 21:05:58
- * @LastEditTime: 2022-11-22 22:07:23
+ * @LastEditTime: 2022-11-23 14:06:16
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-card.vue
@@ -41,7 +41,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .card-container {
-  @apply w-1/5 h-full bg-white flex flex-row cursor-pointer justify-between items-center p-2 rounded-md;
+  @apply h-full bg-white flex flex-row cursor-pointer justify-between items-center p-2 rounded-md;
+  width: 24%;
   &:hover {
     .card-icon {
       fill: white;

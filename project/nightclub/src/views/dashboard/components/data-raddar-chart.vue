@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:36:41
- * @LastEditTime: 2022-11-22 22:41:34
+ * @LastEditTime: 2022-11-23 14:00:14
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-raddar-chart.vue
@@ -23,7 +23,7 @@ let myChart: echarts.ECharts;
 onMounted(() =>
   nextTick(() => {
     if (radder_chart.value) {
-      myChart = echarts.init(radder_chart.value);
+      myChart = echarts.init(radder_chart.value, "macarons");
       setOption();
     }
   })

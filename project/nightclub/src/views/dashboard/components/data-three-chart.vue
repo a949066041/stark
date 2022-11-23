@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:30:44
- * @LastEditTime: 2022-11-22 22:51:05
+ * @LastEditTime: 2022-11-23 14:06:35
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-three-chart.vue
@@ -35,6 +35,6 @@ export default {
 <style lang="scss" scoped>
 .single {
   @apply h-full bg-white rounded-md;
-  width: 30%;
+  width: 32%;
 }
 </style>

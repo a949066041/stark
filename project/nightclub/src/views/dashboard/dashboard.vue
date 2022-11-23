@@ -1,14 +1,14 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 20:49:10
- * @LastEditTime: 2022-11-22 22:34:07
+ * @LastEditTime: 2022-11-23 14:34:25
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\dashboard.vue
 -->
 <template>
   <div class="stark-container bg-gray-100">
-    <div class="h-40 py-4 flex flex-row justify-around">
+    <div class="h-40 py-4 px-8 flex flex-row justify-between">
       <data-card
         @click="handleChangeLineChart()"
         title="Express"
@@ -40,13 +40,23 @@
     </div>
     <data-line-chart ref="line_chart" />
     <data-three-chart />
+    <div class="flex flex-row px-8 mb-8">
+      <data-table />
+      <div class="w-1/2 flex flex-row">
+        <data-code class="mr-4 flex-1" />
+        <data-code class="flex-1" />
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
+import "echarts/theme/macarons";
 import { ref } from "vue";
 import DataCard from "./components/data-card.vue";
 import DataLineChart from "./components/data-line-chart.vue";
 import DataThreeChart from "./components/data-three-chart.vue";
+import DataTable from "./components/data-table.vue";
+import DataCode from "./components/data-code.vue";
 
 const line_chart = ref<typeof DataLineChart>();
 

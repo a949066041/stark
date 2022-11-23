@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@stark/common-arc": "workspace:^0.1.0",
+    "@stark/common-copper": "workspace:^1.0.0",
     "core-js": "^3.8.3",
     "echarts": "^5.4.0",
     "element-plus": "^2.2.20",

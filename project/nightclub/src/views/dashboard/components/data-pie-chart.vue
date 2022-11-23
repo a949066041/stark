@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:42:34
- * @LastEditTime: 2022-11-22 22:44:23
+ * @LastEditTime: 2022-11-23 14:00:09
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-pie-chart.vue
@@ -37,7 +37,7 @@ let myChart: echarts.ECharts;
 onMounted(() =>
   nextTick(() => {
     if (pie_chart.value) {
-      myChart = echarts.init(pie_chart.value);
+      myChart = echarts.init(pie_chart.value, "macarons");
       setOption();
     }
   })

@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:47:43
- * @LastEditTime: 2022-11-22 22:49:21
+ * @LastEditTime: 2022-11-23 13:59:57
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-bar-chart.vue
@@ -36,7 +36,7 @@ let myChart: echarts.ECharts;
 onMounted(() =>
   nextTick(() => {
     if (bar_chart.value) {
-      myChart = echarts.init(bar_chart.value);
+      myChart = echarts.init(bar_chart.value, "macarons");
       setOption();
     }
   })
