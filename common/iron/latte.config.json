@@ -2,5 +2,6 @@
   "svg": "./src/svg",
   "dist": "./src/iron",
   "eslint": "quotes,unicorn/no-abusive-eslint-disable,prettier/prettier",
-  "namespace": true
+  "namespace": true,
+  "color": ["./src/svg/warning"]
 }
