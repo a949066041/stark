@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-11-17 22:14:39
+ * @LastEditTime: 2022-11-24 10:20:40
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\sneaky\vue.config.js
@@ -12,56 +12,14 @@ const AutoImport = require("unplugin-auto-import/webpack");
 const Components = require("unplugin-vue-components/webpack");
 const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
 const { ModuleFederationPlugin } = require("webpack").container;
-const { WebpackConfig } = require("@stark/jarvis");
+const { WebpackConfig, sneaky_config, all_router } = require("@stark/jarvis");
 
-const public_path = path.resolve(__dirname, "../../public/");
-const dist_path = path.resolve(__dirname, "dist");
-
-const webpack_config = new WebpackConfig("localhost");
-const customElement = new Set(["latte-svg"]);
+const webpack_config = new WebpackConfig(sneaky_config, "localhost", __dirname);
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  devServer: { port: webpack_config.sneaky_config.port },
-  chainWebpack: (config) => {
-    config.module
-      .rule("vue")
-      .use("vue-loader")
-      .tap((options) => {
-        if (options.compilerOptions === undefined) {
-          options.compilerOptions = {};
-        }
-        options.compilerOptions.isCustomElement = (tag) =>
-          customElement.has(tag);
-        return options;
-      });
-
-    config.plugin("html").tap(([options]) => [
-      Object.assign(options, {
-        template: path.resolve(public_path, "index.html")
-      })
-    ]);
-    config
-      .plugin("copy")
-      .use(require("copy-webpack-plugin"))
-      .tap(() => {
-        return [
-          {
-            patterns: [
-              {
-                from: public_path,
-                to: dist_path,
-                toType: "dir",
-                noErrorOnMissing: true,
-                globOptions: {
-                  ignore: ["**/.DS_Store", "**/index.html"]
-                }
-              }
-            ]
-          }
-        ];
-      });
-  },
+  devServer: webpack_config.get_dev_server(),
+  chainWebpack: webpack_config.get_chain_config,
   configureWebpack: {
     plugins: [
       AutoImport({
@@ -72,11 +30,7 @@ module.exports = defineConfig({
       }),
       new ModuleFederationPlugin({
         name: "sneaky",
-        remotes: {
-          nightclub: webpack_config.get_remote_url(
-            webpack_config.nightclub_config
-          )
-        },
+        remotes: all_router(),
         shared: {
           vue: { requiredVersion: "^3.0.0", singleton: true },
           pinia: { singleton: true }
