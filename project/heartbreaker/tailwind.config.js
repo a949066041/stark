@@ -1,10 +1,10 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 13:58:05
- * @LastEditTime: 2022-11-24 11:08:24
+ * @LastEditTime: 2022-11-24 11:08:10
  * @LastEditors: Rikka
  * @Description:
- * @FilePath: \stark\project\nightclub\tailwind.config.js
+ * @FilePath: \stark\project\heartbreaker\tailwind.config.js
  */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
