@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-11-24 10:20:07
+ * @LastEditTime: 2022-11-24 11:02:16
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -24,9 +24,7 @@ class WebpackConfig {
     this._dist_path = resolve(dirname, "dist");
   }
 
-  private http = () => `http${this.config.ssl ? "s" : ""}://`;
-
-  private full_path = () => `${this.http()}${this.path}:${this.config.port}`;
+  private full_path = () => `${this.path}:${this.config.port}`;
 
   public get_remote_url = () =>
     `${this.config.name}@${this.full_path()}/${this.config.remote_file}`;
@@ -84,14 +82,45 @@ class WebpackConfig {
         ];
       });
   };
+
+  public get_plugins = () => {
+    const AutoImport = require("unplugin-auto-import/webpack");
+    const Components = require("unplugin-vue-components/webpack");
+    const {
+      ElementPlusResolver
+    } = require("unplugin-vue-components/resolvers");
+    return [
+      AutoImport({
+        resolvers: [ElementPlusResolver()]
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()]
+      })
+    ];
+  };
+
+  public get_remote_mf_plugin = () => {
+    const { ModuleFederationPlugin } = require("webpack").container;
+
+    return new ModuleFederationPlugin({
+      name: this.config.name,
+      filename: this.config.remote_file,
+      library: { type: "var", name: this.config.name },
+      exposes: {
+        "./router": "./src/router/index.ts"
+      },
+      shared: {
+        vue: { requiredVersion: "^3.0.0", singleton: true },
+        pinia: { singleton: true }
+      }
+    });
+  };
 }
 
 interface child_config {
   port: number;
   name: string;
   remote_file: string;
-
-  ssl?: boolean;
 }
 
 export { WebpackConfig };
