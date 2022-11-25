@@ -2,3 +2,4 @@ packages:
   - "project/**"
   - "common/**"
   - "jarvis"
+  - "website"
