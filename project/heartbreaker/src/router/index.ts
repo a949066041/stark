@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 13:25:33
- * @LastEditTime: 2022-11-29 20:42:40
+ * @LastEditTime: 2022-11-29 22:04:27
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\heartbreaker\src\router\index.ts
@@ -20,9 +20,11 @@ const router_list: EnhanceRouter[] = [
     }
   },
   {
-    is_router: false,
+    is_router: true,
     parent_name: "[heartbreaker]Components",
     name: "[heartbreaker]WangEditor",
+    path: "wang-editor",
+    component: () => import("../views/wangEditor.vue"),
     meta: {
       title: "WangEditor",
       permission: []

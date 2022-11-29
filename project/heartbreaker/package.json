@@ -10,6 +10,8 @@
     "@stark/common-arc": "workspace:^0.1.0",
     "@stark/common-copper": "workspace:^1.0.0",
     "@stark/common-iron": "workspace:^1.0.0",
+    "@wangeditor/editor": "^5.1.23",
+    "@wangeditor/editor-for-vue": "^5.1.12",
     "core-js": "^3.8.3",
     "element-plus": "^2.2.20",
     "pinia": "^2.0.23",
