@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-29 21:59:33
- * @LastEditTime: 2022-11-29 22:22:50
+ * @LastEditTime: 2022-11-29 22:43:27
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\wangEditor.vue
@@ -25,6 +25,11 @@
   </div>
 </template>
 <script lang="ts">
+export default {
+  name: "[heartbreaker]WangEditor"
+};
+</script>
+<script lang="ts" setup>
 import "@wangeditor/editor/dist/css/style.css"; // 引入 css
 import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
 import { IDomEditor } from "@wangeditor/editor";
@@ -55,11 +60,6 @@ const handleCreated = (editor: IDomEditor) => {
   editorRef.value = editor; // 记录 editor 实例，重要！
 };
 const mode = "default";
-export default {
-  name: "[heartbreaker]WangEditor"
-};
-</script>
-<script lang="ts" setup>
 defineExpose({
   name: "[heartbreaker]WangEditor"
 });
