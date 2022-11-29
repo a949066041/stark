@@ -8,6 +8,7 @@
     "serve:project-sneaky": "pnpm --filter @stark/project-sneaky serve",
     "serve:project-nightclub": "pnpm --filter @stark/project-nightclub serve",
     "serve:project-heartbreaker": "pnpm --filter @stark/project-heartbreaker serve",
+    "serve:project-cassanova": "pnpm --filter @stark/project-cassanova serve",
     "prepare": "wireit",
     "plop": "pnpm --filter @stark/friday generate"
   },

@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 14:30:07
- * @LastEditTime: 2022-11-24 13:38:26
+ * @LastEditTime: 2022-11-29 21:09:01
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\sneaky\src\bootstrap.ts
@@ -16,10 +16,8 @@ const pinia = createPinia();
 const menuStore = useMenuStore(pinia);
 app.use(pinia);
 
-zip([import("nightclub/router"), import("heartbreaker/router")]).subscribe(
-  (item) => {
-    menuStore.set_menu(item.flatMap(({ router_list }) => router_list));
-    app.use(router(menuStore.router));
-    app.mount("#app");
-  }
-);
+zip([import("nightclub/router"), import("heartbreaker/router"), import("cassanova/router")]).subscribe((item) => {
+  menuStore.set_menu(item.flatMap(({ router_list }) => router_list));
+  app.use(router(menuStore.router));
+  app.mount("#app");
+});

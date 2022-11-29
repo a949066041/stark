@@ -11,3 +11,5 @@ export * from "./remote.util";
 export * from "./config/nightclub.config";
 export * from "./config/sneaky.config";
 export * from "./config/heartbreaker.config";
+
+export * from "./config/cassanova.config";
