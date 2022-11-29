@@ -1,0 +1,24 @@
+{
+  "name": "@stark/friday",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "generate": "plop --plopfile src/plopfile.js && pnpm install",
+    "g": "plop --plopfile src/plopfile.js ",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16",
+    "plop": "^3.1.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@pnpm/find-workspace-dir": "^5.0.0"
+  }
+}

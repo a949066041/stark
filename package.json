@@ -8,7 +8,8 @@
     "serve:project-sneaky": "pnpm --filter @stark/project-sneaky serve",
     "serve:project-nightclub": "pnpm --filter @stark/project-nightclub serve",
     "serve:project-heartbreaker": "pnpm --filter @stark/project-heartbreaker serve",
-    "prepare": "wireit"
+    "prepare": "wireit",
+    "plop": "pnpm --filter @stark/friday generate"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +23,8 @@
       "command": "echo success",
       "dependencies": [
         "./jarvis:build",
-        "./common/iron:build"
+        "./common/iron:build",
+        "./friday:build"
       ]
     }
   }
