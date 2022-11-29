@@ -1,13 +1,17 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-29 21:59:33
- * @LastEditTime: 2022-11-29 22:04:16
+ * @LastEditTime: 2022-11-29 22:22:50
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\wangEditor.vue
 -->
 <template>
   <div class="stark-container private-container">
+    <description>
+      <h2>WangEditor</h2>
+      <p>使用 @wangeditor/editor 和 @wangeditor/editor-for-vue@next</p>
+    </description>
     <div style="border: 1px solid #ccc">
       <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
       <Editor
@@ -24,6 +28,7 @@
 import "@wangeditor/editor/dist/css/style.css"; // 引入 css
 import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
 import { IDomEditor } from "@wangeditor/editor";
+import { Description } from "@stark/common-silver";
 import { onBeforeUnmount, onMounted, ref, shallowRef } from "vue";
 // 编辑器实例，必须用 shallowRef
 const editorRef = shallowRef();

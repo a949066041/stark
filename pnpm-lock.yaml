@@ -42,6 +42,27 @@ importers:
     dependencies:
       '@kaffee/latte': 1.1.4
 
+  common/silver:
+    specifiers:
+      '@kaffee/latte': ^1.1.4
+      '@stark/common-iron': workspace:^1.0.0
+      core-js: ^3.8.3
+      element-plus: ^2.2.20
+      pinia: ^2.0.23
+      typescript: ~4.5.5
+      vue: ^3.2.13
+      vue-router: ^4.0.3
+    dependencies:
+      '@stark/common-iron': link:../iron
+    devDependencies:
+      '@kaffee/latte': 1.1.4
+      core-js: 3.26.0
+      element-plus: 2.2.20_vue@3.2.44
+      pinia: 2.0.23_4bwjhaig4xggmhazfdpgxvirne
+      typescript: 4.5.5
+      vue: 3.2.44
+      vue-router: 4.1.6_vue@3.2.44
+
   friday:
     specifiers:
       '@pnpm/find-workspace-dir': ^5.0.0
@@ -143,6 +164,7 @@ importers:
       '@stark/common-arc': workspace:^0.1.0
       '@stark/common-copper': workspace:^1.0.0
       '@stark/common-iron': workspace:^1.0.0
+      '@stark/common-silver': workspace:^1.0.0
       '@stark/jarvis': workspace:^1.0.0
       '@types/webpack-env': ^1.18.0
       '@vue/cli-plugin-babel': ~5.0.0
@@ -171,6 +193,7 @@ importers:
       '@stark/common-arc': link:../../common/arc
       '@stark/common-copper': link:../../common/copper
       '@stark/common-iron': link:../../common/iron
+      '@stark/common-silver': link:../../common/silver
       '@wangeditor/editor': 5.1.23
       '@wangeditor/editor-for-vue': 5.1.12_jd77brrjgbuqi7h246utbcjone
       core-js: 3.26.0
