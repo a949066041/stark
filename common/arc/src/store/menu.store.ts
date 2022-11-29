@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 16:35:07
- * @LastEditTime: 2022-11-17 22:21:28
+ * @LastEditTime: 2022-11-29 19:58:55
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\menu.store.ts
@@ -30,17 +30,13 @@ export interface IMenu {
   name: string;
   parent_name?: string;
   is_router: boolean;
-  meta?: RouteMeta | { title: string; permission: string[] };
+  meta?: IMenuType;
   children: IMenu[];
   path?: string;
 }
 
-export const useMenuStore = defineStore<
-  "arc_menu",
-  MenuStoreState,
-  MenuStoreGetter,
-  MenuStoreAction
->("arc_menu", {
+type IMenuType = { title: string; permission: string[]; menu_icon: [string, string] } & RouteMeta;
+export const useMenuStore = defineStore<"arc_menu", MenuStoreState, MenuStoreGetter, MenuStoreAction>("arc_menu", {
   state: () => ({
     _menu: [],
     _collapse: false
@@ -61,9 +57,7 @@ export const useMenuStore = defineStore<
 });
 
 function getRouter(menu: EnhanceRouter[]): Array<RouteRecordRaw> {
-  const routers: IEnhanceRouter[] = menu.filter(
-    (item) => item.is_router
-  ) as IEnhanceRouter[];
+  const routers: IEnhanceRouter[] = menu.filter((item) => item.is_router) as IEnhanceRouter[];
   return routers.map((item) => {
     return {
       path: item.path,
@@ -84,7 +78,7 @@ function cycleMenu(menu: EnhanceRouter[], find_name: string): IMenu[] {
       const _menu: IMenu = {
         name: item.name,
         parent_name: item.parent_name,
-        meta: { ...item.meta },
+        meta: item.meta ? (item.meta as IMenuType) : undefined,
         is_router: item.is_router,
         children: child_menu,
         path: item.is_router ? item.path : undefined

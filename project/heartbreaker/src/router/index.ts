@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 13:25:33
- * @LastEditTime: 2022-11-24 13:49:22
+ * @LastEditTime: 2022-11-29 20:42:40
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\heartbreaker\src\router\index.ts
@@ -14,8 +14,9 @@ const router_list: EnhanceRouter[] = [
     parent_name: "root",
     name: "[heartbreaker]Components",
     meta: {
-      title: "组件",
-      permission: []
+      title: "Component",
+      permission: [],
+      menu_icon: ["iron", "component"]
     }
   },
   {

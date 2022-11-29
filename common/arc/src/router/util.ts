@@ -1,12 +1,12 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 15:36:21
- * @LastEditTime: 2022-11-25 15:48:29
+ * @LastEditTime: 2022-11-29 19:52:59
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\router\util.ts
  */
-import { _RouteRecordBase } from "vue-router";
+import { RouteMeta, _RouteRecordBase } from "vue-router";
 
 /**
  * 路由项
@@ -39,6 +39,7 @@ export interface EnhanceMenu {
   meta: {
     title: string; // 菜单标题
     permission: string[]; // 权限
+    menu_icon?: [string, string];
   };
 }
 
