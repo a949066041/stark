@@ -25,7 +25,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+, "src/views/v-calendar/components/child.mixin.js"    "src/views/v-calendar/components/child.mixin.js"
   ],
   "exclude": ["node_modules"]
 }

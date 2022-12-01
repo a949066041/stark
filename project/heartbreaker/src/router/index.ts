@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 13:25:33
- * @LastEditTime: 2022-12-01 20:17:57
+ * @LastEditTime: 2022-12-01 21:50:05
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\heartbreaker\src\router\index.ts
@@ -49,6 +49,17 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/ag-grid.vue"),
     meta: {
       title: "AgGrid",
+      permission: []
+    }
+  },
+  {
+    is_router: true,
+    parent_name: "[heartbreaker]Components",
+    name: "[heartbreaker]VCalendar",
+    path: "v-calendar",
+    component: () => import("../views/v-calendar/v-calendar.vue"),
+    meta: {
+      title: "V-Calendar",
       permission: []
     }
   }
