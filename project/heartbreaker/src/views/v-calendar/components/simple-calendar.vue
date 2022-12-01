@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 21:55:51
- * @LastEditTime: 2022-12-01 22:50:07
+ * @LastEditTime: 2022-12-01 23:36:19
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\simple-calendar.vue
@@ -106,6 +106,21 @@
         </calendar>
       </div>
     </div>
+    <h2>Week Numbers</h2>
+    <div class="flex flex-col items-center md:flex-row md:justify-around mb-8">
+      <div class="mb-6">
+        <h3 class="text-base semibold text-gray-700 mb-3">Default Left Inside</h3>
+        <div class="mb-6">
+          <calendar :from-page="{ month: 1, year: 2021 }" show-weeknumbers />
+        </div>
+      </div>
+      <div class="mb-6">
+        <h3 class="text-base semibold text-gray-700 mb-3">ISO, Right and Outside Options</h3>
+        <div class="mb-6">
+          <calendar :from-page="{ month: 1, year: 2021 }" show-iso-weeknumbers="right-outside" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -118,7 +133,7 @@ import { Calendar } from "v-calendar";
 import { Locale } from "../utils/locale";
 import { Description } from "@stark/common-silver";
 import { nextTick, ref } from "vue";
-import PopoverRow from "./PopoverRow.vue";
+import { PopoverRow } from "./popover-row";
 
 interface TodoItem {
   id: number;
