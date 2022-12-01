@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-29 21:59:33
- * @LastEditTime: 2022-11-29 22:43:27
+ * @LastEditTime: 2022-12-01 20:46:40
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\wangEditor.vue
@@ -10,6 +10,7 @@
   <div class="stark-container private-container">
     <description>
       <h2>WangEditor</h2>
+      <p>方便的富文本编辑方案</p>
       <p>使用 @wangeditor/editor 和 @wangeditor/editor-for-vue@next</p>
     </description>
     <div style="border: 1px solid #ccc">
