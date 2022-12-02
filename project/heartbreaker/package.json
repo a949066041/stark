@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@kyvg/vue3-notification": "^2.7.0",
     "@milkdown/core": "^6.5.4",
     "@milkdown/plugin-menu": "^6.5.4",
     "@milkdown/preset-commonmark": "^6.5.4",

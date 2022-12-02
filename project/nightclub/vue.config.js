@@ -9,11 +9,7 @@
 const { defineConfig } = require("@vue/cli-service");
 const { WebpackConfig, nightclub_config } = require("@stark/jarvis");
 
-const webpack_config = new WebpackConfig(
-  nightclub_config,
-  "http://localhost",
-  __dirname
-);
+const webpack_config = new WebpackConfig(nightclub_config, "http://localhost", __dirname);
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -25,9 +21,6 @@ module.exports = defineConfig({
       usedExports: true,
       splitChunks: false
     },
-    plugins: [
-      ...webpack_config.get_plugins(),
-      webpack_config.get_remote_mf_plugin()
-    ]
+    plugins: [...webpack_config.get_plugins(), webpack_config.get_remote_mf_plugin({})]
   }
 });

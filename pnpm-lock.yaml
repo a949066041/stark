@@ -161,6 +161,7 @@ importers:
   project/heartbreaker:
     specifiers:
       '@babel/core': ^7.20.2
+      '@kyvg/vue3-notification': ^2.7.0
       '@milkdown/core': ^6.5.4
       '@milkdown/plugin-menu': ^6.5.4
       '@milkdown/preset-commonmark': ^6.5.4
@@ -203,6 +204,7 @@ importers:
       webpack: ^5.75.0
       webpack-env: ^0.8.0
     dependencies:
+      '@kyvg/vue3-notification': 2.7.0_vue@3.2.44
       '@milkdown/core': 6.5.4_6c63lmpqk5eqlspcoimzsuubvy
       '@milkdown/plugin-menu': 6.5.4_hcx5jzbrehmpjr4bwjtmcqoyxa
       '@milkdown/preset-commonmark': 6.5.4_hcx5jzbrehmpjr4bwjtmcqoyxa
@@ -2686,6 +2688,14 @@ packages:
       lodash: 4.17.21
       prettier: 2.8.0
       svgo: 3.0.1
+
+  /@kyvg/vue3-notification/2.7.0_vue@3.2.44:
+    resolution: {integrity: sha512-Eti6jRGips9fpf2WdRjlOOJGyjCZ35qt84CeTeFr5piAwXaMpvgzea4dqqTK5KCfqK3qz/zwwxAd/8AToLYL8A==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.2.44
+    dev: false
 
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}

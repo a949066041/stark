@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 13:25:33
- * @LastEditTime: 2022-12-02 16:16:15
+ * @LastEditTime: 2022-12-02 21:11:49
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\heartbreaker\src\router\index.ts
@@ -63,6 +63,18 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/v-calendar/v-calendar.vue"),
     meta: {
       title: "V Calendar",
+      permission: [],
+      menu_icon: ["iron", "calendar"]
+    }
+  },
+  {
+    is_router: true,
+    parent_name: "[heartbreaker]Components",
+    name: "[heartbreaker]Notification",
+    path: "notification",
+    component: () => import("../views/notification.vue"),
+    meta: {
+      title: "Notification",
       permission: [],
       menu_icon: ["iron", "calendar"]
     }

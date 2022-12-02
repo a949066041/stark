@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-11-24 12:19:50
+ * @LastEditTime: 2022-12-02 21:51:58
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\heartbreaker\vue.config.js
@@ -9,11 +9,7 @@
 const { defineConfig } = require("@vue/cli-service");
 const { WebpackConfig, heartbreaker_config } = require("@stark/jarvis");
 
-const webpack_config = new WebpackConfig(
-  heartbreaker_config,
-  "http://localhost",
-  __dirname
-);
+const webpack_config = new WebpackConfig(heartbreaker_config, "http://localhost", __dirname);
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -25,9 +21,6 @@ module.exports = defineConfig({
       usedExports: true,
       splitChunks: false
     },
-    plugins: [
-      ...webpack_config.get_plugins(),
-      webpack_config.get_remote_mf_plugin()
-    ]
+    plugins: [...webpack_config.get_plugins(), webpack_config.get_remote_mf_plugin({ register: true })]
   }
 });

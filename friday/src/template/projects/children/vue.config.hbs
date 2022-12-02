@@ -19,7 +19,7 @@ module.exports = defineConfig({
     },
     plugins: [
       ...webpack_config.get_plugins(),
-      webpack_config.get_remote_mf_plugin()
+      webpack_config.get_remote_mf_plugin({})
     ]
   }
 });
