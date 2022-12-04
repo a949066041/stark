@@ -29,6 +29,7 @@
     "lodash": "^4.17.21",
     "pinia": "^2.0.23",
     "v-calendar": "3.0.0-alpha.8",
+    "velocity-animate": "^1.5.2",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },
@@ -36,6 +37,7 @@
     "@babel/core": "^7.20.2",
     "@stark/jarvis": "workspace:^1.0.0",
     "@types/lodash": "^4.14.191",
+    "@types/velocity-animate": "1.2.33",
     "@types/webpack-env": "^1.18.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
