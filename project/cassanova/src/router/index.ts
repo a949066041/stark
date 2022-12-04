@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-29 20:54:41
- * @LastEditTime: 2022-11-29 21:14:07
+ * @LastEditTime: 2022-12-04 11:46:05
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\cassanova\src\router\index.ts
@@ -14,8 +14,21 @@ const router_list: EnhanceRouter[] = [
     parent_name: "root",
     name: "[cassanova]Project",
     meta: {
-      title: "cassanova project",
-      permission: []
+      title: "Form",
+      permission: [],
+      menu_icon: ["iron", "form"]
+    }
+  },
+  {
+    is_router: true,
+    parent_name: "[cassanova]Project",
+    name: "[cassanova]custom-form",
+    path: "custom-form",
+    component: () => import("../views/custom-form.vue"),
+    meta: {
+      title: "Custom Form",
+      permission: [],
+      menu_icon: ["iron", "form"]
     }
   }
 ];

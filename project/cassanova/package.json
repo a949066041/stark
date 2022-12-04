@@ -7,6 +7,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@formily/core": "^2.2.13",
+    "@formily/element-plus": "1.0.0-beta.8",
+    "@formily/vue": "^2.2.13",
     "@stark/common-arc": "workspace:^0.1.0",
     "@stark/common-copper": "workspace:^1.0.0",
     "@stark/common-iron": "workspace:^1.0.0",
@@ -25,6 +28,7 @@
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "autoprefixer": "^10.4.13",
+    "babel-plugin-import": "^1.13.5",
     "copy-webpack-plugin": "^11.0.0",
     "postcss": "^8.4.19",
     "sass": "^1.32.7",

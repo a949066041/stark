@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 13:25:33
- * @LastEditTime: 2022-12-02 21:11:49
+ * @LastEditTime: 2022-12-04 11:23:37
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\heartbreaker\src\router\index.ts
@@ -76,7 +76,7 @@ const router_list: EnhanceRouter[] = [
     meta: {
       title: "Notification",
       permission: [],
-      menu_icon: ["iron", "calendar"]
+      menu_icon: ["iron", "notification"]
     }
   }
 ];
