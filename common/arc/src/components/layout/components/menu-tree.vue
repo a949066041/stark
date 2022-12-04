@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 17:29:28
- * @LastEditTime: 2022-11-29 20:45:23
+ * @LastEditTime: 2022-12-04 11:59:03
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\menu-tree.vue
@@ -62,7 +62,18 @@ function handleClickMenu(menu: IMenu) {
 .menu-icon {
   @apply fill-slate-800 mr-2;
 }
-.is-active {
+.el-sub-menu.is-active {
+  color: red;
+  .el-sub-menu__title {
+    .menu-icon {
+      @apply fill-blue-500;
+    }
+    .sub_title {
+      @apply text-blue-500;
+    }
+  }
+}
+.el-menu-item.is-active {
   .menu-icon {
     @apply fill-blue-500;
   }
