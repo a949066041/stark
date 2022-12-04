@@ -1,38 +1,88 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-04 11:35:35
- * @LastEditTime: 2022-12-04 11:46:45
+ * @LastEditTime: 2022-12-04 12:08:07
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\cassanova\src\views\custom-form.vue
 -->
 
 <template>
-  <div class="stark-container">
-    <Form :form="form" :label-col="6" :wrapper-col="10" @autoSubmit="log" @autoSubmitFailed="log">
+  <div class="stark-container p-4">
+    <Form :form="form">
       <SchemaField>
-        <SchemaStringField name="input" title="输入框" x-decorator="FormItem" x-component="Input" :required="true" />
         <SchemaStringField
-          name="select"
-          title="选择框"
+          name="size"
+          title="Radio.Group"
           x-decorator="FormItem"
-          x-component="Select"
+          x-component="Radio.Group"
           :enum="[
-            {
-              label: '选项1',
-              value: 1
-            },
-            {
-              label: '选项2',
-              value: 2
-            }
+            { value: 'small', label: 'Small' },
+            { value: 'default', label: 'Default' },
+            { value: 'large', label: 'Large' }
           ]"
-          :required="true"
         />
+        <SchemaVoidField name="sizeWrap" x-component="Div">
+          <SchemaStringField name="input" title="Input" x-decorator="FormItem" x-component="Input" required />
+          <SchemaStringField
+            name="select1"
+            title="Multiple Select"
+            x-decorator="FormItem"
+            x-component="Select"
+            :enum="[
+              {
+                label: '选项1',
+                value: 1
+              },
+              {
+                label: '选项2',
+                value: 2
+              }
+            ]"
+            :x-component-props="{
+              multiple: true,
+              placeholder: '请选择'
+            }"
+            required
+          />
+          <SchemaStringField
+            name="select2"
+            title="Select"
+            x-decorator="FormItem"
+            x-component="Select"
+            :enum="[
+              {
+                label: '选项1',
+                value: 1
+              },
+              {
+                label: '选项2',
+                value: 2
+              }
+            ]"
+            :x-component-props="{
+              placeholder: '请选择'
+            }"
+            required
+          />
+          <SchemaStringField name="Cascader" title="Cascader" x-decorator="FormItem" x-component="Cascader" required />
+          <SchemaStringField
+            name="DatePicker"
+            title="DatePicker"
+            x-decorator="FormItem"
+            x-component="DatePicker"
+            required
+          />
+          <SchemaStringField
+            name="InputNumber"
+            title="InputNumber"
+            x-decorator="FormItem"
+            x-component="InputNumber"
+            required
+          />
+          <SchemaBooleanField name="Switch" title="Switch" x-decorator="FormItem" x-component="Switch" required />
+        </SchemaVoidField>
       </SchemaField>
-      <FormButtonGroup alignFormItem>
-        <Submit>提交</Submit>
-      </FormButtonGroup>
     </Form>
   </div>
 </template>
@@ -41,16 +91,42 @@ export default {
   name: "[cassanova]CustomForm"
 };
 </script>
-<script lang="ts" setup>
-import { createForm } from "@formily/core";
+<script lang="tsx" setup>
+import { createForm, DataField, onFieldChange } from "@formily/core";
 import { createSchemaField } from "@formily/vue";
-import { Form, Input, Select, FormItem, FormButtonGroup, Submit } from "@formily/element-plus";
-const form = createForm();
-const fields = createSchemaField({ components: { Input, Select, FormItem } });
-const { SchemaStringField, SchemaField } = fields;
-function log(value: any) {
-  console.log(value);
-}
+import { Form, FormItem, Input, Select, Cascader, DatePicker, Switch, InputNumber, Radio } from "@formily/element-plus";
+
+const Div = (props: any, { slots }: any) => {
+  return <div {...props}>{slots?.default()}</div>;
+};
+
+const form = createForm({
+  values: {
+    size: "default"
+  },
+  effects: () => {
+    onFieldChange("size", ["value"], (field, form) => {
+      form.setFieldState("sizeWrap.*", (state: any) => {
+        if (state.decorator[1]) {
+          state.decorator[1].size = (field as DataField).value;
+        }
+      });
+    });
+  }
+});
+const { SchemaField, SchemaStringField, SchemaVoidField, SchemaBooleanField } = createSchemaField({
+  components: {
+    FormItem,
+    Input,
+    Select,
+    Cascader,
+    DatePicker,
+    Switch,
+    InputNumber,
+    Radio,
+    Div
+  }
+});
 defineExpose({
   name: "[cassanova]CustomForm"
 });
