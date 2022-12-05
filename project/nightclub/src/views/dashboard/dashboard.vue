@@ -9,34 +9,10 @@
 <template>
   <div class="stark-container bg-gray-100">
     <div class="h-40 py-4 px-8 flex flex-row justify-between">
-      <data-card
-        @click="handleChangeLineChart()"
-        title="Express"
-        :count="102400"
-        color="#40C9C6"
-        name="express"
-      />
-      <data-card
-        @click="handleChangeLineChart()"
-        title="New Visits"
-        :count="81212"
-        color="#36A3F7"
-        name="pepole"
-      />
-      <data-card
-        @click="handleChangeLineChart()"
-        title="Picture"
-        :count="9280"
-        color="#F4516C"
-        name="picture"
-      />
-      <data-card
-        @click="handleChangeLineChart()"
-        title="Shop"
-        :count="13600"
-        color="#34BFA3"
-        name="shop"
-      />
+      <data-card @click="handleChangeLineChart()" title="Express" :count="102400" color="#40C9C6" name="express" />
+      <data-card @click="handleChangeLineChart()" title="New Visits" :count="81212" color="#36A3F7" name="pepole" />
+      <data-card @click="handleChangeLineChart()" title="Picture" :count="9280" color="#F4516C" name="picture" />
+      <data-card @click="handleChangeLineChart()" title="Shop" :count="13600" color="#34BFA3" name="shop" />
     </div>
     <data-line-chart ref="line_chart" />
     <data-three-chart />
@@ -76,4 +52,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

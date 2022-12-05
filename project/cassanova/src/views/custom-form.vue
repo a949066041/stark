@@ -402,16 +402,7 @@ export default {
 import { h } from "vue";
 import { createForm } from "@formily/core";
 import { createSchemaField, FormProvider } from "@formily/vue";
-import {
-  FormItem,
-  InputNumber,
-  Input,
-  Cascader,
-  Select,
-  DatePicker,
-  FormLayout,
-  TimePicker
-} from "@formily/element-plus";
+import { FormItem, InputNumber, Input, Cascader, Select, DatePicker, FormLayout, TimePicker } from "@formily/antdv-x3";
 
 const SuccessIcon = () => {
   return h("i", {
@@ -443,4 +434,4 @@ defineExpose({
   name: "[cassanova]CustomForm"
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

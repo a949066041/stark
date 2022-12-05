@@ -12,6 +12,7 @@ const { WebpackConfig, sneaky_config, all_router } = require("@stark/jarvis");
 
 const webpack_config = new WebpackConfig(sneaky_config, "http://localhost", __dirname);
 module.exports = defineConfig({
+  css: webpack_config.getCssOptions(),
   transpileDependencies: true,
   devServer: webpack_config.get_dev_server(),
   chainWebpack: webpack_config.get_chain_config,

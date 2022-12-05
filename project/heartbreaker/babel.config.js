@@ -12,7 +12,7 @@ module.exports = {
     [
       "import",
       {
-        libraryName: "@formily/element-plus",
+        libraryName: "@formily/antdv-x3",
         libraryDirectory: "esm",
         style: true
       }

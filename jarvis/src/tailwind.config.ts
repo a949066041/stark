@@ -11,8 +11,8 @@ const project_list = ["nightclub", "heartbreaker", "cassanova"].map((project) =>
 
 const content = [
   "./src/**/*.{vue,ts}",
-  "../../common/arc/src/**/*.{html,vue,ts,tsx,scss}",
-  "../../common/silver/src/**/*.{html,vue,ts,tsx,scss}"
+  "../../common/arc/src/**/*.{html,vue,ts,tsx,scss,less}",
+  "../../common/silver/src/**/*.{html,vue,ts,tsx,scss,less}"
 ];
 
 const child_tailwind_config = {

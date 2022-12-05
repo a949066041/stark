@@ -11,13 +11,13 @@
     <description>
       <h2>Ag Grid</h2>
       <p>大数据量表格方案，使用 ag-grid-community 和 ag-grid-vue3</p>
-      <el-link>
+      <a-button type="link">
         <a href="https://www.ag-grid.com/vue-data-grid/getting-started/">
           https://www.ag-grid.com/vue-data-grid/getting-started/
         </a>
-      </el-link>
+      </a-button>
     </description>
-    <el-button class="my-4" @click="deselectRows">deselect rows</el-button>
+    <a-button class="my-4" @click="deselectRows">deselect rows</a-button>
     <ag-grid-vue
       class="ag-theme-material"
       style="height: 500px"
@@ -86,4 +86,4 @@ defineExpose({
   name: "[heartbreaker]AgGrid"
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

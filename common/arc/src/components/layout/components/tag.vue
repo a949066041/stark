@@ -8,17 +8,16 @@
 -->
 <template>
   <div class="tag-container">
-    <el-tag
+    <a-tag
       class="cursor-pointer mr-1 select-none"
-      size="large"
-      :effect="tag.link === $route.fullPath ? 'dark' : 'plain'"
+      :color="tag.link === $route.fullPath ? '#2db7f5' : ''"
       closable
       v-for="tag in tagList"
       :key="tag.name"
       @click="handleTagClick(tag.link)"
     >
       {{ tag.title }}
-    </el-tag>
+    </a-tag>
   </div>
 </template>
 <script lang="ts" setup>
@@ -34,7 +33,7 @@ function handleTagClick(path: string) {
   $router.push(path);
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .tag-container {
   @apply w-full pl-4 flex flex-row items-center h-12;
   border-bottom: solid 1px var(--el-menu-border-color);

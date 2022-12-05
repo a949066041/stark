@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="stark-container p-4">
-    <el-input v-model="input" placeholder="深层缓存测试" />
+    <a-input v-model="input" placeholder="深层缓存测试" />
   </div>
 </template>
 <script lang="ts">
