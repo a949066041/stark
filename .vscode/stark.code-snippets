@@ -32,7 +32,7 @@
       "  name: \"[${1}]${2}\"",
       "});",
       "</script>",
-      "<style lang=\"scss\" scoped></style>"
+      "<style lang=\"less\" scoped></style>"
     ],
     "description": "simple setup component"
   }

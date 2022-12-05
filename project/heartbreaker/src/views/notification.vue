@@ -127,7 +127,7 @@ defineExpose({
   name: "[heartbreaker]Notification"
 });
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 h2 {
   font-weight: 300;
   a {

@@ -32,7 +32,7 @@ export default {
   name: "[nightclub]DataThreeChart"
 };
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .single {
   @apply h-full bg-white rounded-md;
   width: 32%;

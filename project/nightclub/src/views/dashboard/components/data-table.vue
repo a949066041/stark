@@ -8,17 +8,22 @@
 -->
 <template>
   <div class="w-1/2 pr-4">
-    <el-table :data="list">
-      <el-table-column label="Order" prop="order" />
-      <el-table-column label="Price" prop="price" />
-      <el-table-column label="Status" prop="status">
-        <template #default="{ row }">
-          <el-tag :type="row.status === 'pending' ? 'danger' : 'success'">
-            {{ row.status }}
-          </el-tag>
+    <a-table
+      :dataSource="list"
+      :columns="[
+        { dataIndex: 'order', title: 'Order' },
+        { dataIndex: 'price', title: 'Price' },
+        { dataIndex: 'status', title: 'Status' }
+      ]"
+    >
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.key === 'Status'">
+          <a-tag :type="record.status === 'pending' ? 'danger' : 'success'">
+            {{ record.status }}
+          </a-tag>
         </template>
-      </el-table-column>
-    </el-table>
+      </template>
+    </a-table>
   </div>
 </template>
 <script lang="ts">
@@ -39,4 +44,4 @@ defineExpose({
   name: "[nightclub]DataTable"
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

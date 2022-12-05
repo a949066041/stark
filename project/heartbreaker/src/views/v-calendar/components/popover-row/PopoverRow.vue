@@ -79,7 +79,7 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style lang="less">
 .vc-day-popover-row {
   --day-content-transition-time: 0.13s ease-in;
   display: flex;

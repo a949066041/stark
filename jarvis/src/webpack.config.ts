@@ -40,6 +40,18 @@ class WebpackConfig {
     };
   };
 
+  public getCssOptions() {
+    return {
+      loaderOptions: {
+        less: {
+          lessOptions: {
+            javascriptEnabled: true
+          }
+        }
+      }
+    };
+  }
+
   public get_chain_config = (config: ChainableWebpackConfig) => {
     config.module
       .rule("vue")
@@ -82,13 +94,13 @@ class WebpackConfig {
   public get_plugins = () => {
     const AutoImport = require("unplugin-auto-import/webpack");
     const Components = require("unplugin-vue-components/webpack");
-    const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
+    const { AntDesignVueResolver } = require("unplugin-vue-components/resolvers");
     return [
       AutoImport({
-        resolvers: [ElementPlusResolver()]
+        resolvers: [AntDesignVueResolver()]
       }),
       Components({
-        resolvers: [ElementPlusResolver()]
+        resolvers: [AntDesignVueResolver()]
       })
     ];
   };

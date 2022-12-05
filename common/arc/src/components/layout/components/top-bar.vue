@@ -14,35 +14,29 @@
         width="24px"
         height="24px"
         namespace="iron"
-        :name="menu_collapse ? 'indent' : 'outdent'"
-        @click="handleChangeMenu()"
+        :name="menuStore.collapse ? 'indent' : 'outdent'"
+        @click="menuStore.toggle_menu"
       />
     </div>
     <div>
-      <div class="avatar" ref="avatarRef">
-        <el-popover :virtual-ref="avatarRef" trigger="click" virtual-triggering>
-          <el-button size="small" class="w-full">退出</el-button>
-        </el-popover>
-      </div>
+      <a-dropdown>
+        <div class="avatar" />
+        <template #overlay>
+          <a-menu>
+            <a-menu-item>
+              <a href="javascript:;">退出</a>
+            </a-menu-item>
+          </a-menu>
+        </template>
+      </a-dropdown>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { useMenuStore } from "../../../store";
-import { computed, ref } from "vue";
-import { storeToRefs } from "pinia";
-
-const avatarRef = ref();
-
 const menuStore = useMenuStore();
-const menu = storeToRefs(menuStore);
-const menu_collapse = menu.collapse;
-
-function handleChangeMenu() {
-  menuStore.toggle_menu();
-}
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .topbar-container {
   @apply flex flex-row justify-between items-center bg-gray-50 p-1;
   border-bottom: solid 1px var(--el-menu-border-color);
@@ -50,10 +44,9 @@ function handleChangeMenu() {
 .avatar {
   @apply h-10 w-10 rounded-full cursor-pointer;
 
-  background: {
-    image: url("../../../assets/avatar.png");
-    repeat: center;
-    size: contain;
-  }
+  background-image: url("../../../assets/avatar.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>

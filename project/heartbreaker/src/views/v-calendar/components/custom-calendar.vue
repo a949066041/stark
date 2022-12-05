@@ -123,7 +123,7 @@ defineExpose({
   name: "[heartbreaker]CustomCalendar"
 });
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 ::-webkit-scrollbar {
   width: 0px;
 }

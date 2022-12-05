@@ -33,4 +33,4 @@ defineExpose({
   name: "[heartbreaker]VCalendar"
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

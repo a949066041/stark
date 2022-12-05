@@ -6,8 +6,8 @@
  * @Description:
  * @FilePath: \stark\common\arc\src\index.ts
  */
-import "./styles/tailwind.scss";
-import "./styles/arc.scss";
+import "./styles/tailwind.less";
+import "./styles/arc.less";
 
 import { registerSvgIcon } from "@kaffee/latte";
 import { all_icon } from "@stark/common-iron";

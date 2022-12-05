@@ -8,8 +8,8 @@
 -->
 <template>
   <div class="stark-container p-4">
-    <el-tabs v-model="nowTabs">
-      <el-tab-pane lazy v-for="tab in tabList" :label="tab.label" :name="tab.workspace" :key="tab.workspace">
+    <a-tabs v-model="nowTabs">
+      <a-tab-pane lazy v-for="tab in tabList" :tab="tab.label" :name="tab.workspace" :key="tab.workspace">
         <div class="flex flex-row flex-wrap" v-if="nowTabs === tab.workspace">
           <div v-for="icon in tab.icon" class="icon-item">
             <latte-svg
@@ -28,8 +28,8 @@
             </div>
           </div>
         </div>
-      </el-tab-pane>
-    </el-tabs>
+      </a-tab-pane>
+    </a-tabs>
   </div>
 </template>
 <script lang="ts" setup>
@@ -64,7 +64,7 @@ export default {
   name: "[nightclub]Icon"
 };
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .icon-item {
   @apply w-28 h-20 outline outline-1 outline-gray-300 flex flex-col justify-center items-center cursor-pointer;
   margin: 1px;
