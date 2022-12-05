@@ -20,10 +20,14 @@
     </div>
     <div>
       <a-dropdown>
-        <template #overlay>
-          <a-button size="small" class="w-full">退出</a-button>
-        </template>
         <div class="avatar" />
+        <template #overlay>
+          <a-menu>
+            <a-menu-item>
+              <a href="javascript:;">退出</a>
+            </a-menu-item>
+          </a-menu>
+        </template>
       </a-dropdown>
     </div>
   </div>

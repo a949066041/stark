@@ -7,7 +7,7 @@
  * @FilePath: \stark\common\arc\src\components\layout\components\menu.vue
 -->
 <template>
-  <a-menu class="a-menu" :inline-collapsed="menuStore.collapse">
+  <a-menu class="a-menu" mode="inline" :inline-collapsed="menuStore.collapse">
     <menu-tree v-for="item of menuStore.menu" :key="item.name" :config="item" />
   </a-menu>
 </template>
@@ -17,7 +17,7 @@ import MenuTree from "./menu-tree";
 const menuStore = useMenuStore();
 </script>
 <style lang="less" scoped>
-.ant-menu-vertical:not(.ant-menu-inline-collapsed) {
+.ant-menu-inline:not(.ant-menu-inline-collapsed) {
   width: 200px;
   height: 100vh;
 }

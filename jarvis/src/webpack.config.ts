@@ -40,6 +40,18 @@ class WebpackConfig {
     };
   };
 
+  public getCssOptions() {
+    return {
+      loaderOptions: {
+        less: {
+          lessOptions: {
+            javascriptEnabled: true
+          }
+        }
+      }
+    };
+  }
+
   public get_chain_config = (config: ChainableWebpackConfig) => {
     config.module
       .rule("vue")

@@ -4,6 +4,7 @@ const { WebpackConfig, cassanova_config } = require("@stark/jarvis");
 const webpack_config = new WebpackConfig(cassanova_config, "http://localhost", __dirname);
 
 module.exports = defineConfig({
+  css: webpack_config.getCssOptions(),
   transpileDependencies: true,
   devServer: webpack_config.get_dev_server(),
   publicPath: webpack_config.get_public_path(),

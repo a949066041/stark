@@ -16,13 +16,13 @@
       </div>
       <div class="p-4">
         <p class="text-sm">Vue</p>
-        <a-progress class="mb-1" :percentage="70" />
+        <a-progress class="mb-1" :percent="70" status="active" />
         <p class="text-sm">TypeScript</p>
-        <a-progress class="mb-1" :percentage="40" />
+        <a-progress class="mb-1" :percent="40" status="active" />
         <p class="text-sm">SCSS</p>
-        <a-progress class="mb-1" :percentage="20" />
+        <a-progress class="mb-1" :percent="20" status="active" />
         <p class="text-sm">ESLint</p>
-        <a-progress class="mb-1" :percentage="100" status="success" />
+        <a-progress class="mb-1" :percent="100" status="active" />
       </div>
     </div>
   </a-card>
@@ -40,7 +40,8 @@ defineExpose({
 <style lang="less" scoped>
 .avatar {
   @apply w-20 h-20 rounded-full bg-red-200 absolute -top-10 left-3;
-  background: url("@stark/common-arc/src/assets/avatar.png") center contain;
+  background-image: url("@stark/common-arc/src/assets/avatar.png");
+  background-size: contain;
 }
 .card-image {
   background-image: url("@stark/common-copper/assets/image.webp");

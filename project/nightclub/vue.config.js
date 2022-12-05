@@ -12,6 +12,7 @@ const { WebpackConfig, nightclub_config } = require("@stark/jarvis");
 const webpack_config = new WebpackConfig(nightclub_config, "http://localhost", __dirname);
 
 module.exports = defineConfig({
+  css: webpack_config.getCssOptions(),
   transpileDependencies: true,
   devServer: webpack_config.get_dev_server(),
   publicPath: webpack_config.get_public_path(),

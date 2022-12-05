@@ -10,8 +10,7 @@
   <div class="tag-container">
     <a-tag
       class="cursor-pointer mr-1 select-none"
-      size="large"
-      :effect="tag.link === $route.fullPath ? 'dark' : 'plain'"
+      :color="tag.link === $route.fullPath ? '#2db7f5' : ''"
       closable
       v-for="tag in tagList"
       :key="tag.name"
