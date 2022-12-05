@@ -34,7 +34,7 @@ function handleTagClick(path: string) {
   $router.push(path);
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .tag-container {
   @apply w-full pl-4 flex flex-row items-center h-12;
   border-bottom: solid 1px var(--el-menu-border-color);

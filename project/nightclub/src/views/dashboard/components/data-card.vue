@@ -39,7 +39,7 @@ export default {
   name: "[nightclub]DataCard"
 };
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .card-container {
   @apply h-full bg-white flex flex-row cursor-pointer justify-between items-center p-2 rounded-md;
   width: 24%;

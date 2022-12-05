@@ -11,12 +11,7 @@
 </template>
 <script lang="ts" setup>
 import * as echarts from "echarts/core";
-import {
-  TitleComponent,
-  ToolboxComponent,
-  TooltipComponent,
-  LegendComponent
-} from "echarts/components";
+import { TitleComponent, ToolboxComponent, TooltipComponent, LegendComponent } from "echarts/components";
 import { PieChart } from "echarts/charts";
 import { LabelLayout } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
@@ -85,4 +80,4 @@ export default {
   name: "[nightclub]DataPieChart"
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

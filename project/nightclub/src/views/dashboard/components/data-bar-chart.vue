@@ -13,22 +13,12 @@
 import * as echarts from "echarts/core";
 import "echarts/theme/macarons";
 
-import {
-  TooltipComponent,
-  GridComponent,
-  LegendComponent
-} from "echarts/components";
+import { TooltipComponent, GridComponent, LegendComponent } from "echarts/components";
 import { BarChart } from "echarts/charts";
 import { CanvasRenderer } from "echarts/renderers";
 import { nextTick, onMounted, ref } from "vue";
 
-echarts.use([
-  TooltipComponent,
-  GridComponent,
-  LegendComponent,
-  BarChart,
-  CanvasRenderer
-]);
+echarts.use([TooltipComponent, GridComponent, LegendComponent, BarChart, CanvasRenderer]);
 
 const bar_chart = ref<HTMLDivElement>();
 let myChart: echarts.ECharts;
@@ -114,4 +104,4 @@ export default {
   name: "[nightclub]DataBarChart"
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

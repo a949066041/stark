@@ -48,7 +48,7 @@ import {
   ArrayTable,
   ArrayCards,
   InputNumber
-} from "@formily/element-plus";
+} from "@formily/antdv-x3";
 import { CustomJSONSchema } from "./schema/json-schema";
 
 const schema = CustomJSONSchema.schema;
@@ -91,4 +91,4 @@ defineExpose({
   name: "[cassanova]JSONSchema"
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

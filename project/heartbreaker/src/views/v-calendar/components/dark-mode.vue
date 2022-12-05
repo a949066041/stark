@@ -63,4 +63,4 @@ defineExpose({
   name: "[heartbreaker]DarkMode"
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

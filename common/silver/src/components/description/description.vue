@@ -21,11 +21,9 @@ defineExpose({
   name: "[silver]Description"
 });
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .description-container {
-  border: {
-    left: solid 4px;
-  }
+  border: 4px left;
   @apply text-gray-500 border-blue-500 pl-2 mb-4;
 }
 </style>

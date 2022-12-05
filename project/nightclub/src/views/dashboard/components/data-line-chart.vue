@@ -18,13 +18,7 @@ export default {
 </script>
 <script lang="ts" setup>
 import * as echarts from "echarts/core";
-import {
-  TitleComponent,
-  ToolboxComponent,
-  TooltipComponent,
-  GridComponent,
-  LegendComponent
-} from "echarts/components";
+import { TitleComponent, ToolboxComponent, TooltipComponent, GridComponent, LegendComponent } from "echarts/components";
 import { LineChart } from "echarts/charts";
 import { UniversalTransition } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
@@ -100,4 +94,4 @@ defineExpose({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped></style>

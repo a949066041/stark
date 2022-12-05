@@ -54,7 +54,7 @@ function handleLogin() {
   router.push("/view");
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .login-left {
   @apply basis-1/2 bg-blue-400 h-full rounded-r-3xl flex flex-row justify-center items-center overflow-hidden;
 }

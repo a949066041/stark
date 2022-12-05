@@ -32,7 +32,7 @@
 import { useMenuStore } from "../../../store";
 const menuStore = useMenuStore();
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .topbar-container {
   @apply flex flex-row justify-between items-center bg-gray-50 p-1;
   border-bottom: solid 1px var(--el-menu-border-color);
@@ -40,10 +40,9 @@ const menuStore = useMenuStore();
 .avatar {
   @apply h-10 w-10 rounded-full cursor-pointer;
 
-  background: {
-    image: url("../../../assets/avatar.png");
-    repeat: center;
-    size: contain;
-  }
+  background-image: url("../../../assets/avatar.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>

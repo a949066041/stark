@@ -16,7 +16,7 @@ import { useMenuStore } from "../../../store";
 import MenuTree from "./menu-tree";
 const menuStore = useMenuStore();
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .ant-menu-vertical:not(.ant-menu-inline-collapsed) {
   width: 200px;
   height: 100vh;

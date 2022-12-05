@@ -64,7 +64,7 @@ export default {
   name: "[nightclub]Icon"
 };
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .icon-item {
   @apply w-28 h-20 outline outline-1 outline-gray-300 flex flex-col justify-center items-center cursor-pointer;
   margin: 1px;

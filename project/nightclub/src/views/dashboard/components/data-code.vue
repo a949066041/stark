@@ -37,21 +37,15 @@ defineExpose({
   name: "[nightclub]DataCode"
 });
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .avatar {
   @apply w-20 h-20 rounded-full bg-red-200 absolute -top-10 left-3;
-  background: {
-    image: url("@stark/common-arc/src/assets/avatar.png");
-    repeat: center;
-    size: contain;
-  }
+  background: url("@stark/common-arc/src/assets/avatar.png") center contain;
 }
 .card-image {
-  background: {
-    image: url("@stark/common-copper/assets/image.webp");
-    repeat: center;
-    size: cover;
-    position: center;
-  }
+  background-image: url("@stark/common-copper/assets/image.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>
