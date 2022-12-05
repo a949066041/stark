@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-29 20:54:41
- * @LastEditTime: 2022-12-04 11:46:05
+ * @LastEditTime: 2022-12-05 10:21:35
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\cassanova\src\router\index.ts
@@ -29,6 +29,18 @@ const router_list: EnhanceRouter[] = [
       title: "Custom Form",
       permission: [],
       menu_icon: ["iron", "form"]
+    }
+  },
+  {
+    is_router: true,
+    parent_name: "[cassanova]Project",
+    name: "[cassanova]json-schema",
+    path: "json-schema",
+    component: () => import("../views/json-schema.vue"),
+    meta: {
+      title: "JSON Schema",
+      permission: [],
+      menu_item: ["iron", "json"]
     }
   }
 ];
