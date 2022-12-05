@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-02 22:23:45
+ * @LastEditTime: 2022-12-05 13:16:01
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -118,7 +118,8 @@ class WebpackConfig {
       exposes,
       shared: {
         vue: { requiredVersion: "^3.0.0", singleton: true },
-        pinia: { singleton: true }
+        pinia: { singleton: true },
+        "@stark/common-arc": { singleton: true }
       }
     });
   };

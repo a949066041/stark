@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 19:57:36
- * @LastEditTime: 2022-11-29 22:25:03
+ * @LastEditTime: 2022-12-05 10:37:44
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\index.ts
@@ -14,3 +14,5 @@ export * from "./config/sneaky.config";
 export * from "./config/heartbreaker.config";
 
 export * from "./config/cassanova.config";
+
+export * from "./config/tiger.config";
