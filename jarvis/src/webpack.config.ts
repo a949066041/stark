@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-05 16:33:19
+ * @LastEditTime: 2022-12-05 17:47:54
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -11,6 +11,8 @@ import ChainableWebpackConfig from "webpack-chain";
 import { resolve } from "path";
 const customElement = new Set(["latte-svg"]);
 import { default as minimist } from "minimist";
+import * as dotenv from "dotenv";
+import dotenvExpand from "dotenv-expand";
 
 class WebpackConfig {
   public config: child_config;
@@ -20,11 +22,15 @@ class WebpackConfig {
   private _dist_path: string;
   private _vue_arguments: minimist.ParsedArgs;
   constructor(config: child_config, path: string, dirname: string) {
+    this._vue_arguments = minimist(process.argv.slice(2), {});
     this.config = config;
-    this.path = path;
+    if (this._vue_arguments._.includes("serve")) {
+      this.path = path;
+    } else {
+      this.path = path;
+    }
     this._public_path = resolve(dirname, "../../public/");
     this._dist_path = resolve(dirname, "dist");
-    this._vue_arguments = minimist(process.argv.slice(2), {});
   }
 
   private full_path = () => `${this.path}:${this.config.port}`;
@@ -132,6 +138,9 @@ class WebpackConfig {
     if (this._vue_arguments["mode"]) {
       environmentFile = environmentFile + `.${this._vue_arguments["mode"]}`;
     }
+    const environmentPath = resolve("../../environment", environmentFile);
+    const environment = dotenv.config({ path: environmentPath });
+    dotenvExpand.expand(environment);
   }
 }
 
