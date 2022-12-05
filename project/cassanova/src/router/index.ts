@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-29 20:54:41
- * @LastEditTime: 2022-12-05 10:21:35
+ * @LastEditTime: 2022-12-05 22:55:00
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\cassanova\src\router\index.ts
@@ -40,7 +40,7 @@ const router_list: EnhanceRouter[] = [
     meta: {
       title: "JSON Schema",
       permission: [],
-      menu_item: ["iron", "json"]
+      menu_icon: ["iron", "json"]
     }
   }
 ];

@@ -14,7 +14,7 @@
     "@milkdown/prose": "^6.5.4",
     "@milkdown/theme-nord": "^6.5.4",
     "@milkdown/vue": "^6.5.4",
-    "@stark/common-arc": "workspace:^0.1.0",
+    "@stark/common-arc": "workspace:^1.0.0",
     "@stark/common-copper": "workspace:^1.0.0",
     "@stark/common-iron": "workspace:^1.0.0",
     "@stark/common-silver": "workspace:^1.0.0",

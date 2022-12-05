@@ -1,13 +1,15 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-29 22:24:16
- * @LastEditTime: 2022-11-29 22:28:06
+ * @LastEditTime: 2022-12-05 21:04:22
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\tailwind.config.ts
  */
 
-const project_list = ["nightclub", "heartbreaker", "cassanova"].map((project) => `../${project}/src/**/*.{vue,ts}`);
+const project_list = ["nightclub", "heartbreaker", "cassanova", "tiger"].map(
+  (project) => `../${project}/src/**/*.{vue,ts}`
+);
 
 const content = [
   "./src/**/*.{vue,ts}",

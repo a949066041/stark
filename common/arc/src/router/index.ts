@@ -1,25 +1,18 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 13:28:47
- * @LastEditTime: 2022-11-11 16:27:12
+ * @LastEditTime: 2022-12-05 22:03:06
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\router\index.ts
  */
-import {
-  createRouter,
-  RouteRecordRaw,
-  createWebHashHistory,
-  Router
-} from "vue-router";
+import { createRouter, RouteRecordRaw, Router, createWebHistory } from "vue-router";
 import Login from "../components/login/login.vue";
 import Layout from "../components/layout/layout.vue";
 
-const router: (routes: Array<RouteRecordRaw>) => Router = (
-  children: Array<RouteRecordRaw>
-) =>
+const router: (routes: Array<RouteRecordRaw>) => Router = (children: Array<RouteRecordRaw>) =>
   createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes: [
       {
         path: "/login",

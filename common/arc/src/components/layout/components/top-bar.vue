@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-17 19:23:22
- * @LastEditTime: 2022-11-17 22:41:03
+ * @LastEditTime: 2022-12-05 21:27:48
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\top-bar.vue
@@ -39,7 +39,7 @@ const menuStore = useMenuStore();
 <style lang="less" scoped>
 .topbar-container {
   @apply flex flex-row justify-between items-center bg-gray-50 p-1;
-  border-bottom: solid 1px var(--el-menu-border-color);
+  border-bottom: solid 1px #4b5563;
 }
 .avatar {
   @apply h-10 w-10 rounded-full cursor-pointer;

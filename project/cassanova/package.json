@@ -10,7 +10,7 @@
     "@formily/antdv-x3": "1.0.0-alpha.5",
     "@formily/core": "^2.2.13",
     "@formily/vue": "^2.2.13",
-    "@stark/common-arc": "workspace:^0.1.0",
+    "@stark/common-arc": "workspace:^1.0.0",
     "@stark/common-copper": "workspace:^1.0.0",
     "@stark/common-iron": "workspace:^1.0.0",
     "ant-design-vue": "^3.2.15",

@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-05 17:47:54
+ * @LastEditTime: 2022-12-06 00:21:37
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -24,19 +24,26 @@ class WebpackConfig {
   constructor(config: child_config, path: string, dirname: string) {
     this._vue_arguments = minimist(process.argv.slice(2), {});
     this.config = config;
-    if (this._vue_arguments._.includes("serve")) {
+    if (this._vue_arguments._.includes("serve") && config.name !== "sneaky") {
       this.path = path;
+      this.full_path = `${this.path}:${this.config.port}`;
     } else {
-      this.path = path;
+      if (config.name === "sneaky") {
+        this.path = ".";
+        this.full_path = `${this.path}`;
+      } else {
+        this.path = `./remote/${config.name}`;
+        this.full_path = `${this.path}`;
+      }
     }
     this._public_path = resolve(dirname, "../../public/");
     this._dist_path = resolve(dirname, "dist");
   }
 
-  private full_path = () => `${this.path}:${this.config.port}`;
+  private full_path: string;
 
-  public get_remote_url = () => `${this.config.name}@${this.full_path()}/${this.config.remote_file}`;
-  public get_public_path = () => `${this.full_path()}`;
+  public get_remote_url = () => `${this.config.name}@${this.full_path}/${this.config.remote_file}`;
+  public get_public_path = () => `${this.full_path}`;
 
   public get_dev_server = () => {
     return {
@@ -128,6 +135,9 @@ class WebpackConfig {
       shared: {
         vue: { requiredVersion: "^3.0.0", singleton: true },
         pinia: { singleton: true },
+        "vue-router": { singleton: true },
+        "@kaffee/latte": { singleton: true },
+        "@stark/common-iron": { singleton: true },
         "@stark/common-arc": { singleton: true }
       }
     });

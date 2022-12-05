@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-15 21:02:40
- * @LastEditTime: 2022-11-17 23:09:00
+ * @LastEditTime: 2022-12-05 21:27:49
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\tag.vue
@@ -36,6 +36,6 @@ function handleTagClick(path: string) {
 <style lang="less" scoped>
 .tag-container {
   @apply w-full pl-4 flex flex-row items-center h-12;
-  border-bottom: solid 1px var(--el-menu-border-color);
+  border-bottom: solid 1px #4b5563;
 }
 </style>

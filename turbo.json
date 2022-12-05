@@ -1,8 +1,20 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "serve:dev": {},
-    "prepare:build": {},
-    "build:dev": {}
+    "serve:dev": {
+      "cache": false
+    },
+    "prepare:build": {
+      "inputs": [
+        "common/iron/src/svg/**/*.svg",
+        "common/iron/latte.config.json",
+        "friday/src/**/*.ts",
+        "friday/src/**/*.hbs",
+        "jarvis/src/**/*.ts"
+      ]
+    },
+    "build:dev": {
+      "cache": false
+    }
   }
 }
