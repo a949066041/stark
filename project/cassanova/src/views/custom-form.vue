@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-04 11:35:35
- * @LastEditTime: 2022-12-04 12:08:07
+ * @LastEditTime: 2022-12-05 09:49:41
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\cassanova\src\views\custom-form.vue
@@ -9,81 +9,388 @@
 
 <template>
   <div class="stark-container p-4">
-    <Form :form="form">
+    <FormProvider :form="form">
       <SchemaField>
+        <SchemaVoidField x-component="Title" x-content="label为空时的展示: " />
         <SchemaStringField
-          name="size"
-          title="Radio.Group"
           x-decorator="FormItem"
-          x-component="Radio.Group"
-          :enum="[
-            { value: 'small', label: 'Small' },
-            { value: 'default', label: 'Default' },
-            { value: 'large', label: 'Large' }
-          ]"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300
+          }"
         />
-        <SchemaVoidField name="sizeWrap" x-component="Div">
-          <SchemaStringField name="input" title="Input" x-decorator="FormItem" x-component="Input" required />
+        <SchemaStringField
+          title=""
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300
+          }"
+        />
+        <SchemaVoidField x-component="Title" x-content="冒号: " />
+        <SchemaStringField title="默认" x-decorator="FormItem" x-component="Input" />
+        <SchemaStringField
+          title="无冒号(colon=false)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            colon: false
+          }"
+        />
+        <SchemaVoidField x-component="Title" x-content="固定宽度设置: " />
+        <SchemaStringField
+          title="固定label宽度(labelWidth)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300
+          }"
+        />
+        <SchemaStringField
+          title="固定label宽度(labelWidth)溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出溢出"
+          description="描述描述"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300,
+            tooltip: '提示提示'
+          }"
+        />
+        <SchemaStringField
+          title="固定label宽度(labelWidth)换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行换行"
+          description="描述描述"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300,
+            labelWrap: true,
+            tooltip: '提示提示'
+          }"
+        />
+        <SchemaStringField
+          title="固定内容宽度(wrapperWidth)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300,
+            wrapperWidth: 300
+          }"
+        />
+        <SchemaVoidField x-component="Title" x-content="对齐方式设置:" />
+        <SchemaStringField
+          title="label左对齐(labelAlign=left)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300,
+            labelAlign: 'left'
+          }"
+        />
+        <SchemaStringField
+          title="label右对齐(labelAlign=right默认)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300,
+            labelAlign: 'right'
+          }"
+        />
+        <SchemaStringField
+          title="内容左对齐(wrapperAlign=left默认)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300,
+            wrapperWidth: 240,
+            wrapperAlign: 'left'
+          }"
+        />
+        <SchemaStringField
+          title="内容右对齐(wrapperAlign=right)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            labelWidth: 300,
+            wrapperWidth: 240,
+            wrapperAlign: 'right'
+          }"
+        />
+        <SchemaStringField
+          title="tooltip"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            tooltip: 'tooltip'
+          }"
+        />
+        <SchemaStringField
+          title="tooltip"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            tooltip: 'tooltip',
+            tooltipLayout: 'text'
+          }"
+        />
+        <SchemaVoidField x-component="Title" x-content="是否撑满: " />
+        <SchemaStringField title="默认不撑满(fullness=false)" x-decorator="FormItem" x-component="Select" />
+        <SchemaStringField
+          title="撑满(fullness=true)"
+          x-decorator="FormItem"
+          x-component="Select"
+          :x-decorator-props="{
+            fullness: true
+          }"
+        />
+        <SchemaVoidField x-component="Title" x-content="辅助信息: " />
+        <SchemaStringField
+          title="必填星号"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            asterisk: true,
+            labelCol: 6,
+            wrapperCol: 10
+          }"
+        />
+        <SchemaStringField
+          title="前缀"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            addonBefore: 'addonBefore',
+            labelCol: 6,
+            wrapperCol: 10
+          }"
+        />
+        <SchemaStringField
+          title="后缀"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            addonAfter: 'addonAfter',
+            labelCol: 6,
+            wrapperCol: 10
+          }"
+        />
+        <SchemaStringField
+          title="帮助信息feedbackText"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            feedbackText: 'feedbackText',
+            labelCol: 6,
+            wrapperCol: 10
+          }"
+        />
+        <SchemaStringField
+          title="额外信息extra"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            feedbackText: 'feedbackText',
+            extra: 'extra',
+            labelCol: 6,
+            wrapperCol: 10
+          }"
+        />
+        <SchemaVoidField x-component="Title" x-content="表单状态: " />
+        <SchemaStringField
+          title="错误状态(feedbackStatus=error)"
+          x-decorator="FormItem"
+          x-component="Input"
+          description="description"
+          :x-decorator-props="{
+            feedbackStatus: 'error'
+          }"
+        />
+        <SchemaStringField
+          title="警告状态(feedbackStatus=warning)"
+          x-decorator="FormItem"
+          x-component="Input"
+          description="description"
+          :x-decorator-props="{
+            feedbackStatus: 'warning'
+          }"
+        />
+        <SchemaStringField
+          title="成功状态(feedbackStatus=success)"
+          x-decorator="FormItem"
+          x-component="Input"
+          description="description"
+          :x-decorator-props="{
+            feedbackStatus: 'success'
+          }"
+        />
+        <SchemaStringField
+          title="加载状态(feedbackStatus=pending)"
+          x-decorator="FormItem"
+          x-component="Input"
+          description="description"
+          :x-decorator-props="{
+            feedbackStatus: 'pending'
+          }"
+        />
+        <SchemaVoidField x-component="Title" x-content="反馈信息的布局: " />
+        <SchemaStringField
+          title="紧凑模式required"
+          x-decorator="FormItem"
+          x-component="Input"
+          :required="true"
+          :x-decorator-props="{
+            feedbackLayout: 'terse'
+          }"
+        />
+        <SchemaStringField
+          title="紧凑模式有feedback(feedbackLayout=terse)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            feedbackStatus: 'error',
+            feedbackText: 'error message',
+            feedbackLayout: 'terse'
+          }"
+        />
+        <SchemaStringField
+          title="紧凑模式无feedback(feedbackLayout=terse)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            feedbackLayout: 'terse'
+          }"
+        />
+        <SchemaStringField
+          title="松散模式(feedbackLayout=loose)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            feedbackStatus: 'error',
+            feedbackText: 'error message',
+            feedbackLayout: 'loose'
+          }"
+        />
+        <SchemaStringField
+          title="弹出模式(feedbackLayout=popover)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            feedbackStatus: 'warning',
+            feedbackText: 'warning message',
+            feedbackLayout: 'popover'
+          }"
+        />
+        <SchemaStringField
+          title="弹出模式(feedbackLayout=popover)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            feedbackStatus: 'error',
+            feedbackText: 'error message',
+            feedbackLayout: 'popover'
+          }"
+        />
+        <SchemaStringField
+          title="弹出模式(feedbackLayout=popover)"
+          x-decorator="FormItem"
+          x-component="Input"
+          :x-decorator-props="{
+            feedbackStatus: 'success',
+            feedbackText: 'success message',
+            feedbackLayout: 'popover'
+          }"
+        />
+        <SchemaVoidField x-component="Title" x-content="组件的适配情况: " />
+        <SchemaVoidField
+          x-component="FormLayout"
+          :x-component-props="{
+            labelCol: 6,
+            wrapperCol: 10
+          }"
+        >
           <SchemaStringField
-            name="select1"
-            title="Multiple Select"
-            x-decorator="FormItem"
-            x-component="Select"
-            :enum="[
-              {
-                label: '选项1',
-                value: 1
-              },
-              {
-                label: '选项2',
-                value: 2
-              }
-            ]"
-            :x-component-props="{
-              multiple: true,
-              placeholder: '请选择'
-            }"
-            required
-          />
-          <SchemaStringField
-            name="select2"
             title="Select"
             x-decorator="FormItem"
             x-component="Select"
-            :enum="[
-              {
-                label: '选项1',
-                value: 1
-              },
-              {
-                label: '选项2',
-                value: 2
-              }
-            ]"
-            :x-component-props="{
-              placeholder: '请选择'
+            :x-decorator-props="{
+              feedbackStatus: 'success',
+              feedbackIcon: SuccessIcon
             }"
-            required
           />
-          <SchemaStringField name="Cascader" title="Cascader" x-decorator="FormItem" x-component="Cascader" required />
           <SchemaStringField
-            name="DatePicker"
             title="DatePicker"
             x-decorator="FormItem"
             x-component="DatePicker"
-            required
+            :x-decorator-props="{
+              feedbackStatus: 'success',
+              feedbackIcon: SuccessIcon
+            }"
           />
           <SchemaStringField
-            name="InputNumber"
+            title="DateRangePicker"
+            x-decorator="FormItem"
+            x-component="DatePicker"
+            :x-decorator-props="{
+              feedbackStatus: 'success',
+              feedbackIcon: SuccessIcon
+            }"
+            :x-component-props="{
+              type: 'daterange'
+            }"
+          />
+          <SchemaStringField
+            title="YearPicker"
+            x-decorator="FormItem"
+            x-component="DatePicker"
+            :x-decorator-props="{
+              feedbackStatus: 'success',
+              feedbackIcon: SuccessIcon
+            }"
+            :x-component-props="{
+              type: 'year'
+            }"
+          />
+          <SchemaStringField
+            title="MonthPicker"
+            x-decorator="FormItem"
+            x-component="DatePicker"
+            :x-decorator-props="{
+              feedbackStatus: 'success',
+              feedbackIcon: SuccessIcon
+            }"
+            :x-component-props="{
+              type: 'month'
+            }"
+          />
+          <SchemaStringField
+            title="TimePicker"
+            x-decorator="FormItem"
+            x-component="TimePicker"
+            :x-decorator-props="{
+              feedbackStatus: 'success',
+              feedbackIcon: SuccessIcon
+            }"
+          />
+          <SchemaStringField
             title="InputNumber"
             x-decorator="FormItem"
             x-component="InputNumber"
-            required
+            :x-decorator-props="{
+              feedbackStatus: 'success',
+              feedbackIcon: SuccessIcon
+            }"
           />
-          <SchemaBooleanField name="Switch" title="Switch" x-decorator="FormItem" x-component="Switch" required />
+          <SchemaStringField
+            title="Cascader"
+            x-decorator="FormItem"
+            x-component="Cascader"
+            :x-decorator-props="{
+              feedbackStatus: 'success',
+              feedbackIcon: SuccessIcon
+            }"
+          />
         </SchemaVoidField>
       </SchemaField>
-    </Form>
+    </FormProvider>
   </div>
 </template>
 <script lang="ts">
@@ -91,42 +398,47 @@ export default {
   name: "[cassanova]CustomForm"
 };
 </script>
-<script lang="tsx" setup>
-import { createForm, DataField, onFieldChange } from "@formily/core";
-import { createSchemaField } from "@formily/vue";
-import { Form, FormItem, Input, Select, Cascader, DatePicker, Switch, InputNumber, Radio } from "@formily/element-plus";
+<script lang="ts" setup>
+import { h } from "vue";
+import { createForm } from "@formily/core";
+import { createSchemaField, FormProvider } from "@formily/vue";
+import {
+  FormItem,
+  InputNumber,
+  Input,
+  Cascader,
+  Select,
+  DatePicker,
+  FormLayout,
+  TimePicker
+} from "@formily/element-plus";
 
-const Div = (props: any, { slots }: any) => {
-  return <div {...props}>{slots?.default()}</div>;
+const SuccessIcon = () => {
+  return h("i", {
+    class: "el-icon-circle-check",
+    style: { color: "#8AE65C" }
+  });
 };
 
-const form = createForm({
-  values: {
-    size: "default"
-  },
-  effects: () => {
-    onFieldChange("size", ["value"], (field, form) => {
-      form.setFieldState("sizeWrap.*", (state: any) => {
-        if (state.decorator[1]) {
-          state.decorator[1].size = (field as DataField).value;
-        }
-      });
-    });
-  }
-});
-const { SchemaField, SchemaStringField, SchemaVoidField, SchemaBooleanField } = createSchemaField({
+const Title = (props: any, { slots }: any) => {
+  return h("p", props, slots.default?.());
+};
+
+const { SchemaField, SchemaVoidField, SchemaStringField } = createSchemaField({
   components: {
+    Title,
     FormItem,
-    Input,
-    Select,
-    Cascader,
-    DatePicker,
-    Switch,
     InputNumber,
-    Radio,
-    Div
+    Input,
+    Cascader,
+    Select,
+    DatePicker,
+    FormLayout,
+    TimePicker
   }
 });
+
+const form = createForm();
 defineExpose({
   name: "[cassanova]CustomForm"
 });
