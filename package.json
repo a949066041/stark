@@ -9,6 +9,7 @@
     "serve:project-nightclub": "pnpm --filter @stark/project-nightclub serve",
     "serve:project-heartbreaker": "pnpm --filter @stark/project-heartbreaker serve",
     "serve:project-cassanova": "pnpm --filter @stark/project-cassanova serve",
+    "serve:project-tiger": "pnpm --filter @stark/project-tiger serve",
     "serve:website": "wireit",
     "prepare": "wireit",
     "plop": "pnpm --filter @stark/friday generate"

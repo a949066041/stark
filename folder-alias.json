@@ -16,5 +16,8 @@
     },
     "project/cassanova": {
         "description": "卡萨诺瓦"
+    },
+    "project/tiger": {
+        "description": "老虎"
     }
 }

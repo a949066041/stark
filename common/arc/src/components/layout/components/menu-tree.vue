@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 17:29:28
- * @LastEditTime: 2022-12-04 11:59:03
+ * @LastEditTime: 2022-12-05 13:43:57
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\menu-tree.vue
@@ -64,7 +64,7 @@ function handleClickMenu(menu: IMenu) {
 }
 .el-sub-menu.is-active {
   color: red;
-  .el-sub-menu__title {
+  & > .el-sub-menu__title {
     .menu-icon {
       @apply fill-blue-500;
     }
