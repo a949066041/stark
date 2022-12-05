@@ -4,14 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve:all": "concurrently pnpm:serve:project-*",
-    "serve:project-sneaky": "pnpm --filter @stark/project-sneaky serve",
-    "serve:project-nightclub": "pnpm --filter @stark/project-nightclub serve",
-    "serve:project-heartbreaker": "pnpm --filter @stark/project-heartbreaker serve",
-    "serve:project-cassanova": "pnpm --filter @stark/project-cassanova serve",
-    "serve:project-tiger": "pnpm --filter @stark/project-tiger serve",
+    "serve:dev:all": "turbo serve:dev",
+    "build:dev:all": "turbo build:dev",
     "serve:website": "wireit",
-    "prepare": "wireit",
+    "prepare": "turbo prepare:build",
     "plop": "pnpm --filter @stark/friday generate"
   },
   "keywords": [],
@@ -19,21 +15,14 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.5.0",
+    "turbo": "^1.6.3",
     "wireit": "^0.7.2"
   },
   "wireit": {
-    "prepare": {
-      "command": "echo success",
-      "dependencies": [
-        "./jarvis:build",
-        "./common/iron:build",
-        "./friday:build"
-      ]
-    },
     "serve:website": {
       "command": "echo success",
       "dependencies": [
-        "./website:start"
+        "./website:doc:start"
       ]
     }
   }

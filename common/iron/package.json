@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/iron/index.ts",
   "scripts": {
-    "build": "latte"
+    "prepare:build": "latte"
   },
   "keywords": [],
   "author": "",
