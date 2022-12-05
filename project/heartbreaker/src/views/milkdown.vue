@@ -11,9 +11,9 @@
     <description>
       <h2>milkdown</h2>
       <p>一款markdown编辑器</p>
-      <el-link>
+      <a-button type="link">
         <a target="_blank" href="https://milkdown.dev/why-milkdown">https://milkdown.dev/why-milkdown</a>
-      </el-link>
+      </a-button>
     </description>
     <VueEditor :editor="editor" />
   </div>

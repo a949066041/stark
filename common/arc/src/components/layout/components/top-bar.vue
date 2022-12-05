@@ -14,33 +14,23 @@
         width="24px"
         height="24px"
         namespace="iron"
-        :name="menu_collapse ? 'indent' : 'outdent'"
-        @click="handleChangeMenu()"
+        :name="menuStore.collapse ? 'indent' : 'outdent'"
+        @click="menuStore.toggle_menu"
       />
     </div>
     <div>
-      <div class="avatar" ref="avatarRef">
-        <el-popover :virtual-ref="avatarRef" trigger="click" virtual-triggering>
-          <el-button size="small" class="w-full">退出</el-button>
-        </el-popover>
-      </div>
+      <a-dropdown>
+        <template #overlay>
+          <a-button size="small" class="w-full">退出</a-button>
+        </template>
+        <div class="avatar" />
+      </a-dropdown>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { useMenuStore } from "../../../store";
-import { computed, ref } from "vue";
-import { storeToRefs } from "pinia";
-
-const avatarRef = ref();
-
 const menuStore = useMenuStore();
-const menu = storeToRefs(menuStore);
-const menu_collapse = menu.collapse;
-
-function handleChangeMenu() {
-  menuStore.toggle_menu();
-}
 </script>
 <style lang="scss" scoped>
 .topbar-container {

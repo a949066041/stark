@@ -10,9 +10,9 @@
     "@stark/common-arc": "workspace:^0.1.0",
     "@stark/common-copper": "workspace:^1.0.0",
     "@stark/common-iron": "workspace:^1.0.0",
+    "ant-design-vue": "^3.2.15",
     "core-js": "^3.8.3",
     "echarts": "^5.4.0",
-    "element-plus": "^2.2.20",
     "pinia": "^2.0.23",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"

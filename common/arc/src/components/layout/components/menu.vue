@@ -7,20 +7,17 @@
  * @FilePath: \stark\common\arc\src\components\layout\components\menu.vue
 -->
 <template>
-  <el-menu class="el-menu-vertical" :collapse="collapse">
-    <menu-tree :menu="menu_list" />
-  </el-menu>
+  <a-menu class="a-menu" :inline-collapsed="menuStore.collapse">
+    <menu-tree v-for="item of menuStore.menu" :key="item.name" :config="item" />
+  </a-menu>
 </template>
 <script lang="ts" setup>
-import { storeToRefs } from "pinia";
 import { useMenuStore } from "../../../store";
-import MenuTree from "./menu-tree.vue";
-const store = storeToRefs(useMenuStore());
-const collapse = store.collapse;
-const menu_list = store.menu;
+import MenuTree from "./menu-tree";
+const menuStore = useMenuStore();
 </script>
 <style lang="scss" scoped>
-.el-menu-vertical:not(.el-menu--collapse) {
+.ant-menu-vertical:not(.ant-menu-inline-collapsed) {
   width: 200px;
   height: 100vh;
 }

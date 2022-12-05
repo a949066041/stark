@@ -23,32 +23,24 @@
           <span>Username</span>
         </div>
         <div>
-          <el-input size="large" />
+          <a-input size="large" />
         </div>
         <div class="mb-1">
           <span>Password</span>
         </div>
         <div>
-          <el-input size="large" />
+          <a-input size="large" />
         </div>
         <div class="flex flex-row justify-between my-4">
           <div>
-            <el-checkbox size="large" label="Remember for 30 days" />
+            <a-checkbox size="large">Remember for 30 days</a-checkbox>
           </div>
           <div>
-            <el-link>Forgot password</el-link>
+            <a-button type="link">Forgot password</a-button>
           </div>
         </div>
         <div>
-          <el-button
-            @click="handleLogin()"
-            size="large"
-            type="primary"
-            round
-            class="w-full"
-          >
-            Login
-          </el-button>
+          <a-button @click="handleLogin()" size="large" type="primary" round class="w-full"> Login </a-button>
         </div>
       </div>
     </div>

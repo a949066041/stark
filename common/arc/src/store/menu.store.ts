@@ -7,6 +7,7 @@
  * @FilePath: \stark\common\arc\src\store\menu.store.ts
  */
 import { defineStore, _GettersTree } from "pinia";
+import { computed, ref } from "vue";
 import { RouteMeta, RouteRecordRaw } from "vue-router";
 import { EnhanceRouter, IEnhanceRouter } from "..";
 
@@ -36,24 +37,29 @@ export interface IMenu {
 }
 
 type IMenuType = { title: string; permission: string[]; menu_icon: [string, string] } & RouteMeta;
-export const useMenuStore = defineStore<"arc_menu", MenuStoreState, MenuStoreGetter, MenuStoreAction>("arc_menu", {
-  state: () => ({
-    _menu: [],
-    _collapse: false
-  }),
-  getters: {
-    menu: (state) => cycleMenu(state._menu, "root"),
-    router: (state) => getRouter(state._menu),
-    collapse: (state) => state._collapse
-  },
-  actions: {
-    set_menu(menu: EnhanceRouter[]) {
-      this._menu = menu;
-    },
-    toggle_menu() {
-      this._collapse = !this.collapse;
-    }
+
+export const useMenuStore = defineStore("arc_menu", () => {
+  const _menu = ref<EnhanceRouter[]>([]);
+  const collapse = ref(false);
+
+  const menu = computed(() => cycleMenu(_menu.value, "root"));
+  const router = computed(() => getRouter(_menu.value));
+
+  function toggle_menu() {
+    collapse.value = !collapse.value;
   }
+
+  function set_menu(menus: EnhanceRouter[]) {
+    _menu.value = menus;
+  }
+
+  return {
+    menu,
+    router,
+    collapse,
+    toggle_menu,
+    set_menu
+  };
 });
 
 function getRouter(menu: EnhanceRouter[]): Array<RouteRecordRaw> {

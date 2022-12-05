@@ -7,27 +7,25 @@
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-code.vue
 -->
 <template>
-  <el-card shadow="never" class="box-card" :body-style="{ padding: '0px' }">
+  <a-card shadow="never" class="box-card" :body-style="{ padding: '0px' }">
     <div class="w-full h-40 card-image"></div>
     <div class="relative">
       <div class="avatar"></div>
       <div class="h-10 pl-20 text-center">
-        <p class="text-lg font-bold leading-10 text-teal-500">
-          stark-workspace
-        </p>
+        <p class="text-lg font-bold leading-10 text-teal-500">stark-workspace</p>
       </div>
       <div class="p-4">
         <p class="text-sm">Vue</p>
-        <el-progress class="mb-1" :percentage="70" />
+        <a-progress class="mb-1" :percentage="70" />
         <p class="text-sm">TypeScript</p>
-        <el-progress class="mb-1" :percentage="40" />
+        <a-progress class="mb-1" :percentage="40" />
         <p class="text-sm">SCSS</p>
-        <el-progress class="mb-1" :percentage="20" />
+        <a-progress class="mb-1" :percentage="20" />
         <p class="text-sm">ESLint</p>
-        <el-progress class="mb-1" :percentage="100" status="success" />
+        <a-progress class="mb-1" :percentage="100" status="success" />
       </div>
     </div>
-  </el-card>
+  </a-card>
 </template>
 <script lang="ts">
 export default {

@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="tag-container">
-    <el-tag
+    <a-tag
       class="cursor-pointer mr-1 select-none"
       size="large"
       :effect="tag.link === $route.fullPath ? 'dark' : 'plain'"
@@ -18,7 +18,7 @@
       @click="handleTagClick(tag.link)"
     >
       {{ tag.title }}
-    </el-tag>
+    </a-tag>
   </div>
 </template>
 <script lang="ts" setup>
