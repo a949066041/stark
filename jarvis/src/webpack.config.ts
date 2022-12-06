@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-06 16:12:19
+ * @LastEditTime: 2022-12-06 16:19:38
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -29,10 +29,10 @@ class WebpackConfig {
       this.full_path = `${this.path}:${this.config.port}`;
     } else {
       if (config.name === "sneaky") {
-        this.path = ".";
+        this.path = "https://stark.rikka.cc";
         this.full_path = `${this.path}`;
       } else {
-        this.path = `/remote/${config.name}`;
+        this.path = `https://stark.rikka.cc/remote/${config.name}`;
         this.full_path = `${this.path}`;
       }
     }
