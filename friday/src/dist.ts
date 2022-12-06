@@ -1,13 +1,13 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-05 15:09:51
- * @LastEditTime: 2022-12-06 09:50:12
+ * @LastEditTime: 2022-12-06 13:49:56
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\friday\src\dist.ts
  */
 import { findWorkspaceDir } from "@pnpm/find-workspace-dir";
-import { readdirSync } from "fs";
+import { readdirSync, writeFileSync } from "fs";
 import fsExtra from "fs-extra";
 const { copySync, rmSync, existsSync } = fsExtra;
 import { resolve } from "path";
@@ -32,5 +32,6 @@ findWorkspaceDir(cwd()).then((root) => {
       copySync(distDir[0], distDir[1]);
     });
     console.log("copy complete");
+    writeFileSync(resolve(distDir, ".gitkeep"), "");
   }
 });
