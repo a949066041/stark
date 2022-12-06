@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-06 00:21:37
+ * @LastEditTime: 2022-12-06 16:12:19
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -32,7 +32,7 @@ class WebpackConfig {
         this.path = ".";
         this.full_path = `${this.path}`;
       } else {
-        this.path = `./remote/${config.name}`;
+        this.path = `/remote/${config.name}`;
         this.full_path = `${this.path}`;
       }
     }
