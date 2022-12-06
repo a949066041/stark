@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-06 16:19:38
+ * @LastEditTime: 2022-12-06 17:19:02
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -9,10 +9,11 @@
 
 import ChainableWebpackConfig from "webpack-chain";
 import { resolve } from "path";
-const customElement = new Set(["latte-svg"]);
 import { default as minimist } from "minimist";
 import * as dotenv from "dotenv";
 import dotenvExpand from "dotenv-expand";
+
+const customElement = new Set(["latte-svg"]);
 
 class WebpackConfig {
   public config: child_config;
@@ -73,10 +74,10 @@ class WebpackConfig {
       .rule("vue")
       .use("vue-loader")
       .tap((options) => {
-        if (options.compilerOptions === undefined) {
-          options.compilerOptions = {};
-        }
-        options.compilerOptions.isCustomElement = (tag: string) => customElement.has(tag);
+        options.compilerOptions = {
+          ...(options.compilerOptions || {}),
+          isCustomElement: (tag: string) => customElement.has(tag)
+        };
         return options;
       });
 

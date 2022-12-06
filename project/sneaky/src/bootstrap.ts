@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 14:30:07
- * @LastEditTime: 2022-12-05 11:16:06
+ * @LastEditTime: 2022-12-06 17:13:58
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\sneaky\src\bootstrap.ts
@@ -14,7 +14,6 @@ const app = createApp(App);
 const pinia = createPinia();
 const menuStore = useMenuStore(pinia);
 app.use(pinia);
-
 zip([
   import("nightclub/remote"),
   import("heartbreaker/remote"),
