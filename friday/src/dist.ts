@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-05 15:09:51
- * @LastEditTime: 2022-12-06 13:49:56
+ * @LastEditTime: 2022-12-06 16:00:31
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\friday\src\dist.ts
@@ -33,5 +33,8 @@ findWorkspaceDir(cwd()).then((root) => {
     });
     console.log("copy complete");
     writeFileSync(resolve(distDir, ".gitkeep"), "");
+    const _redirects = `/login    /index.html   200
+/view/*    /index.html   200`;
+    writeFileSync(resolve(distDir, "_redirects"), _redirects);
   }
 });
