@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-12-05 13:15:35
+ * @LastEditTime: 2022-12-06 14:39:37
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\sneaky\vue.config.js
@@ -25,6 +25,9 @@ module.exports = defineConfig({
         shared: {
           vue: { requiredVersion: "^3.0.0", singleton: true },
           pinia: { singleton: true },
+          "vue-router": { singleton: true },
+          "@kaffee/latte": { singleton: true },
+          "@stark/common-iron": { singleton: true },
           "@stark/common-arc": { singleton: true }
         }
       })
