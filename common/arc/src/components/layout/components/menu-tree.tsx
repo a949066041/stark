@@ -1,7 +1,7 @@
 import { type PropType, defineComponent } from "vue";
 import { MenuItem, SubMenu } from "ant-design-vue";
 import { IMenu } from "../../../store";
-
+import { ArcIcon } from "../../icon";
 const MenuTree = defineComponent({
   name: "MenuTree",
   props: {
@@ -16,7 +16,7 @@ const MenuTree = defineComponent({
     function renderIcon() {
       return props.config.meta && props.config.meta.menu_icon
         ? () => (
-            <latte-svg
+            <ArcIcon
               class="anticon !inline-flex"
               width="14px"
               height="14px"

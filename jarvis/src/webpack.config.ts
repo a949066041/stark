@@ -25,7 +25,7 @@ class WebpackConfig {
   constructor(config: child_config, path: string, dirname: string) {
     this._vue_arguments = minimist(process.argv.slice(2), {});
     this.config = config;
-    if (this._vue_arguments._.includes("serve") && config.name !== "sneaky") {
+    if (this._vue_arguments._.includes("serve")) {
       this.path = path;
       this.full_path = `${this.path}:${this.config.port}`;
     } else {
