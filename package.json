@@ -6,6 +6,7 @@
   "scripts": {
     "serve:dev:all": "turbo serve:dev",
     "build:dev:all": "turbo build:dev",
+    "dist:dev": "turbo generate:dist",
     "serve:website": "wireit",
     "prepare": "turbo prepare:build",
     "plop": "pnpm --filter @stark/friday generate"
@@ -16,7 +17,6 @@
   "devDependencies": {
     "concurrently": "^7.5.0",
     "http-server": "^14.1.1",
-    "live-server": "^1.2.2",
     "turbo": "^1.6.3",
     "wireit": "^0.7.2"
   },
