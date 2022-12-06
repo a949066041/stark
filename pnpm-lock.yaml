@@ -70,6 +70,11 @@ importers:
   friday:
     specifiers:
       '@pnpm/find-workspace-dir': ^5.0.0
+      '@stark/project-cassanova': workspace:^1.0.0
+      '@stark/project-heartbreaker': workspace:^1.0.0
+      '@stark/project-nightclub': workspace:^1.0.0
+      '@stark/project-sneaky': workspace:^1.0.0
+      '@stark/project-tiger': workspace:^1.0.0
       '@types/fs-extra': ^9.0.13
       '@types/node': ^16
       fs-extra: ^11.1.0
@@ -80,6 +85,11 @@ importers:
       '@pnpm/find-workspace-dir': 5.0.0
       fs-extra: 11.1.0
     devDependencies:
+      '@stark/project-cassanova': link:../project/cassanova
+      '@stark/project-heartbreaker': link:../project/heartbreaker
+      '@stark/project-nightclub': link:../project/nightclub
+      '@stark/project-sneaky': link:../project/sneaky
+      '@stark/project-tiger': link:../project/tiger
       '@types/fs-extra': 9.0.13
       '@types/node': 16.18.3
       plop: 3.1.1
@@ -126,7 +136,6 @@ importers:
       '@stark/common-arc': workspace:^1.0.0
       '@stark/common-copper': workspace:^1.0.0
       '@stark/common-iron': workspace:^1.0.0
-      '@stark/friday': workspace:^1.0.0
       '@stark/jarvis': workspace:^1.0.0
       '@types/webpack-env': ^1.18.0
       '@vue/cli-plugin-babel': ~5.0.0
@@ -164,7 +173,6 @@ importers:
       vue-router: 4.1.6_vue@3.2.44
     devDependencies:
       '@babel/core': 7.20.2
-      '@stark/friday': link:../../friday
       '@stark/jarvis': link:../../jarvis
       '@types/webpack-env': 1.18.0
       '@vue/cli-plugin-babel': 5.0.8_lfo5qcnp2uojstlqxdmiuhb33i
@@ -198,7 +206,6 @@ importers:
       '@stark/common-copper': workspace:^1.0.0
       '@stark/common-iron': workspace:^1.0.0
       '@stark/common-silver': workspace:^1.0.0
-      '@stark/friday': workspace:^1.0.0
       '@stark/jarvis': workspace:^1.0.0
       '@types/lodash': ^4.14.191
       '@types/velocity-animate': 1.2.33
@@ -260,7 +267,6 @@ importers:
       vue-router: 4.1.6_vue@3.2.44
     devDependencies:
       '@babel/core': 7.20.2
-      '@stark/friday': link:../../friday
       '@stark/jarvis': link:../../jarvis
       '@types/lodash': 4.14.191
       '@types/velocity-animate': 1.2.33
@@ -287,7 +293,6 @@ importers:
       '@stark/common-arc': workspace:^1.0.0
       '@stark/common-copper': workspace:^1.0.0
       '@stark/common-iron': workspace:^1.0.0
-      '@stark/friday': workspace:^1.0.0
       '@stark/jarvis': workspace:^1.0.0
       '@types/webpack-env': ^1.18.0
       '@vue/cli-plugin-babel': ~5.0.0
@@ -323,7 +328,6 @@ importers:
       vue-router: 4.1.6_vue@3.2.44
     devDependencies:
       '@babel/core': 7.20.2
-      '@stark/friday': link:../../friday
       '@stark/jarvis': link:../../jarvis
       '@types/webpack-env': 1.18.0
       '@vue/cli-plugin-babel': 5.0.8_lfo5qcnp2uojstlqxdmiuhb33i
@@ -347,7 +351,6 @@ importers:
       '@babel/core': ^7.20.2
       '@kaffee/latte': ^1.1.4
       '@stark/common-arc': workspace:^1.0.0
-      '@stark/friday': workspace:^1.0.0
       '@stark/jarvis': workspace:^1.0.0
       '@types/webpack-env': ^1.18.0
       '@vue/cli-plugin-babel': ~5.0.0
@@ -382,7 +385,6 @@ importers:
       vue-router: 4.1.6_vue@3.2.44
     devDependencies:
       '@babel/core': 7.20.2
-      '@stark/friday': link:../../friday
       '@stark/jarvis': link:../../jarvis
       '@types/webpack-env': 1.18.0
       '@vue/cli-plugin-babel': 5.0.8_lfo5qcnp2uojstlqxdmiuhb33i
@@ -407,7 +409,6 @@ importers:
       '@stark/common-arc': workspace:^1.0.0
       '@stark/common-copper': workspace:^1.0.0
       '@stark/common-iron': workspace:^1.0.0
-      '@stark/friday': workspace:^1.0.0
       '@stark/jarvis': workspace:^1.0.0
       '@types/webpack-env': ^1.18.0
       '@vue/cli-plugin-babel': ~5.0.0
@@ -441,7 +442,6 @@ importers:
       vue-router: 4.1.6_vue@3.2.44
     devDependencies:
       '@babel/core': 7.20.2
-      '@stark/friday': link:../../friday
       '@stark/jarvis': link:../../jarvis
       '@types/webpack-env': 1.18.0
       '@vue/cli-plugin-babel': 5.0.8_lfo5qcnp2uojstlqxdmiuhb33i
