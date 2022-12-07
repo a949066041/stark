@@ -1,11 +1,13 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-05 11:45:22
- * @LastEditTime: 2022-12-05 11:45:28
+ * @LastEditTime: 2022-12-07 15:43:46
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\tiger\src\bootstrap.ts
  */
+import "./styles/tailwind.less";
+
 import { createApp } from "vue";
 import { App, router, useMenuStore } from "@stark/common-arc";
 import { createPinia } from "pinia";

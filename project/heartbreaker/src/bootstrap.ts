@@ -1,11 +1,13 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-02 21:39:54
- * @LastEditTime: 2022-12-02 22:23:28
+ * @LastEditTime: 2022-12-07 15:44:03
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\heartbreaker\src\bootstrap.ts
  */
+import "./styles/tailwind.less";
+
 import { createApp } from "vue";
 import { App, router, useMenuStore } from "@stark/common-arc";
 import { createPinia } from "pinia";
