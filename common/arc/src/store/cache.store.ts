@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-15 16:25:57
- * @LastEditTime: 2022-12-07 17:09:23
+ * @LastEditTime: 2022-12-07 17:30:45
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\cache.store.ts
@@ -18,21 +18,18 @@ export interface TagItem {
   title: string;
 }
 
-interface CacheStoreState {
-  _cache: Record<string, unknown>;
-  _tags: TagItem[];
-}
-
 export const useCacheStore = defineStore("arc_cache", () => {
   const _cache = ref<Record<string, unknown>>({});
   const _tags = ref<TagItem[]>([]);
 
-  const getCache = computed((state: CacheStoreState) => {
+  const getCache = computed(() => {
     return <T>(name: string) => {
-      return state._cache[name] as T | undefined;
+      return _cache.value[name] as T | undefined;
     };
   });
-  const cacheList = computed((state: CacheStoreState) => Object.keys(state._cache));
+  const cacheList = computed(() => {
+    return Object.keys(_cache.value);
+  });
 
   function setCache<T>(name: string, cache: T, route: RouteLocationNormalizedLoaded) {
     _cache.value[name] = cache;
@@ -56,6 +53,7 @@ export const useCacheStore = defineStore("arc_cache", () => {
     }
     _tags.value = _tags.value.filter((item) => item.name !== name);
   }
+
   return {
     setCache,
     deleteCache,

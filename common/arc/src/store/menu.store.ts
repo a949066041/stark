@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 16:35:07
- * @LastEditTime: 2022-12-07 17:10:20
+ * @LastEditTime: 2022-12-07 17:31:07
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\menu.store.ts
@@ -10,11 +10,6 @@ import { defineStore, _GettersTree } from "pinia";
 import { computed, ref } from "vue";
 import { RouteMeta, RouteRecordRaw } from "vue-router";
 import { EnhanceRouter, IEnhanceRouter } from "..";
-
-interface MenuStoreState {
-  _menu: EnhanceRouter[];
-  _collapse: boolean;
-}
 
 export interface IMenu {
   name: string;

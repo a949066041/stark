@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-15 20:53:44
- * @LastEditTime: 2022-12-07 17:11:51
+ * @LastEditTime: 2022-12-07 17:31:00
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\setting.store.ts
@@ -14,7 +14,7 @@ interface SettingStoreState {
 
 export const useSettingStore = defineStore("arc_setting", () => {
   const _menu_collapse = ref(true);
-  const menu_collapse = computed((state) => state._menu_collapse);
+  const menu_collapse = computed(() => _menu_collapse.value);
   function toggle_menu() {
     _menu_collapse.value = !_menu_collapse.value;
   }
