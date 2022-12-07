@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 09:51:31
- * @LastEditTime: 2022-11-24 10:42:47
+ * @LastEditTime: 2022-12-06 17:08:03
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\nightclub\vue.config.js

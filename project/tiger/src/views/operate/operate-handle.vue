@@ -1,14 +1,14 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-05 12:57:57
- * @LastEditTime: 2022-12-05 13:38:37
+ * @LastEditTime: 2022-12-06 16:38:13
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\tiger\src\views\operate\operate-handle.vue
 -->
 <template>
   <div class="stark-container p-4">
-    <el-button @click="handleSetRandom()">Random {{ change_count }}</el-button>
+    <a-button @click="handleSetRandom()">Random {{ change_count }}</a-button>
   </div>
 </template>
 <script lang="ts">

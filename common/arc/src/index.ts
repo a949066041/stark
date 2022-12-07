@@ -1,12 +1,11 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 13:07:16
- * @LastEditTime: 2022-11-22 20:53:29
+ * @LastEditTime: 2022-12-07 15:42:21
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\index.ts
  */
-import "./styles/tailwind.less";
 import "./styles/arc.less";
 
 import { registerSvgIcon } from "@kaffee/latte";

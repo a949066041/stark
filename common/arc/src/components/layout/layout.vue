@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 15:20:20
- * @LastEditTime: 2022-11-25 15:28:08
+ * @LastEditTime: 2022-12-06 20:39:19
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\layout.vue
@@ -9,7 +9,7 @@
 <template>
   <div class="flex flex-row self-stretch">
     <layout-menu />
-    <div class="flex flex-1 flex-col h-screen">
+    <div class="flex flex-1 flex-col h-screen overflow-x-hidden">
       <layout-top-bar />
       <layout-tag />
       <div class="flex-1 overflow-x-auto">
