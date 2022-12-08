@@ -7,10 +7,10 @@
  * @FilePath: \stark\project\nightclub\src\views\icon.vue
 -->
 <template>
-  <div class="stark-container p-4">
+  <div class="p-4 stark-container">
     <a-tabs v-model="nowTabs">
       <a-tab-pane lazy v-for="tab in tabList" :tab="tab.label" :name="tab.workspace" :key="tab.workspace">
-        <div class="flex flex-row flex-wrap" v-if="nowTabs === tab.workspace">
+        <div class="flex flex-row flex-wrap">
           <div v-for="icon in tab.icon" class="icon-item">
             <latte-svg
               :namespace="tab.workspace"
@@ -19,8 +19,8 @@
               height="32px"
               class="fill-gray-700"
             />
-            <div class="px-2 w-full">
-              <div class="text-ellipsis overflow-hidden text-center">
+            <div class="w-full px-2">
+              <div class="overflow-hidden text-center text-ellipsis">
                 <span class="text-xs">
                   {{ icon.iconName }}
                 </span>
