@@ -18,6 +18,7 @@ const content = [
 ];
 
 const child_tailwind_config = {
+  darkMode: "class",
   content,
   theme: {
     extend: {}
@@ -25,6 +26,7 @@ const child_tailwind_config = {
   plugins: []
 };
 const shell_tailwind_config = {
+  darkMode: "class",
   content: [...content, ...project_list],
   theme: {
     extend: {}

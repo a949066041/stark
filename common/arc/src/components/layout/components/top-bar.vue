@@ -10,7 +10,7 @@
   <div class="topbar-container">
     <div>
       <latte-svg
-        class="fill-slate-800 cursor-pointer"
+        class="cursor-pointer fill-slate-800"
         width="24px"
         height="24px"
         namespace="iron"
@@ -18,7 +18,9 @@
         @click="menuStore.toggle_menu"
       />
     </div>
-    <div>
+    <div class="flex items-center">
+      <a-button class="mr-2" size="small" @click="globStore.toggleTheme">{{ globStore.theme }}</a-button>
+      <a-button class="mr-2" size="small" @click="globStore.toggleLang">{{ LANGS[globStore.lang] }}</a-button>
       <a-dropdown>
         <div class="avatar" />
         <template #overlay>
@@ -33,12 +35,13 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { useMenuStore } from "../../../store";
+import { useMenuStore, useGlobStore, LANGS } from "../../../store";
 const menuStore = useMenuStore();
+const globStore = useGlobStore();
 </script>
 <style lang="less" scoped>
 .topbar-container {
-  @apply flex flex-row justify-between items-center bg-gray-50 p-1;
+  @apply flex flex-row justify-between items-center bg-gray-50 p-1 dark:bg-black;
   border-bottom: solid 1px #98a8bd;
 }
 .avatar {

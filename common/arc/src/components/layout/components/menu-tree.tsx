@@ -14,17 +14,19 @@ const MenuTree = defineComponent({
     if ((props.config as any).hidden) return null;
 
     function renderIcon() {
-      return props.config.meta && props.config.meta.menu_icon
-        ? () => (
-            <ArcIcon
-              class="anticon !inline-flex"
-              width="14px"
-              height="14px"
-              namespace={props.config.meta?.menu_icon[0]}
-              name={props.config.meta?.menu_icon[1]}
-            />
-          )
-        : null;
+      if (props.config.meta && props.config.meta.menu_icon) {
+        const [namespace, name] = props.config.meta.menu_icon as [string, string];
+        return () => (
+          <ArcIcon
+            class="anticon !inline-flex !dark:text-white"
+            width="14px"
+            height="14px"
+            namespace={namespace}
+            name={name}
+          />
+        );
+      }
+      return null;
     }
 
     if (!props.config.children || !props.config.children.length) {

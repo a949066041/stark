@@ -9,3 +9,4 @@
 export * from "./menu.store";
 export * from "./cache.store";
 export * from "./setting.store";
+export * from "./glob.store";
