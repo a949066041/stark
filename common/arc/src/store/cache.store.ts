@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-15 16:25:57
- * @LastEditTime: 2022-12-07 17:30:45
+ * @LastEditTime: 2022-12-08 11:14:50
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\cache.store.ts
@@ -9,7 +9,7 @@
 
 import { defineStore, _GettersTree } from "pinia";
 import { computed, ref } from "vue";
-import { RouteLocationNormalizedLoaded } from "vue-router";
+import { RouteLocationNormalizedLoaded, Router } from "vue-router";
 
 export interface TagItem {
   name: string;
@@ -47,11 +47,21 @@ export const useCacheStore = defineStore("arc_cache", () => {
     }
   }
 
-  function deleteCache<T>(name: string) {
+  function deleteCache<T>(name: string, router: Router) {
     if (_cache.value[name]) {
+      const cacheList = Object.keys(_cache.value);
+      if (cacheList.length === 1) {
+      } else {
+        const cacheIndex = cacheList.indexOf(name);
+        if (cacheIndex === 0) {
+          router.push(_tags.value[1].link);
+        } else {
+          router.push(_tags.value[cacheIndex - 1].link);
+        }
+      }
       delete _cache.value[name];
+      _tags.value = _tags.value.filter((item) => item.name !== name);
     }
-    _tags.value = _tags.value.filter((item) => item.name !== name);
   }
 
   return {
