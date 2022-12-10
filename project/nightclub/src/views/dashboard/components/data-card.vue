@@ -12,7 +12,7 @@
       <latte-svg width="48px" height="48px" namespace="alipay" :name="name" />
     </div>
     <div class="pr-4 text-lg">
-      <div class="text-gray-500 font-bold">{{ title }}</div>
+      <div class="font-bold text-gray-500">{{ title }}</div>
       <div class="font-extrabold">{{ count_str }}</div>
     </div>
   </div>
@@ -41,7 +41,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .card-container {
-  @apply h-full bg-white flex flex-row cursor-pointer justify-between items-center p-2 rounded-md;
+  @apply h-full bg-white flex flex-row cursor-pointer justify-between items-center p-2 rounded-md dark:bg-zinc-900;
   width: 24%;
   &:hover {
     .card-icon {

@@ -69,7 +69,7 @@ export default {
   @apply w-28 h-20 outline outline-1 outline-gray-300 flex flex-col justify-center items-center cursor-pointer;
   margin: 1px;
   &:hover {
-    @apply bg-gray-100;
+    @apply bg-gray-100 dark:bg-zinc-900;
   }
 }
 </style>

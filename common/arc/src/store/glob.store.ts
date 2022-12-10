@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { ref, watch } from "vue";
+import { useStorage } from "@vueuse/core";
 import dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
 
@@ -11,7 +12,8 @@ export enum LANGS {
 export type Theme = "light" | "dark";
 
 export const useGlobStore = defineStore("arc_glob", () => {
-  const lang = ref<keyof typeof LANGS>("zh");
+  const lang = useStorage<keyof typeof LANGS>("arc_blob_lang", "zh");
+  const collapse = useStorage("arc_blob_collapse", false);
   const theme = ref<Theme>("light");
 
   watch(
@@ -35,6 +37,10 @@ export const useGlobStore = defineStore("arc_glob", () => {
     lang.value = lang.value === "en" ? "zh" : "en";
   }
 
+  function toggleCollapse() {
+    collapse.value = !collapse.value;
+  }
+
   function toggleTheme() {
     theme.value = theme.value === "dark" ? "light" : "dark";
   }
@@ -42,7 +48,9 @@ export const useGlobStore = defineStore("arc_glob", () => {
   return {
     lang,
     theme,
+    collapse,
     toggleLang,
-    toggleTheme
+    toggleTheme,
+    toggleCollapse
   };
 });

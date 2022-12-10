@@ -6,8 +6,8 @@
  * @Description:
  * @FilePath: \stark\common\arc\src\index.ts
  */
+// import "./styles/dark.less";
 import "./styles/arc.less";
-import "./styles/dark.less";
 
 import { registerSvgIcon } from "@kaffee/latte";
 import { all_icon } from "@stark/common-iron";
