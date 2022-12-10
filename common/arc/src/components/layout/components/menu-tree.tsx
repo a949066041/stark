@@ -11,8 +11,6 @@ const MenuTree = defineComponent({
     }
   },
   setup(props) {
-    if ((props.config as any).hidden) return null;
-
     function renderIcon() {
       if (props.config.meta && props.config.meta.menu_icon) {
         const [namespace, name] = props.config.meta.menu_icon as [string, string];
@@ -30,26 +28,28 @@ const MenuTree = defineComponent({
     }
 
     if (!props.config.children || !props.config.children.length) {
-      return () => (
-        <MenuItem key={props.config.path}>
-          {{
-            icon: renderIcon(),
-            default: () => <router-link to={`/view/${props.config.path}`}>{props.config.meta?.title}</router-link>
-          }}
-        </MenuItem>
-      );
+      return () =>
+        !props.config.hidden && (
+          <MenuItem key={props.config.path}>
+            {{
+              icon: renderIcon(),
+              default: () => <router-link to={`/view/${props.config.path}`}>{props.config.meta?.title}</router-link>
+            }}
+          </MenuItem>
+        );
     }
 
-    return () => (
-      <SubMenu key={props.config.name}>
-        {{
-          icon: renderIcon(),
-          title: () => <span>{<span class="sub_title">{props.config.meta?.title}</span>}</span>,
-          default: () =>
-            Array.isArray(props.config.children) && props.config.children.map((item) => <MenuTree config={item} />)
-        }}
-      </SubMenu>
-    );
+    return () =>
+      !props.config.hidden && (
+        <SubMenu key={props.config.name}>
+          {{
+            icon: renderIcon(),
+            title: () => <span>{<span class="sub_title">{props.config.meta?.title}</span>}</span>,
+            default: () =>
+              Array.isArray(props.config.children) && props.config.children.map((item) => <MenuTree config={item} />)
+          }}
+        </SubMenu>
+      );
   }
 });
 
