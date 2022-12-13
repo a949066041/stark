@@ -1,3 +1,11 @@
+/*
+ * @Author: Rikka
+ * @Date: 2022-12-07 15:41:23
+ * @LastEditTime: 2022-12-13 21:24:13
+ * @LastEditors: Rikka
+ * @Description:
+ * @FilePath: \stark\common\arc\src\components\layout\components\menu-tree.tsx
+ */
 import { type PropType, defineComponent } from "vue";
 import { MenuItem, SubMenu } from "ant-design-vue";
 import { IMenu } from "../../../store";

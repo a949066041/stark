@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-29 20:54:41
- * @LastEditTime: 2022-12-05 22:55:00
+ * @LastEditTime: 2022-12-09 16:58:29
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\cassanova\src\router\index.ts
@@ -15,7 +15,7 @@ const router_list: EnhanceRouter[] = [
     name: "[cassanova]Project",
     meta: {
       title: "Form",
-      permission: [],
+      permission: ["form"],
       menu_icon: ["iron", "form"]
     }
   },
@@ -27,7 +27,7 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/custom-form.vue"),
     meta: {
       title: "Custom Form",
-      permission: [],
+      permission: ["form-custom_form"],
       menu_icon: ["iron", "form"]
     }
   },
@@ -39,7 +39,7 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/json-schema.vue"),
     meta: {
       title: "JSON Schema",
-      permission: [],
+      permission: ["form-json_schema"],
       menu_icon: ["iron", "json"]
     }
   }
