@@ -14,7 +14,7 @@ export type Theme = "light" | "dark";
 export const useGlobStore = defineStore("arc_glob", () => {
   const lang = useStorage<keyof typeof LANGS>("arc_blob_lang", "zh");
   const collapse = useStorage("arc_blob_collapse", false);
-  const theme = ref<Theme>("light");
+  const theme = useStorage<Theme>("arc_blob_theme", "light");
 
   watch(
     lang,
@@ -27,7 +27,8 @@ export const useGlobStore = defineStore("arc_glob", () => {
   watch(
     theme,
     (value) => {
-      document.querySelector("html")!.classList[value === "dark" ? "add" : "remove"]("dark");
+      const isDark = value === "dark";
+      document.querySelector("html")!.classList[isDark ? "add" : "remove"]("dark");
     },
     { immediate: true }
   );

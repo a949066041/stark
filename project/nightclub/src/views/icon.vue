@@ -17,7 +17,7 @@
               :name="icon.iconName"
               width="32px"
               height="32px"
-              class="fill-gray-700"
+              class="fill-gray-700 dark:fill-slate-200"
             />
             <div class="w-full px-2">
               <div class="overflow-hidden text-center text-ellipsis">

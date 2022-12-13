@@ -10,7 +10,7 @@
   <a-header class="topbar-container">
     <div>
       <latte-svg
-        class="cursor-pointer fill-slate-800"
+        class="cursor-pointer fill-slate-800 dark:fill-slate-200"
         width="24px"
         height="24px"
         namespace="iron"
@@ -19,10 +19,12 @@
       />
     </div>
     <div class="flex items-center">
-      <!-- <a-button class="mr-2" size="small" @click="globStore.toggleTheme">{{
-        globStore.theme === "dark" ? "light" : "dark"
-      }}</a-button> -->
-      <!-- <a-button class="mr-2" size="small" @click="globStore.toggleLang">{{ LANGS[globStore.lang] }}</a-button> -->
+      <a-space>
+        <a-button size="small" @click="globStore.toggleTheme">{{
+          globStore.theme === "dark" ? "light" : "dark"
+        }}</a-button>
+        <a-button size="small" @click="globStore.toggleLang">{{ LANGS[globStore.lang] }}</a-button>
+      </a-space>
       <a-dropdown>
         <div class="avatar" />
         <template #overlay>

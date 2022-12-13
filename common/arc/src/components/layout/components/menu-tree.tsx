@@ -16,7 +16,7 @@ const MenuTree = defineComponent({
         const [namespace, name] = props.config.meta.menu_icon as [string, string];
         return () => (
           <ArcIcon
-            class="anticon !inline-flex !dark:text-white"
+            class="anticon !inline-flex dark:fill-white"
             width="14px"
             height="14px"
             namespace={namespace}
