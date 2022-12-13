@@ -1,14 +1,15 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-15 16:25:57
- * @LastEditTime: 2022-12-05 13:34:41
+ * @LastEditTime: 2022-12-08 11:14:50
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\cache.store.ts
  */
 
 import { defineStore, _GettersTree } from "pinia";
-import { RouteLocationNormalizedLoaded } from "vue-router";
+import { computed, ref } from "vue";
+import { RouteLocationNormalizedLoaded, Router } from "vue-router";
 
 export interface TagItem {
   name: string;
@@ -17,60 +18,58 @@ export interface TagItem {
   title: string;
 }
 
-interface CacheStoreState {
-  _cache: Record<string, unknown>;
-  _tags: TagItem[];
-}
+export const useCacheStore = defineStore("arc_cache", () => {
+  const _cache = ref<Record<string, unknown>>({});
+  const _tags = ref<TagItem[]>([]);
 
-interface CacheStoreGetter extends _GettersTree<CacheStoreState> {
-  getCache: (
-    state: CacheStoreState
-  ) => <T extends abstract new (...args: any) => any>(name: string) => InstanceType<T> | undefined;
-  cacheList: (state: CacheStoreState) => string[];
-}
+  const getCache = computed(() => {
+    return <T>(name: string) => {
+      return _cache.value[name] as T | undefined;
+    };
+  });
+  const cacheList = computed(() => {
+    return Object.keys(_cache.value);
+  });
 
-interface CacheStoreAction {
-  setCache<T>(name: string, cache: T, route: RouteLocationNormalizedLoaded): void;
-  deleteCache(name: string): void;
-}
-
-export const useCacheStore = defineStore<"arc_cache", CacheStoreState, CacheStoreGetter, CacheStoreAction>(
-  "arc_cache",
-  {
-    state: () => ({
-      _cache: {},
-      _tags: []
-    }),
-    actions: {
-      setCache<T>(name: string, cache: T, route: RouteLocationNormalizedLoaded) {
-        this._cache[name] = cache;
-        if (route.meta["title"]) {
-          const tagIndex = this._tags.findIndex((item) => item.name === name);
-          if (tagIndex !== -1) {
-            this._tags[tagIndex].link = route.fullPath;
-          } else {
-            this._tags.push({
-              name,
-              link: route.fullPath,
-              title: route.meta["title"] as string
-            });
-          }
-        }
-      },
-      deleteCache<T>(name: string) {
-        if (this._cache[name]) {
-          delete this._cache[name];
-        }
-        this._tags = this._tags.filter((item) => item.name !== name);
+  function setCache<T>(name: string, cache: T, route: RouteLocationNormalizedLoaded) {
+    _cache.value[name] = cache;
+    if (route.meta["title"]) {
+      const tagIndex = _tags.value.findIndex((item) => item.name === name);
+      if (tagIndex !== -1) {
+        _tags.value[tagIndex].link = route.fullPath;
+      } else {
+        _tags.value.push({
+          name,
+          link: route.fullPath,
+          title: route.meta["title"] as string
+        });
       }
-    },
-    getters: {
-      getCache: (state: CacheStoreState) => {
-        return <T>(name: string) => {
-          return state._cache[name] as T | undefined;
-        };
-      },
-      cacheList: (state: CacheStoreState) => Object.keys(state._cache)
     }
   }
-);
+
+  function deleteCache<T>(name: string, router: Router) {
+    if (_cache.value[name]) {
+      const cacheList = Object.keys(_cache.value);
+      if (cacheList.length === 1) {
+      } else {
+        const cacheIndex = cacheList.indexOf(name);
+        if (cacheIndex === 0) {
+          router.push(_tags.value[1].link);
+        } else {
+          router.push(_tags.value[cacheIndex - 1].link);
+        }
+      }
+      delete _cache.value[name];
+      _tags.value = _tags.value.filter((item) => item.name !== name);
+    }
+  }
+
+  return {
+    setCache,
+    deleteCache,
+    getCache,
+    cacheList,
+    _cache,
+    _tags
+  };
+});

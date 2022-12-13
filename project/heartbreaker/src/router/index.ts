@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 13:25:33
- * @LastEditTime: 2022-12-04 11:23:37
+ * @LastEditTime: 2022-12-09 16:11:17
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\heartbreaker\src\router\index.ts
@@ -15,7 +15,7 @@ const router_list: EnhanceRouter[] = [
     name: "[heartbreaker]Components",
     meta: {
       title: "Component",
-      permission: [],
+      permission: ["component"],
       menu_icon: ["iron", "component"]
     }
   },
@@ -27,7 +27,7 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/wangEditor.vue"),
     meta: {
       title: "WangEditor",
-      permission: [],
+      permission: ["component-wangeditor"],
       menu_icon: ["iron", "editor"]
     }
   },
@@ -39,7 +39,7 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/milkdown.vue"),
     meta: {
       title: "Milkdown",
-      permission: [],
+      permission: ["component-milkdown"],
       menu_icon: ["iron", "milk"]
     }
   },
@@ -51,7 +51,7 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/ag-grid.vue"),
     meta: {
       title: "AgGrid",
-      permission: [],
+      permission: ["component-aggrid"],
       menu_icon: ["iron", "grid"]
     }
   },
@@ -63,7 +63,7 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/v-calendar/v-calendar.vue"),
     meta: {
       title: "V Calendar",
-      permission: [],
+      permission: ["component-v_calendar"],
       menu_icon: ["iron", "calendar"]
     }
   },
@@ -75,7 +75,7 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/notification.vue"),
     meta: {
       title: "Notification",
-      permission: [],
+      permission: ["component-notification"],
       menu_icon: ["iron", "notification"]
     }
   }

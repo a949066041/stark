@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-05 10:37:34
- * @LastEditTime: 2022-12-05 13:45:19
+ * @LastEditTime: 2022-12-09 16:06:13
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\tiger\src\router\index.ts
@@ -15,7 +15,7 @@ const router_list: EnhanceRouter[] = [
     name: "[tiger]Project",
     meta: {
       title: "Feature",
-      permission: [],
+      permission: ["feature"],
       menu_icon: ["iron", "feature"]
     }
   },
@@ -25,7 +25,7 @@ const router_list: EnhanceRouter[] = [
     name: "[tiger]CacheMenu",
     meta: {
       title: "缓存测试",
-      permission: []
+      permission: ["feature-cache"]
     }
   },
   {
@@ -36,7 +36,7 @@ const router_list: EnhanceRouter[] = [
     path: "cache-test",
     meta: {
       title: "缓存测试1",
-      permission: []
+      permission: ["feature-cache-cache_test"]
     }
   },
   {
@@ -45,7 +45,7 @@ const router_list: EnhanceRouter[] = [
     name: "[tiger]CacheMenuDeep",
     meta: {
       title: "二级菜单",
-      permission: []
+      permission: ["feature-cache-second"]
     }
   },
   {
@@ -56,7 +56,7 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/cache/deep-menu.vue"),
     meta: {
       title: "深层缓存",
-      permission: []
+      permission: ["feature-cache-second-deep_menu"]
     }
   },
   {
@@ -65,7 +65,7 @@ const router_list: EnhanceRouter[] = [
     name: "[tiger]OperateMenu",
     meta: {
       title: "跨页操作",
-      permission: []
+      permission: ["feature-operate"]
     }
   },
   {
@@ -76,7 +76,7 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/operate/operate-data.vue"),
     meta: {
       title: "数据页",
-      permission: []
+      permission: ["feature-operate-data"]
     }
   },
   {
@@ -87,7 +87,27 @@ const router_list: EnhanceRouter[] = [
     component: () => import("../views/operate/operate-handle.vue"),
     meta: {
       title: "操作页",
-      permission: []
+      permission: ["feature-operate-handle"]
+    }
+  },
+  {
+    is_router: false,
+    parent_name: "[tiger]Project",
+    name: "[tiger]Permission",
+    meta: {
+      title: "权限",
+      permission: ["feature-permission"]
+    }
+  },
+  {
+    is_router: true,
+    parent_name: "[tiger]Permission",
+    name: "[tiger]PermissionTree",
+    path: "permission-tree",
+    component: () => import("../views/permission/permission-tree.vue"),
+    meta: {
+      title: "权限树",
+      permission: ["feature-permission-tree"]
     }
   }
 ];
