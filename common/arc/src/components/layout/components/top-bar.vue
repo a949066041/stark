@@ -7,18 +7,22 @@
  * @FilePath: \stark\common\arc\src\components\layout\components\top-bar.vue
 -->
 <template>
-  <div class="topbar-container">
+  <a-header class="topbar-container">
     <div>
       <latte-svg
-        class="fill-slate-800 cursor-pointer"
+        class="cursor-pointer fill-slate-800"
         width="24px"
         height="24px"
         namespace="iron"
-        :name="menuStore.collapse ? 'indent' : 'outdent'"
-        @click="menuStore.toggle_menu"
+        :name="globStore.collapse ? 'indent' : 'outdent'"
+        @click="globStore.toggleCollapse"
       />
     </div>
-    <div>
+    <div class="flex items-center">
+      <!-- <a-button class="mr-2" size="small" @click="globStore.toggleTheme">{{
+        globStore.theme === "dark" ? "light" : "dark"
+      }}</a-button> -->
+      <!-- <a-button class="mr-2" size="small" @click="globStore.toggleLang">{{ LANGS[globStore.lang] }}</a-button> -->
       <a-dropdown>
         <div class="avatar" />
         <template #overlay>
@@ -30,15 +34,15 @@
         </template>
       </a-dropdown>
     </div>
-  </div>
+  </a-header>
 </template>
 <script lang="ts" setup>
-import { useMenuStore } from "../../../store";
-const menuStore = useMenuStore();
+import { useGlobStore, LANGS } from "../../../store";
+const globStore = useGlobStore();
 </script>
 <style lang="less" scoped>
 .topbar-container {
-  @apply flex flex-row justify-between items-center bg-gray-50 p-1;
+  @apply flex flex-row justify-between items-center p-1;
   border-bottom: solid 1px #98a8bd;
 }
 .avatar {

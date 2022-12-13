@@ -17,7 +17,18 @@ const content = [
   "../../common/silver/src/**/*.{html,vue,ts,tsx,scss,less}"
 ];
 
+const base_dark_config = {
+  darkMode: "class",
+  variants: {
+    extend: {
+      backgroundColor: ["dark"],
+      textColor: ["dark"]
+    }
+  }
+};
+
 const child_tailwind_config = {
+  ...base_dark_config,
   content,
   theme: {
     extend: {}
@@ -25,6 +36,7 @@ const child_tailwind_config = {
   plugins: []
 };
 const shell_tailwind_config = {
+  ...base_dark_config,
   content: [...content, ...project_list],
   theme: {
     extend: {}

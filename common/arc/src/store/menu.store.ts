@@ -16,6 +16,7 @@ export interface IMenu {
   parent_name?: string;
   is_router: boolean;
   meta?: IMenuType;
+  hidden?: boolean;
   children: IMenu[];
   path?: string;
 }

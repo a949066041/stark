@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "@stark/common-iron": "workspace:^1.0.0",
+    "@vueuse/core": "^9.6.0",
     "ant-design-vue": "^3.2.15",
+    "dayjs": "^1.11.7",
     "vue3-lottie": "^2.4.0"
   }
 }

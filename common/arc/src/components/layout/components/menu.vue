@@ -7,13 +7,14 @@
  * @FilePath: \stark\common\arc\src\components\layout\components\menu.vue
 -->
 <template>
-  <a-menu class="a-menu" mode="inline" :inline-collapsed="menuStore.collapse">
+  <a-menu class="a-menu" mode="inline" :inline-collapsed="globStore.collapse">
     <menu-tree v-for="item of menuStore.menu" :key="item.name" :config="item" />
   </a-menu>
 </template>
 <script lang="ts" setup>
-import { useMenuStore } from "../../../store";
+import { useGlobStore, useMenuStore } from "../../../store";
 import MenuTree from "./menu-tree";
+const globStore = useGlobStore();
 const menuStore = useMenuStore();
 </script>
 <style lang="less" scoped>

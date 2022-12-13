@@ -6,11 +6,12 @@
  * @Description:
  * @FilePath: \stark\common\arc\src\index.ts
  */
+// import "./styles/dark.less";
 import "./styles/arc.less";
 
 import { registerSvgIcon } from "@kaffee/latte";
 import { all_icon } from "@stark/common-iron";
 registerSvgIcon(all_icon);
-export { default as App } from "./components/app/app.vue";
+export { default as App } from "./components/app/app";
 export * from "./router";
 export * from "./store";

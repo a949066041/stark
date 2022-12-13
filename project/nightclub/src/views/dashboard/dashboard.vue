@@ -7,8 +7,8 @@
  * @FilePath: \stark\project\nightclub\src\views\dashboard\dashboard.vue
 -->
 <template>
-  <div class="stark-container bg-gray-100">
-    <div class="h-40 py-4 px-8 flex flex-row justify-between">
+  <div class="bg-gray-100 stark-container dark:bg-zinc-800">
+    <div class="flex flex-row justify-between h-40 px-8 py-4">
       <data-card @click="handleChangeLineChart()" title="Express" :count="102400" color="#40C9C6" name="express" />
       <data-card @click="handleChangeLineChart()" title="New Visits" :count="81212" color="#36A3F7" name="pepole" />
       <data-card @click="handleChangeLineChart()" title="Picture" :count="9280" color="#F4516C" name="picture" />
@@ -18,8 +18,8 @@
     <data-three-chart />
     <div class="flex flex-row px-8 mb-8">
       <data-table />
-      <div class="w-1/2 flex flex-row">
-        <data-code class="mr-4 flex-1" />
+      <div class="flex flex-row w-1/2">
+        <data-code class="flex-1 mr-4" />
         <data-code class="flex-1" />
       </div>
     </div>
