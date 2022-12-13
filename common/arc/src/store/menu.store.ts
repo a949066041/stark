@@ -1,13 +1,13 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 16:35:07
- * @LastEditTime: 2022-12-09 17:08:44
+ * @LastEditTime: 2022-12-13 21:46:41
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\menu.store.ts
  */
 import { defineStore, _GettersTree } from "pinia";
-import { computed, ref } from "vue";
+import { computed, reactive, ref } from "vue";
 import { RouteMeta, RouteRecordRaw } from "vue-router";
 import { EnhanceRouter, IEnhanceRouter } from "..";
 
@@ -24,18 +24,19 @@ export interface IMenu {
 type IMenuType = { title: string; permission: string[]; menu_icon: [string, string] } & RouteMeta;
 
 export const useMenuStore = defineStore("arc_menu", () => {
-  const _menu = ref<EnhanceRouter[]>([]);
+  const _menu = reactive<{ data: EnhanceRouter[] }>({ data: [] });
   const collapse = ref(false);
 
-  const menu = computed(() => cycleMenu(_menu.value, "root"));
-  const router = computed(() => getRouter(_menu.value));
+  const menu = reactive<{ data: IMenu[] }>({ data: [] });
+  const router = computed(() => getRouter(_menu.data));
 
   function toggle_menu() {
     collapse.value = !collapse.value;
   }
 
   function set_menu(menus: EnhanceRouter[]) {
-    _menu.value = menus;
+    _menu.data = menus;
+    menu.data = cycleMenu(_menu.data, "root");
   }
 
   return {
@@ -43,7 +44,8 @@ export const useMenuStore = defineStore("arc_menu", () => {
     router,
     collapse,
     toggle_menu,
-    set_menu
+    set_menu,
+    _menu
   };
 });
 
@@ -59,7 +61,7 @@ function getRouter(menu: EnhanceRouter[]): Array<RouteRecordRaw> {
   });
 }
 
-function cycleMenu(menu: EnhanceRouter[], find_name: string): IMenu[] {
+export function cycleMenu(menu: EnhanceRouter[], find_name: string): IMenu[] {
   const menus = menu
     .filter(({ parent_name }) => parent_name === find_name)
     .map((item) => {

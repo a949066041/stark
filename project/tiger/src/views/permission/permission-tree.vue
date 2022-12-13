@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-09 09:54:43
- * @LastEditTime: 2022-12-09 16:14:05
+ * @LastEditTime: 2022-12-13 21:30:47
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\tiger\src\views\permission\permission-tree.vue
@@ -115,7 +115,7 @@ const treeData: TreeProps["treeData"] = [
 ];
 const permissionStore = usePermissionStore();
 const expandedKeys = ref<string[]>([]);
-const checkedKeys = ref<string[]>(permissionStore.permission_list);
+const checkedKeys = ref<string[]>(permissionStore.permission_list.data);
 watch(checkedKeys, () => {
   console.log("checkedKeys", checkedKeys);
 });
