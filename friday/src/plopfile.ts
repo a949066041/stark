@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-29 18:05:40
- * @LastEditTime: 2022-11-29 22:07:44
+ * @LastEditTime: 2022-12-18 12:45:18
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\friday\src\plopfile.ts
@@ -48,6 +48,7 @@ export default async function (plop: NodePlopAPI) {
       common_action("vue.config.js", "projects/children/vue.config.hbs"),
       common_action("tsconfig.json", "projects/children/tsconfig.hbs"),
       common_action("src/main.ts", "projects/children/src/main.hbs"),
+      common_action("src/remote.ts", "projects/children/src/remote.hbs"),
       common_action("src/shims-vue.d.ts", "projects/children/src/shims-vue.d.hbs"),
       common_action("src/router/index.ts", "projects/children/src/router/index.hbs"),
       {

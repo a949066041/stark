@@ -19,5 +19,8 @@
     },
     "project/tiger": {
         "description": "老虎"
+    },
+    "project/midas": {
+        "description": "麦得斯"
     }
 }

@@ -16,3 +16,5 @@ export * from "./config/heartbreaker.config";
 export * from "./config/cassanova.config";
 
 export * from "./config/tiger.config";
+
+export * from "./config/midas.config";
