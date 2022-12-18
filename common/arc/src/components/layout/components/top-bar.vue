@@ -7,7 +7,7 @@
  * @FilePath: \stark\common\arc\src\components\layout\components\top-bar.vue
 -->
 <template>
-  <a-header class="topbar-container">
+  <header class="topbar-container">
     <div>
       <latte-svg
         class="cursor-pointer fill-slate-800"
@@ -34,7 +34,7 @@
         </template>
       </a-dropdown>
     </div>
-  </a-header>
+  </header>
 </template>
 <script lang="ts" setup>
 import { useGlobStore, LANGS } from "../../../store";

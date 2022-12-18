@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-15 16:25:57
- * @LastEditTime: 2022-12-08 11:14:50
+ * @LastEditTime: 2022-12-18 12:20:25
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\cache.store.ts
@@ -61,6 +61,9 @@ export const useCacheStore = defineStore("arc_cache", () => {
       }
       delete _cache.value[name];
       _tags.value = _tags.value.filter((item) => item.name !== name);
+      if (_tags.value.length === 0) {
+        router.push("/view");
+      }
     }
   }
 

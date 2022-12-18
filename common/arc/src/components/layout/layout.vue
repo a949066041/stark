@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 15:20:20
- * @LastEditTime: 2022-12-07 17:31:32
+ * @LastEditTime: 2022-12-18 12:16:42
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\layout.vue
@@ -31,7 +31,7 @@ import LayoutTopBar from "./components/top-bar.vue";
 import { useCacheStore } from "../../store";
 import { storeToRefs } from "pinia";
 
-const views = ref([]);
+const views = ref<{ name: string }>();
 const $router = useRouter();
 const $route = useRoute();
 
@@ -42,10 +42,9 @@ const cacheList = _cacheStore.cacheList;
 
 function _setCahce() {
   nextTick(() => {
-    // @ts-ignore
-    const viewName: string = views.value.name;
-    if (viewName) {
-      cacheStore.setCache(viewName, views.value, $route);
+    const viewName = views.value;
+    if (viewName && viewName.name) {
+      cacheStore.setCache(viewName.name, views.value, $route);
     }
   });
 }

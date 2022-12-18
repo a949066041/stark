@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-15 21:02:40
- * @LastEditTime: 2022-12-08 11:20:10
+ * @LastEditTime: 2022-12-18 12:18:17
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\tag.vue
@@ -42,7 +42,6 @@ function handleTagClick(path: string) {
 }
 
 function handleClose(tag: TagItem) {
-  console.log(tag);
   cacheStore.deleteCache(tag.name, $router);
 }
 </script>

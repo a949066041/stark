@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 13:07:16
- * @LastEditTime: 2022-12-07 15:42:21
+ * @LastEditTime: 2022-12-18 11:50:59
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\index.ts
@@ -15,3 +15,4 @@ registerSvgIcon(all_icon);
 export { default as App } from "./components/app/app";
 export * from "./router";
 export * from "./store";
+export { ArcIcon } from "./components/icon";

@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-06 17:19:02
+ * @LastEditTime: 2022-12-18 10:42:40
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -138,8 +138,8 @@ class WebpackConfig {
         pinia: { singleton: true },
         "vue-router": { singleton: true },
         "@kaffee/latte": { singleton: true },
-        "@stark/common-iron": { singleton: true },
-        "@stark/common-arc": { singleton: true }
+        "@stark/common-iron": { singleton: true, version: "workspace:^1.0.0" },
+        "@stark/common-arc": { singleton: true, version: "workspace:^1.0.0" }
       }
     });
   };
