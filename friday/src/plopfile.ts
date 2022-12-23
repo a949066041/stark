@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-29 18:05:40
- * @LastEditTime: 2022-12-18 12:45:18
+ * @LastEditTime: 2022-12-23 20:59:18
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\friday\src\plopfile.ts
@@ -12,11 +12,11 @@ import { findWorkspaceDir } from "@pnpm/find-workspace-dir";
 import { resolve } from "path";
 
 export default async function (plop: NodePlopAPI) {
-  const workspaceDir: string = (await findWorkspaceDir(process.cwd())) as string;
-  if (!workspaceDir) {
+  const workspaceDirectory: string = (await findWorkspaceDir(process.cwd())) as string;
+  if (!workspaceDirectory) {
     throw new Error("no workspace");
   }
-  const ws_path = (r_path: string) => resolve(workspaceDir, r_path);
+  const ws_path = (r_path: string) => resolve(workspaceDirectory, r_path);
   const common_action = (path_name: string, template_name: string) => {
     return {
       type: "add",

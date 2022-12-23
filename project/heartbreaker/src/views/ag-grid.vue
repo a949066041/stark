@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 20:05:58
- * @LastEditTime: 2022-12-23 18:14:39
+ * @LastEditTime: 2022-12-23 20:17:35
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\ag-grid.vue
@@ -46,7 +46,7 @@ import { Description } from "@stark/common-silver";
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-material.min.css"; // Optional theme CSS
 
-const gridApi = ref<GridApi | null>(null); // Optional - for accessing Grid's API
+const gridApi = ref<GridApi | null>(); // Optional - for accessing Grid's API
 
 // Obtain API from grid's onGridReady event
 const onGridReady = (params: GridReadyEvent) => {
@@ -61,6 +61,7 @@ const columnDefs = reactive({
 });
 
 // DefaultColDef sets props common to all Columns
+// eslint-disable-next-line unicorn/prevent-abbreviations
 const defaultColDef = {
   sortable: true,
   filter: true,

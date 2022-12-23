@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-05 15:09:51
- * @LastEditTime: 2022-12-06 16:00:31
+ * @LastEditTime: 2022-12-23 21:04:16
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\friday\src\dist.ts
@@ -13,6 +13,7 @@ const { copySync, rmSync, existsSync } = fsExtra;
 import { resolve } from "path";
 import { cwd } from "process";
 
+// eslint-disable-next-line unicorn/prefer-top-level-await
 findWorkspaceDir(cwd()).then((root) => {
   if (root) {
     const distDir = resolve(root, "dist");

@@ -1,2 +1,4 @@
 dist
 *.d.ts
+project/heartbreaker/src/views/v-calendar/utils
+common/iron/src/iron

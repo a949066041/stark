@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-23 18:35:55
- * @LastEditTime: 2022-12-23 18:54:41
+ * @LastEditTime: 2022-12-23 19:07:40
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\eslint\typescript.eslint.ts
@@ -24,7 +24,7 @@ export const typescript_override: Linter.ConfigOverride = {
     ecmaVersion: "latest"
   },
   plugins: ["@typescript-eslint", "unicorn", "prettier"],
-  extends: ["plugin:@typescript-eslint/recommended", "prettier"],
+  extends: ["plugin:@typescript-eslint/recommended", "prettier", "plugin:unicorn/recommended"],
   rules: {
     ...typescript_rule
   }

@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-29 21:59:33
- * @LastEditTime: 2022-12-23 18:04:43
+ * @LastEditTime: 2022-12-23 19:57:37
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\wangEditor.vue
@@ -53,7 +53,7 @@ const editorConfig = { placeholder: "请输入内容..." };
 // 组件销毁时，也及时销毁编辑器
 onBeforeUnmount(() => {
   const editor = editorRef.value;
-  if (editor == null) return;
+  if (editor == undefined) return;
   editor.destroy();
 });
 

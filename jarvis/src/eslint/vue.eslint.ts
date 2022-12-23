@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-23 16:34:46
- * @LastEditTime: 2022-12-23 18:55:00
+ * @LastEditTime: 2022-12-23 19:07:46
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\eslint\vue.eslint.ts
@@ -18,12 +18,7 @@ files.push(
 );
 const vue_override: Linter.ConfigOverride = {
   files,
-  extends: [
-    "plugin:vue/vue3-strongly-recommended",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+
   parser: "vue-eslint-parser",
   parserOptions: {
     parser: "@typescript-eslint/parser",
@@ -37,7 +32,14 @@ const vue_override: Linter.ConfigOverride = {
       jsx: true
     }
   },
-  plugins: ["@typescript-eslint", "prettier"],
+  plugins: ["@typescript-eslint", "prettier", "unicorn"],
+  extends: [
+    "plugin:vue/vue3-strongly-recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:unicorn/recommended"
+  ],
   rules: {
     ...vue_rule,
     ...typescript_rule

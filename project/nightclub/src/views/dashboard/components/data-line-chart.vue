@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:04:00
- * @LastEditTime: 2022-12-23 18:04:30
+ * @LastEditTime: 2022-12-23 19:10:26
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-line-chart.vue
@@ -68,7 +68,7 @@ function handleSetOption() {
           lineStyle: {
             color: "#F4516C"
           },
-          data: Array(7)
+          data: Array.from({ length: 7 })
             .fill("")
             .map(() => Math.round(Math.random() * (150 - 100)) + 100)
         },
@@ -79,7 +79,7 @@ function handleSetOption() {
           showSymbol: false,
           stack: "Total",
           lineStyle: { color: "#36A3F7" },
-          data: Array(7)
+          data: Array.from({ length: 7 })
             .fill("")
             .map(() => Math.round(Math.random() * (300 - 20)) + 20)
         }

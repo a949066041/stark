@@ -35,14 +35,14 @@ export const useCacheStore = defineStore("arc_cache", () => {
     _cache.value[name] = cache;
     if (route.meta["title"]) {
       const tagIndex = _tags.value.findIndex((item) => item.name === name);
-      if (tagIndex !== -1) {
-        _tags.value[tagIndex].link = route.fullPath;
-      } else {
+      if (tagIndex === -1) {
         _tags.value.push({
           name,
           link: route.fullPath,
           title: route.meta["title"] as string
         });
+      } else {
+        _tags.value[tagIndex].link = route.fullPath;
       }
     }
   }
@@ -51,6 +51,7 @@ export const useCacheStore = defineStore("arc_cache", () => {
     if (_cache.value[name]) {
       const cacheList = Object.keys(_cache.value);
       if (cacheList.length === 1) {
+        //
       } else {
         const cacheIndex = cacheList.indexOf(name);
         if (cacheIndex === 0) {

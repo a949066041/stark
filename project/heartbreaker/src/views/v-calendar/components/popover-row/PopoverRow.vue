@@ -33,6 +33,7 @@ export default {
   computed: {
     indicator() {
       const { highlight, dot, bar, popover } = this.attribute;
+      // eslint-disable-next-line unicorn/no-null
       if (popover && popover.hideIndicator) return null;
       if (highlight) {
         const { color, isDark } = highlight.start;
@@ -75,6 +76,7 @@ export default {
           }
         };
       }
+      // eslint-disable-next-line unicorn/no-null
       return null;
     }
   }
