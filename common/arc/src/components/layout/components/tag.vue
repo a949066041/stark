@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-15 21:02:40
- * @LastEditTime: 2022-12-18 12:18:17
+ * @LastEditTime: 2022-12-23 22:23:58
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\tag.vue
@@ -28,9 +28,10 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { TagItem, useCacheStore } from "../../../store";
-import { useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
+import { useRouter } from "vue-router";
+
+import { TagItem, useCacheStore } from "../../../store";
 
 const cacheStore = useCacheStore();
 const cacheStoreRef = storeToRefs(cacheStore);

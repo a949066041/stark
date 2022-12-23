@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-09 09:54:43
- * @LastEditTime: 2022-12-23 18:10:22
+ * @LastEditTime: 2022-12-23 22:20:40
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\tiger\src\views\permission\permission-tree.vue
@@ -43,10 +43,13 @@ export default {
   name: "[tiger]PermissionTree"
 };
 </script>
+
 <script lang="ts" setup>
-import { usePermissionStore, ArcIcon } from "@stark/common-arc";
+import { ArcIcon, usePermissionStore } from "@stark/common-arc";
 import { ref } from "vue";
+
 import { permission_tree } from "./data";
+
 const treeData = permission_tree;
 const permissionStore = usePermissionStore();
 const expandedKeys = ref<string[]>([]);

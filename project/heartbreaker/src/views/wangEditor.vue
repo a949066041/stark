@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-29 21:59:33
- * @LastEditTime: 2022-12-23 19:57:37
+ * @LastEditTime: 2022-12-23 22:22:42
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\wangEditor.vue
@@ -32,9 +32,10 @@ export default {
 </script>
 <script lang="ts" setup>
 import "@wangeditor/editor/dist/css/style.css"; // 引入 css
-import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
-import { IDomEditor } from "@wangeditor/editor";
+
 import { Description } from "@stark/common-silver";
+import { IDomEditor } from "@wangeditor/editor";
+import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
 import { onBeforeUnmount, onMounted, ref, shallowRef } from "vue";
 // 编辑器实例，必须用 shallowRef
 const editorRef = shallowRef();

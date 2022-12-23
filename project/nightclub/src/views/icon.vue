@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 21:00:20
- * @LastEditTime: 2022-12-23 18:03:35
+ * @LastEditTime: 2022-12-23 22:21:57
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\icon.vue
@@ -34,6 +34,7 @@
 </template>
 <script lang="ts" setup>
 import { all_icon } from "@stark/common-iron";
+
 const iron_icon = all_icon.filter(({ namespace }) => namespace === "iron");
 const alipay_icon = all_icon.filter(({ namespace }) => namespace === "alipay");
 const warning_icon = all_icon.filter(({ namespace }) => namespace === "warning");

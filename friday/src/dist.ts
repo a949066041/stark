@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-05 15:09:51
- * @LastEditTime: 2022-12-23 21:04:16
+ * @LastEditTime: 2022-12-23 22:23:35
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\friday\src\dist.ts
@@ -9,6 +9,7 @@
 import { findWorkspaceDir } from "@pnpm/find-workspace-dir";
 import { readdirSync, writeFileSync } from "fs";
 import fsExtra from "fs-extra";
+
 const { copySync, rmSync, existsSync } = fsExtra;
 import { resolve } from "path";
 import { cwd } from "process";

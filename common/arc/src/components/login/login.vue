@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 13:44:35
- * @LastEditTime: 2022-12-23 18:15:23
+ * @LastEditTime: 2022-12-23 22:23:50
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\login\login.vue
@@ -49,6 +49,7 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
 import { Vue3Lottie } from "vue3-lottie";
+
 const router = useRouter();
 function handleLogin() {
   router.push("/view");

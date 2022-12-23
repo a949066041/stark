@@ -1,18 +1,18 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-23 20:56:46
+ * @LastEditTime: 2022-12-23 22:23:25
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
  */
 
-import ChainableWebpackConfig from "webpack-chain";
-// eslint-disable-next-line unicorn/import-style
-import { resolve } from "path";
-import { default as minimist } from "minimist";
 import * as dotenv from "dotenv";
 import dotenvExpand from "dotenv-expand";
+import { default as minimist } from "minimist";
+// eslint-disable-next-line unicorn/import-style
+import { resolve } from "path";
+import ChainableWebpackConfig from "webpack-chain";
 
 const customElement = new Set(["latte-svg"]);
 

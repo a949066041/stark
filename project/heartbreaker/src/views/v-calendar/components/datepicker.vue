@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 23:51:25
- * @LastEditTime: 2022-12-23 18:14:05
+ * @LastEditTime: 2022-12-23 22:22:54
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\datepicker.vue
@@ -31,8 +31,9 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { DatePicker } from "v-calendar";
 import { Description } from "@stark/common-silver";
+import { DatePicker } from "v-calendar";
+
 const date = new Date();
 const month = date.getMonth();
 const year = date.getFullYear();

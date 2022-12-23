@@ -1,14 +1,16 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-23 16:34:46
- * @LastEditTime: 2022-12-23 19:07:46
+ * @LastEditTime: 2022-12-23 22:23:30
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\eslint\vue.eslint.ts
  */
 
 import { Linter } from "eslint";
+
 import { typescript_rule, vue_rule } from "./rules";
+
 const files: string[] = [];
 files.push(
   ...["sneaky", "cassanova", "heartbreaker", "midas", "nightclub", "tiger"].map(
@@ -32,7 +34,7 @@ const vue_override: Linter.ConfigOverride = {
       jsx: true
     }
   },
-  plugins: ["@typescript-eslint", "prettier", "unicorn"],
+  plugins: ["@typescript-eslint", "prettier", "unicorn", "simple-import-sort", "import"],
   extends: [
     "plugin:vue/vue3-strongly-recommended",
     "eslint:recommended",

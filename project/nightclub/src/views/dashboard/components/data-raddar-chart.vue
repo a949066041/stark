@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:36:41
- * @LastEditTime: 2022-12-23 19:08:47
+ * @LastEditTime: 2022-12-23 22:22:06
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-raddar-chart.vue
@@ -10,11 +10,11 @@
   <div class="w-full h-full" ref="radder_chart" />
 </template>
 <script lang="ts" setup>
-import { nextTick, onMounted, ref } from "vue";
-import * as echarts from "echarts/core";
-import { TitleComponent, LegendComponent } from "echarts/components";
 import { RadarChart } from "echarts/charts";
+import { LegendComponent, TitleComponent } from "echarts/components";
+import * as echarts from "echarts/core";
 import { CanvasRenderer } from "echarts/renderers";
+import { nextTick, onMounted, ref } from "vue";
 
 echarts.use([TitleComponent, LegendComponent, RadarChart, CanvasRenderer]);
 

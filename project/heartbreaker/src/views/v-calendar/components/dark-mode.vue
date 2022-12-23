@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 23:45:10
- * @LastEditTime: 2022-12-01 23:49:50
+ * @LastEditTime: 2022-12-23 22:22:56
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\dark-mode.vue
@@ -39,8 +39,8 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { Calendar } from "v-calendar";
 import { Description } from "@stark/common-silver";
+import { Calendar } from "v-calendar";
 
 const date = new Date();
 const month = date.getMonth();

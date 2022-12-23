@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:04:00
- * @LastEditTime: 2022-12-23 19:10:26
+ * @LastEditTime: 2022-12-23 22:22:10
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-line-chart.vue
@@ -17,12 +17,13 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import * as echarts from "echarts/core";
-import { TitleComponent, ToolboxComponent, TooltipComponent, GridComponent, LegendComponent } from "echarts/components";
 import { LineChart } from "echarts/charts";
+import { GridComponent, LegendComponent, TitleComponent, ToolboxComponent, TooltipComponent } from "echarts/components";
+import * as echarts from "echarts/core";
 import { UniversalTransition } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
 import { nextTick, onMounted, ref } from "vue";
+
 echarts.use([
   TitleComponent,
   ToolboxComponent,

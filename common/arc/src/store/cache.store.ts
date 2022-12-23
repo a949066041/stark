@@ -1,13 +1,13 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-15 16:25:57
- * @LastEditTime: 2022-12-23 19:05:53
+ * @LastEditTime: 2022-12-23 22:24:47
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\cache.store.ts
  */
 
-import { defineStore, _GettersTree } from "pinia";
+import { _GettersTree, defineStore } from "pinia";
 import { computed, ref } from "vue";
 import { RouteLocationNormalizedLoaded, Router } from "vue-router";
 

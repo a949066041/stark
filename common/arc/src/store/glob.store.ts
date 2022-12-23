@@ -1,16 +1,17 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-13 21:08:27
- * @LastEditTime: 2022-12-23 19:05:45
+ * @LastEditTime: 2022-12-23 22:23:41
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\glob.store.ts
  */
-import { defineStore } from "pinia";
-import { ref, watch } from "vue";
+import "dayjs/locale/zh-cn";
+
 import { useStorage } from "@vueuse/core";
 import dayjs from "dayjs";
-import "dayjs/locale/zh-cn";
+import { defineStore } from "pinia";
+import { ref, watch } from "vue";
 
 export enum LANGS {
   "zh" = "中文",

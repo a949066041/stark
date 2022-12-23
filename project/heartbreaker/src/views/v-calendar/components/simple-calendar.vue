@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 21:55:51
- * @LastEditTime: 2022-12-23 18:13:21
+ * @LastEditTime: 2022-12-23 22:22:49
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\simple-calendar.vue
@@ -129,10 +129,11 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { Calendar } from "v-calendar";
-import { Locale } from "../utils/locale";
 import { Description } from "@stark/common-silver";
+import { Calendar } from "v-calendar";
 import { nextTick, ref } from "vue";
+
+import { Locale } from "../utils/locale";
 import { PopoverRow } from "./popover-row";
 
 interface TodoItem {

@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-23 18:27:52
- * @LastEditTime: 2022-12-23 21:02:09
+ * @LastEditTime: 2022-12-23 22:20:01
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\eslint\rules\typescript.rule.ts
@@ -32,5 +32,10 @@ export const typescript_rule: Linter.RulesRecord = {
         }
       }
     }
-  ]
+  ],
+  "simple-import-sort/imports": "error",
+  "simple-import-sort/exports": "error",
+  "import/first": "off",
+  "import/newline-after-import": "error",
+  "import/no-duplicates": "error"
 };

@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-17 19:23:22
- * @LastEditTime: 2022-12-23 18:33:42
+ * @LastEditTime: 2022-12-23 22:23:54
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\top-bar.vue
@@ -38,6 +38,7 @@
 </template>
 <script lang="ts" setup>
 import { useGlobStore } from "../../../store";
+
 const globStore = useGlobStore();
 </script>
 <style lang="less" scoped>

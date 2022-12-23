@@ -1,13 +1,15 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-23 18:35:55
- * @LastEditTime: 2022-12-23 19:07:40
+ * @LastEditTime: 2022-12-23 22:23:32
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\eslint\typescript.eslint.ts
  */
 import { Linter } from "eslint";
+
 import { typescript_rule } from "./rules";
+
 const files: string[] = [];
 files.push(
   ...["sneaky", "cassanova", "heartbreaker", "midas", "nightclub", "tiger"].map(
@@ -23,7 +25,7 @@ export const typescript_override: Linter.ConfigOverride = {
   parserOptions: {
     ecmaVersion: "latest"
   },
-  plugins: ["@typescript-eslint", "unicorn", "prettier"],
+  plugins: ["@typescript-eslint", "unicorn", "prettier", "simple-import-sort", "import"],
   extends: ["plugin:@typescript-eslint/recommended", "prettier", "plugin:unicorn/recommended"],
   rules: {
     ...typescript_rule

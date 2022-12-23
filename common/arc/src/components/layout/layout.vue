@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 15:20:20
- * @LastEditTime: 2022-12-18 12:46:01
+ * @LastEditTime: 2022-12-23 22:23:53
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\layout.vue
@@ -23,13 +23,14 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { storeToRefs } from "pinia";
 import { nextTick, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
+
+import { useCacheStore } from "../../store";
 import LayoutMenu from "./components/menu.vue";
 import LayoutTag from "./components/tag.vue";
 import LayoutTopBar from "./components/top-bar.vue";
-import { useCacheStore } from "../../store";
-import { storeToRefs } from "pinia";
 
 const views = ref<{ name: string }>();
 const $router = useRouter();

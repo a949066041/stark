@@ -1,15 +1,15 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-29 18:05:40
- * @LastEditTime: 2022-12-23 20:59:18
+ * @LastEditTime: 2022-12-23 22:24:44
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\friday\src\plopfile.ts
  */
 
-import { NodePlopAPI } from "plop";
 import { findWorkspaceDir } from "@pnpm/find-workspace-dir";
 import { resolve } from "path";
+import { NodePlopAPI } from "plop";
 
 export default async function (plop: NodePlopAPI) {
   const workspaceDirectory: string = (await findWorkspaceDir(process.cwd())) as string;

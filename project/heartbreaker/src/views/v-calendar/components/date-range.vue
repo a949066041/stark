@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 23:59:05
- * @LastEditTime: 2022-12-23 18:11:04
+ * @LastEditTime: 2022-12-23 22:24:40
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\date-range.vue
@@ -81,6 +81,7 @@ export default {
 </script>
 <script lang="ts" setup>
 import { DatePicker } from "v-calendar";
+
 const range = {
   start: new Date(2020, 0, 6),
   end: new Date(2020, 0, 23)

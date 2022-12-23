@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 20:49:10
- * @LastEditTime: 2022-12-23 18:04:06
+ * @LastEditTime: 2022-12-23 22:22:00
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\dashboard.vue
@@ -27,12 +27,14 @@
 </template>
 <script lang="ts" setup>
 import "echarts/theme/macarons";
+
 import { ref } from "vue";
+
 import DataCard from "./components/data-card.vue";
-import DataLineChart from "./components/data-line-chart.vue";
-import DataThreeChart from "./components/data-three-chart.vue";
-import DataTable from "./components/data-table.vue";
 import DataCode from "./components/data-code.vue";
+import DataLineChart from "./components/data-line-chart.vue";
+import DataTable from "./components/data-table.vue";
+import DataThreeChart from "./components/data-three-chart.vue";
 
 const line_chart = ref<typeof DataLineChart>();
 

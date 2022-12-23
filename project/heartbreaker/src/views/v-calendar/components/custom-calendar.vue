@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-02 00:05:09
- * @LastEditTime: 2022-12-23 18:14:09
+ * @LastEditTime: 2022-12-23 22:22:59
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\custom-calendar.vue
@@ -43,8 +43,8 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { Calendar } from "v-calendar";
 import { Description } from "@stark/common-silver";
+import { Calendar } from "v-calendar";
 
 const month = new Date().getMonth();
 const year = new Date().getFullYear();
