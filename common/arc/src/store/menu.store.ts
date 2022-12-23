@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 16:35:07
- * @LastEditTime: 2022-12-13 21:46:41
+ * @LastEditTime: 2022-12-23 19:05:37
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\menu.store.ts
@@ -66,6 +66,7 @@ export function cycleMenu(menu: EnhanceRouter[], find_name: string): IMenu[] {
     .filter(({ parent_name }) => parent_name === find_name)
     .map((item) => {
       const child_menu = cycleMenu(menu, item.name);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       item["children"] = child_menu;
       const _menu: IMenu = {

@@ -10,7 +10,7 @@
     "serve:website": "wireit",
     "prepare": "turbo prepare:build",
     "plop": "pnpm --filter @stark/friday generate",
-    "lint": "pnpm --filter @stark/jarvis prepare:build  && eslint . --ext .js --ext .vue"
+    "lint": "pnpm --filter @stark/jarvis prepare:build  && eslint . --ext .js --ext .vue --ext .ts"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,8 @@
     "concurrently": "^7.5.0",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unicorn": "^45.0.2",
     "eslint-plugin-vue": "^9.8.0",
     "http-server": "^14.1.1",
     "prettier": "^2.8.1",

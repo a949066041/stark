@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-18 10:42:40
+ * @LastEditTime: 2022-12-23 18:58:28
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -88,6 +88,7 @@ class WebpackConfig {
     ]);
     config
       .plugin("copy")
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
       .use(require("copy-webpack-plugin"))
       .tap(() => {
         return [
@@ -109,8 +110,11 @@ class WebpackConfig {
   };
 
   public get_plugins = () => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const AutoImport = require("unplugin-auto-import/webpack");
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const Components = require("unplugin-vue-components/webpack");
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { AntDesignVueResolver } = require("unplugin-vue-components/resolvers");
     return [
       AutoImport({
@@ -122,7 +126,8 @@ class WebpackConfig {
     ];
   };
 
-  public get_remote_mf_plugin = (options: RemoteMFPluginOption) => {
+  public get_remote_mf_plugin = (_options: RemoteMFPluginOption) => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { ModuleFederationPlugin } = require("webpack").container;
     const exposes: Record<string, string> = {
       "./remote": "./src/remote.ts"

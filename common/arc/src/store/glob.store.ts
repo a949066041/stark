@@ -1,3 +1,11 @@
+/*
+ * @Author: Rikka
+ * @Date: 2022-12-13 21:08:27
+ * @LastEditTime: 2022-12-23 19:05:45
+ * @LastEditors: Rikka
+ * @Description:
+ * @FilePath: \stark\common\arc\src\store\glob.store.ts
+ */
 import { defineStore } from "pinia";
 import { ref, watch } from "vue";
 import { useStorage } from "@vueuse/core";
@@ -27,7 +35,7 @@ export const useGlobStore = defineStore("arc_glob", () => {
   watch(
     theme,
     (value) => {
-      document.querySelector("html")!.classList[value === "dark" ? "add" : "remove"]("dark");
+      document.querySelector("html")?.classList[value === "dark" ? "add" : "remove"]("dark");
     },
     { immediate: true }
   );

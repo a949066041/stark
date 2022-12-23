@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-23 16:34:46
- * @LastEditTime: 2022-12-23 18:28:50
+ * @LastEditTime: 2022-12-23 18:55:00
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\eslint\vue.eslint.ts
@@ -37,7 +37,7 @@ const vue_override: Linter.ConfigOverride = {
       jsx: true
     }
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "prettier"],
   rules: {
     ...vue_rule,
     ...typescript_rule
