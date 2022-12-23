@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 23:51:25
- * @LastEditTime: 2022-12-01 23:55:01
+ * @LastEditTime: 2022-12-23 18:14:05
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\datepicker.vue
@@ -37,7 +37,6 @@ const date = new Date();
 const month = date.getMonth();
 const year = date.getFullYear();
 
-const dates = [new Date(year, month, 3), new Date(year, month, 15), new Date(year, month, 25)];
 const range = {
   start: new Date(year, month, 6),
   end: new Date(year, month, 23)

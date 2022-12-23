@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 20:49:10
- * @LastEditTime: 2022-11-23 14:34:25
+ * @LastEditTime: 2022-12-23 18:04:06
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\dashboard.vue
@@ -48,7 +48,7 @@ defineExpose({
 </script>
 <script lang="ts">
 export default {
-  name: "[nightclub]Dashboard"
+  name: "[nightclub]NightclubDashboard"
 };
 </script>
 

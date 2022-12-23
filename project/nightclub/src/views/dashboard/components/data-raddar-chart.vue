@@ -1,13 +1,13 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:36:41
- * @LastEditTime: 2022-11-23 14:00:14
+ * @LastEditTime: 2022-12-23 18:04:25
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-raddar-chart.vue
 -->
 <template>
-  <div class="w-full h-full" ref="radder_chart"></div>
+  <div class="w-full h-full" ref="radder_chart" />
 </template>
 <script lang="ts" setup>
 import { nextTick, onMounted, ref } from "vue";

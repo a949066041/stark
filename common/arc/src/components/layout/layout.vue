@@ -52,7 +52,7 @@ function _setCahce() {
 onMounted(() => {
   _setCahce();
 
-  $router.afterEach((guard) => {
+  $router.afterEach((_guard) => {
     _setCahce();
   });
 });

@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 21:00:20
- * @LastEditTime: 2022-11-29 20:51:05
+ * @LastEditTime: 2022-12-23 18:03:35
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\icon.vue
@@ -11,7 +11,7 @@
     <a-tabs v-model="nowTabs">
       <a-tab-pane lazy v-for="tab in tabList" :tab="tab.label" :name="tab.workspace" :key="tab.workspace">
         <div class="flex flex-row flex-wrap">
-          <div v-for="icon in tab.icon" class="icon-item">
+          <div v-for="icon in tab.icon" :key="icon.iconName" class="icon-item">
             <latte-svg
               :namespace="tab.workspace"
               :name="icon.iconName"
@@ -61,7 +61,7 @@ defineExpose({
 </script>
 <script lang="ts">
 export default {
-  name: "[nightclub]Icon"
+  name: "[nightclub]NightclubIcon"
 };
 </script>
 <style lang="less" scoped>

@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 20:05:58
- * @LastEditTime: 2022-12-01 20:46:25
+ * @LastEditTime: 2022-12-23 18:14:39
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\ag-grid.vue
@@ -21,11 +21,11 @@
     <ag-grid-vue
       class="ag-theme-material"
       style="height: 500px"
-      :columnDefs="columnDefs.value"
-      :rowData="rowData"
-      :defaultColDef="defaultColDef"
-      rowSelection="multiple"
-      animateRows="true"
+      :column-defs="columnDefs.value"
+      :row-data="rowData"
+      :default-col-def="defaultColDef"
+      row-selection="multiple"
+      animate-rows="true"
       @cell-clicked="cellWasClicked"
       @grid-ready="onGridReady"
     >
@@ -53,7 +53,7 @@ const onGridReady = (params: GridReadyEvent) => {
   gridApi.value = params.api;
 };
 
-const rowData = reactive<any>([]); // Set rowData to Array of Objects, one Object per Row
+const rowData = reactive<Array<unknown>>([]); // Set rowData to Array of Objects, one Object per Row
 
 // Each Column Definition results in one Column.
 const columnDefs = reactive({

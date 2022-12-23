@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-04 11:35:35
- * @LastEditTime: 2022-12-05 09:49:41
+ * @LastEditTime: 2022-12-23 18:15:19
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\cassanova\src\views\custom-form.vue
@@ -411,6 +411,7 @@ const SuccessIcon = () => {
   });
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Title = (props: any, { slots }: any) => {
   return h("p", props, slots.default?.());
 };

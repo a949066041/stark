@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-23 14:07:42
- * @LastEditTime: 2022-11-23 14:18:45
+ * @LastEditTime: 2022-12-23 18:04:22
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-table.vue
@@ -9,7 +9,7 @@
 <template>
   <div class="w-1/2 pr-4">
     <a-table
-      :dataSource="list"
+      :data-source="list"
       :columns="[
         { dataIndex: 'order', title: 'Order' },
         { dataIndex: 'price', title: 'Price' },

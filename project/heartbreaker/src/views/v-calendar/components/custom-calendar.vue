@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-02 00:05:09
- * @LastEditTime: 2022-12-02 00:10:32
+ * @LastEditTime: 2022-12-23 18:14:09
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\custom-calendar.vue
@@ -12,8 +12,14 @@
       <h2 class="h2">Custom Calendars</h2>
       <p class="text-lg font-medium text-gray-600 mb-6">Roll your own calendars using scoped slots</p>
     </description>
-    <calendar class="custom-calendar max-w-full" :masks="masks" :attributes="attributes" disable-page-swipe is-expanded>
-      <template v-slot:day-content="{ day, attributes }">
+    <calendar
+      class="custom-calendar max-w-full"
+      :masks="masks"
+      :attributes="attributesData"
+      disable-page-swipe
+      is-expanded
+    >
+      <template #day-content="{ day, attributes }">
         <div class="flex flex-col h-full z-10 overflow-hidden">
           <span class="day-label text-sm text-gray-900">{{ day.day }}</span>
           <div class="flex-grow overflow-y-auto overflow-x-auto">
@@ -45,7 +51,7 @@ const year = new Date().getFullYear();
 const masks = {
   weekdays: "WWW"
 };
-const attributes = [
+const attributesData = [
   {
     key: 1,
     customData: {

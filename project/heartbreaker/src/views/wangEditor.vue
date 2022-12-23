@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-29 21:59:33
- * @LastEditTime: 2022-12-01 20:46:40
+ * @LastEditTime: 2022-12-23 18:04:43
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\wangEditor.vue
@@ -14,13 +14,13 @@
       <p>使用 @wangeditor/editor 和 @wangeditor/editor-for-vue@next</p>
     </description>
     <div style="border: 1px solid #ccc">
-      <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" :mode="mode" />
+      <Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :default-config="toolbarConfig" :mode="mode" />
       <Editor
         style="height: 500px; overflow-y: hidden"
         v-model="valueHtml"
-        :defaultConfig="editorConfig"
+        :default-config="editorConfig"
         :mode="mode"
-        @onCreated="handleCreated"
+        @on-created="handleCreated"
       />
     </div>
   </div>

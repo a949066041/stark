@@ -1,13 +1,13 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:47:43
- * @LastEditTime: 2022-11-23 13:59:57
+ * @LastEditTime: 2022-12-23 18:04:34
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-bar-chart.vue
 -->
 <template>
-  <div class="w-full h-full" ref="bar_chart"></div>
+  <div class="w-full h-full" ref="bar_chart" />
 </template>
 <script lang="ts" setup>
 import * as echarts from "echarts/core";

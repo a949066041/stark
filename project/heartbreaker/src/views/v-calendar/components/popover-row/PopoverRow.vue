@@ -1,10 +1,10 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 22:42:56
- * @LastEditTime: 2022-12-01 22:45:48
+ * @LastEditTime: 2022-12-23 18:13:54
  * @LastEditors: Rikka
  * @Description: 
- * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\PopoverRow.vue
+ * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\popover-row\PopoverRow.vue
 -->
 <template>
   <!-- Content row -->
@@ -27,6 +27,7 @@ export default {
   name: "PopoverRow",
   mixins: [childMixin],
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     attribute: Object
   },
   computed: {

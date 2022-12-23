@@ -1,16 +1,16 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-23 14:23:51
- * @LastEditTime: 2022-11-23 15:14:50
+ * @LastEditTime: 2022-12-23 18:04:32
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-code.vue
 -->
 <template>
   <a-card shadow="never" class="box-card" :body-style="{ padding: '0px' }">
-    <div class="w-full h-40 card-image"></div>
+    <div class="w-full h-40 card-image" />
     <div class="relative">
-      <div class="avatar"></div>
+      <div class="avatar" />
       <div class="h-10 pl-20 text-center">
         <p class="text-lg font-bold leading-10 text-teal-500">stark-workspace</p>
       </div>

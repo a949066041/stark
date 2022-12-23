@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-09 09:54:43
- * @LastEditTime: 2022-12-18 12:13:28
+ * @LastEditTime: 2022-12-23 18:10:22
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\tiger\src\views\permission\permission-tree.vue
@@ -19,7 +19,7 @@
       <template #icon="{ _icon }">
         <arc-icon
           v-if="_icon"
-          class="fill-gray-800 mt-1"
+          class-name="fill-gray-800 mt-1"
           :namespace="_icon[0]"
           :name="_icon[1]"
           width="16px"
@@ -28,11 +28,13 @@
       </template>
       <template #title="{ title, key }">
         <span v-if="key === '0-0-1-0'" style="color: #1890ff">{{ title }}</span>
-        <template v-else>{{ title }}</template>
+        <template v-else>
+          {{ title }}
+        </template>
       </template>
     </a-tree>
     <div>
-      <a-button @click="handleSetPermission()">save</a-button>
+      <a-button @click="handleSetPermission()"> save </a-button>
     </div>
   </div>
 </template>

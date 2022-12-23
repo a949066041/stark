@@ -1,14 +1,14 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:04:00
- * @LastEditTime: 2022-11-22 22:54:18
+ * @LastEditTime: 2022-12-23 18:04:30
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-line-chart.vue
 -->
 <template>
   <div class="w-full h-96 px-8">
-    <div class="h-full w-full bg-white rounded-md" ref="chart"></div>
+    <div class="h-full w-full bg-white rounded-md" ref="chart" />
   </div>
 </template>
 <script lang="ts">
