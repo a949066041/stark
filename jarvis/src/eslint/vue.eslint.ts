@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-23 16:34:46
- * @LastEditTime: 2022-12-23 22:23:30
+ * @LastEditTime: 2022-12-23 22:36:36
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\eslint\vue.eslint.ts
@@ -34,7 +34,7 @@ const vue_override: Linter.ConfigOverride = {
       jsx: true
     }
   },
-  plugins: ["@typescript-eslint", "prettier", "unicorn", "simple-import-sort", "import"],
+  plugins: ["@typescript-eslint", "prettier", "unicorn", "simple-import-sort", "import", "sort-annotation"],
   extends: [
     "plugin:vue/vue3-strongly-recommended",
     "eslint:recommended",

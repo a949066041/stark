@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-23 18:35:55
- * @LastEditTime: 2022-12-23 22:23:32
+ * @LastEditTime: 2022-12-23 22:36:42
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\eslint\typescript.eslint.ts
@@ -25,9 +25,7 @@ export const typescript_override: Linter.ConfigOverride = {
   parserOptions: {
     ecmaVersion: "latest"
   },
-  plugins: ["@typescript-eslint", "unicorn", "prettier", "simple-import-sort", "import"],
+  plugins: ["@typescript-eslint", "unicorn", "prettier", "simple-import-sort", "import", "sort-annotation"],
   extends: ["plugin:@typescript-eslint/recommended", "prettier", "plugin:unicorn/recommended"],
-  rules: {
-    ...typescript_rule
-  }
+  rules: typescript_rule
 };

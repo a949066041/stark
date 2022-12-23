@@ -13,6 +13,7 @@ importers:
       eslint-plugin-import: ^2.26.0
       eslint-plugin-prettier: ^4.2.1
       eslint-plugin-simple-import-sort: ^8.0.0
+      eslint-plugin-sort-annotation: ^1.0.5
       eslint-plugin-unicorn: ^45.0.2
       eslint-plugin-vue: ^9.8.0
       http-server: ^14.1.1
@@ -31,6 +32,7 @@ importers:
       eslint-plugin-import: 2.26.0_tqyj5ytb5g6r5ett7xxedhk6eq
       eslint-plugin-prettier: 4.2.1_kl4pe43v5b43npmso5hoplpbyi
       eslint-plugin-simple-import-sort: 8.0.0_eslint@8.30.0
+      eslint-plugin-sort-annotation: 1.0.5_lzzuuodtsqwxnvqeq4g4likcqa
       eslint-plugin-unicorn: 45.0.2_eslint@8.30.0
       eslint-plugin-vue: 9.8.0_eslint@8.30.0
       http-server: 14.1.1
@@ -7692,6 +7694,17 @@ packages:
       eslint: '>=5.0.0'
     dependencies:
       eslint: 8.30.0
+    dev: true
+
+  /eslint-plugin-sort-annotation/1.0.5_lzzuuodtsqwxnvqeq4g4likcqa:
+    resolution: {integrity: sha512-vXOAcL3fTomCoGup7IEgLBOYyhCheOBB9KUosW9SKslmq4743Fp40VcjH0Gal4yNQfAanrYWM4fmoGh9hjw11w==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dependencies:
+      '@typescript-eslint/utils': 5.47.0_lzzuuodtsqwxnvqeq4g4likcqa
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
+      - typescript
     dev: true
 
   /eslint-plugin-unicorn/45.0.2_eslint@8.30.0:
