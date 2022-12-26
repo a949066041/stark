@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 17:17:18
- * @LastEditTime: 2022-12-13 21:51:45
+ * @LastEditTime: 2022-12-23 22:23:59
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\menu.vue
@@ -13,8 +13,10 @@
 </template>
 <script lang="ts" setup>
 import { Ref, ref, watch } from "vue";
+
 import { cycleMenu, IMenu, useGlobStore, useMenuStore, usePermissionStore } from "../../../store";
 import MenuTree from "./menu-tree";
+
 const globStore = useGlobStore();
 const menuStore = useMenuStore();
 const permissionStore = usePermissionStore();
@@ -27,13 +29,16 @@ function handleSetMenu() {
     if (!meta) {
       return true;
     }
-    return (meta.permission as string[]).some((p) => permission_list.data.includes(p));
+    const permission = meta.permission as string[];
+    if (permission.includes("stark")) {
+      return true;
+    }
+    return permission.some((p) => permission_list.data.includes(p));
   });
   storeMenu.value = cycleMenu(_storeMenu, "root");
 }
 handleSetMenu();
 watch(permission_list, () => {
-  console.log(permission_list);
   handleSetMenu();
 });
 </script>

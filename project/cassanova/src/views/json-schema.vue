@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-05 10:02:14
- * @LastEditTime: 2022-12-05 10:18:09
+ * @LastEditTime: 2022-12-23 22:23:14
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\cassanova\src\views\json-schema.vue
@@ -20,17 +20,21 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { createForm } from "@formily/core";
-import { createSchemaField } from "@formily/vue";
 import {
-  Form,
-  FormItem,
-  DatePicker,
-  Checkbox,
+  ArrayCards,
+  ArrayTable,
   Cascader,
+  Checkbox,
+  DatePicker,
   Editable,
+  Form,
+  FormCollapse,
+  FormGrid,
+  FormItem,
+  FormLayout,
+  FormTab,
   Input,
-  Switch,
+  InputNumber,
   Password,
   PreviewText,
   Radio,
@@ -38,17 +42,14 @@ import {
   Select,
   Space,
   Submit,
+  Switch,
   TimePicker,
   Transfer,
-  Upload,
-  FormGrid,
-  FormLayout,
-  FormTab,
-  FormCollapse,
-  ArrayTable,
-  ArrayCards,
-  InputNumber
+  Upload
 } from "@formily/antdv-x3";
+import { createForm } from "@formily/core";
+import { createSchemaField } from "@formily/vue";
+
 import { CustomJSONSchema } from "./schema/json-schema";
 
 const schema = CustomJSONSchema.schema;

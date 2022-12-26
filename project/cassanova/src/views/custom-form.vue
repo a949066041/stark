@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-04 11:35:35
- * @LastEditTime: 2022-12-05 09:49:41
+ * @LastEditTime: 2022-12-23 22:23:20
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\cassanova\src\views\custom-form.vue
@@ -399,10 +399,10 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { h } from "vue";
+import { Cascader, DatePicker, FormItem, FormLayout, Input, InputNumber, Select, TimePicker } from "@formily/antdv-x3";
 import { createForm } from "@formily/core";
 import { createSchemaField, FormProvider } from "@formily/vue";
-import { FormItem, InputNumber, Input, Cascader, Select, DatePicker, FormLayout, TimePicker } from "@formily/antdv-x3";
+import { h } from "vue";
 
 const SuccessIcon = () => {
   return h("i", {
@@ -411,6 +411,7 @@ const SuccessIcon = () => {
   });
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Title = (props: any, { slots }: any) => {
   return h("p", props, slots.default?.());
 };

@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 13:44:35
- * @LastEditTime: 2022-11-12 12:58:14
+ * @LastEditTime: 2022-12-23 22:23:50
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\login\login.vue
@@ -9,7 +9,7 @@
 <template>
   <div class="w-screen h-screen bg-gray-50 flex flex-row text-gray-700">
     <div class="login-left">
-      <Vue3Lottie animationLink="/arc/lottie-login.json" />
+      <Vue3Lottie animation-link="/arc/lottie-login.json" />
     </div>
     <div class="basis-1/2 flex flex-col items-center justify-center">
       <div class="login-box">
@@ -49,6 +49,7 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
 import { Vue3Lottie } from "vue3-lottie";
+
 const router = useRouter();
 function handleLogin() {
   router.push("/view");

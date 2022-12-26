@@ -1,14 +1,15 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 16:35:07
- * @LastEditTime: 2022-12-13 21:46:41
+ * @LastEditTime: 2022-12-23 22:23:38
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\menu.store.ts
  */
-import { defineStore, _GettersTree } from "pinia";
+import { _GettersTree, defineStore } from "pinia";
 import { computed, reactive, ref } from "vue";
 import { RouteMeta, RouteRecordRaw } from "vue-router";
+
 import { EnhanceRouter, IEnhanceRouter } from "..";
 
 export interface IMenu {
@@ -66,6 +67,7 @@ export function cycleMenu(menu: EnhanceRouter[], find_name: string): IMenu[] {
     .filter(({ parent_name }) => parent_name === find_name)
     .map((item) => {
       const child_menu = cycleMenu(menu, item.name);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       item["children"] = child_menu;
       const _menu: IMenu = {

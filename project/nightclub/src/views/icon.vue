@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 21:00:20
- * @LastEditTime: 2022-11-29 20:51:05
+ * @LastEditTime: 2022-12-26 19:22:50
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\icon.vue
@@ -11,7 +11,7 @@
     <a-tabs v-model="nowTabs">
       <a-tab-pane lazy v-for="tab in tabList" :tab="tab.label" :name="tab.workspace" :key="tab.workspace">
         <div class="flex flex-row flex-wrap">
-          <div v-for="icon in tab.icon" class="icon-item">
+          <div v-for="icon in tab.icon" :key="icon.iconName" class="icon-item">
             <latte-svg
               :namespace="tab.workspace"
               :name="icon.iconName"
@@ -34,6 +34,7 @@
 </template>
 <script lang="ts" setup>
 import { all_icon } from "@stark/common-iron";
+
 const iron_icon = all_icon.filter(({ namespace }) => namespace === "iron");
 const alipay_icon = all_icon.filter(({ namespace }) => namespace === "alipay");
 const warning_icon = all_icon.filter(({ namespace }) => namespace === "warning");
@@ -61,13 +62,15 @@ defineExpose({
 </script>
 <script lang="ts">
 export default {
-  name: "[nightclub]Icon"
+  name: "[nightclub]NightclubIcon"
 };
 </script>
 <style lang="less" scoped>
 .icon-item {
   @apply w-28 h-20 outline outline-1 outline-gray-300 flex flex-col justify-center items-center cursor-pointer;
+
   margin: 1px;
+
   &:hover {
     @apply bg-gray-100 dark:bg-zinc-900;
   }

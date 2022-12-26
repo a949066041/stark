@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-07 15:41:23
- * @LastEditTime: 2022-12-13 21:24:13
+ * @LastEditTime: 2022-12-23 18:10:09
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\components\layout\components\menu-tree.tsx
@@ -24,7 +24,7 @@ const MenuTree = defineComponent({
         const [namespace, name] = props.config.meta.menu_icon as [string, string];
         return () => (
           <ArcIcon
-            class="anticon !inline-flex !dark:text-white"
+            className="anticon !inline-flex !dark:text-white"
             width="14px"
             height="14px"
             namespace={namespace}
@@ -41,7 +41,13 @@ const MenuTree = defineComponent({
           <MenuItem key={props.config.path}>
             {{
               icon: renderIcon(),
-              default: () => <router-link to={`/view/${props.config.path}`}>{props.config.meta?.title}</router-link>
+              default: () => {
+                if (props.config.path) {
+                  return <router-link to={`/view/${props.config.path}`}>{props.config.meta?.title}</router-link>;
+                } else {
+                  return <span>{props.config.meta?.title}</span>;
+                }
+              }
             }}
           </MenuItem>
         );

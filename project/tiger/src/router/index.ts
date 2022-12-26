@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-05 10:37:34
- * @LastEditTime: 2022-12-09 16:06:13
+ * @LastEditTime: 2022-12-18 10:32:30
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\tiger\src\router\index.ts
@@ -25,7 +25,8 @@ const router_list: EnhanceRouter[] = [
     name: "[tiger]CacheMenu",
     meta: {
       title: "缓存测试",
-      permission: ["feature-cache"]
+      permission: ["feature-cache"],
+      menu_icon: ["iron", "cache"]
     }
   },
   {
@@ -65,7 +66,8 @@ const router_list: EnhanceRouter[] = [
     name: "[tiger]OperateMenu",
     meta: {
       title: "跨页操作",
-      permission: ["feature-operate"]
+      permission: ["feature-operate"],
+      menu_icon: ["iron", "operate"]
     }
   },
   {
@@ -96,7 +98,8 @@ const router_list: EnhanceRouter[] = [
     name: "[tiger]Permission",
     meta: {
       title: "权限",
-      permission: ["feature-permission"]
+      permission: ["feature-permission"],
+      menu_icon: ["iron", "permission"]
     }
   },
   {

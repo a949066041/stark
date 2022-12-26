@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 15:20:20
- * @LastEditTime: 2022-12-07 17:31:32
+ * @LastEditTime: 2022-12-23 22:23:53
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\layout.vue
@@ -23,15 +23,16 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { nextTick, onMounted, reactive, ref } from "vue";
+import { storeToRefs } from "pinia";
+import { nextTick, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
+
+import { useCacheStore } from "../../store";
 import LayoutMenu from "./components/menu.vue";
 import LayoutTag from "./components/tag.vue";
 import LayoutTopBar from "./components/top-bar.vue";
-import { useCacheStore } from "../../store";
-import { storeToRefs } from "pinia";
 
-const views = ref([]);
+const views = ref<{ name: string }>();
 const $router = useRouter();
 const $route = useRoute();
 
@@ -42,10 +43,9 @@ const cacheList = _cacheStore.cacheList;
 
 function _setCahce() {
   nextTick(() => {
-    // @ts-ignore
-    const viewName: string = views.value.name;
-    if (viewName) {
-      cacheStore.setCache(viewName, views.value, $route);
+    const viewName = views.value;
+    if (viewName && viewName.name) {
+      cacheStore.setCache(viewName.name, views.value, $route);
     }
   });
 }
@@ -53,7 +53,7 @@ function _setCahce() {
 onMounted(() => {
   _setCahce();
 
-  $router.afterEach((guard) => {
+  $router.afterEach((_guard) => {
     _setCahce();
   });
 });

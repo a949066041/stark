@@ -1,9 +1,9 @@
 <template>
-  <latte-svg :class="class" :width="width" :height="height" :namespace="namespace" :name="name" />
+  <latte-svg :class="className" :width="width" :height="height" :namespace="namespace" :name="name" />
 </template>
 <script lang="ts">
 export default {
-  name: "[arc]Icon"
+  name: "[arc]ArcIcon"
 };
 </script>
 <script lang="ts" setup>
@@ -12,10 +12,11 @@ const props = defineProps({
   namespace: { type: String, required: true },
   width: { type: String, required: true },
   height: { type: String, required: true },
-  class: { type: String, required: true }
+  className: { type: String, required: true }
 });
 defineExpose({
-  name: "[arc]Icon"
+  name: "[arc]Icon",
+  props
 });
 </script>
 <style lang="less" scoped></style>

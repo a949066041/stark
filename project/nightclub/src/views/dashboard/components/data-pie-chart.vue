@@ -1,18 +1,18 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:42:34
- * @LastEditTime: 2022-11-23 14:00:09
+ * @LastEditTime: 2022-12-23 22:22:07
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-pie-chart.vue
 -->
 <template>
-  <div class="w-full h-full" ref="pie_chart"></div>
+  <div class="w-full h-full" ref="pie_chart" />
 </template>
 <script lang="ts" setup>
-import * as echarts from "echarts/core";
-import { TitleComponent, ToolboxComponent, TooltipComponent, LegendComponent } from "echarts/components";
 import { PieChart } from "echarts/charts";
+import { LegendComponent, TitleComponent, ToolboxComponent, TooltipComponent } from "echarts/components";
+import * as echarts from "echarts/core";
 import { LabelLayout } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
 import { nextTick, onMounted, ref } from "vue";

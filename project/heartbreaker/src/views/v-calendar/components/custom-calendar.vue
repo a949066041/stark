@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-02 00:05:09
- * @LastEditTime: 2022-12-02 00:10:32
+ * @LastEditTime: 2022-12-26 19:22:30
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\custom-calendar.vue
@@ -12,8 +12,14 @@
       <h2 class="h2">Custom Calendars</h2>
       <p class="text-lg font-medium text-gray-600 mb-6">Roll your own calendars using scoped slots</p>
     </description>
-    <calendar class="custom-calendar max-w-full" :masks="masks" :attributes="attributes" disable-page-swipe is-expanded>
-      <template v-slot:day-content="{ day, attributes }">
+    <calendar
+      class="custom-calendar max-w-full"
+      :masks="masks"
+      :attributes="attributesData"
+      disable-page-swipe
+      is-expanded
+    >
+      <template #day-content="{ day, attributes }">
         <div class="flex flex-col h-full z-10 overflow-hidden">
           <span class="day-label text-sm text-gray-900">{{ day.day }}</span>
           <div class="flex-grow overflow-y-auto overflow-x-auto">
@@ -37,15 +43,15 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { Calendar } from "v-calendar";
 import { Description } from "@stark/common-silver";
+import { Calendar } from "v-calendar";
 
 const month = new Date().getMonth();
 const year = new Date().getFullYear();
 const masks = {
   weekdays: "WWW"
 };
-const attributes = [
+const attributesData = [
   {
     key: 1,
     customData: {
@@ -125,11 +131,13 @@ defineExpose({
 </script>
 <style lang="less" scoped>
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
 }
+
 ::-webkit-scrollbar-track {
   display: none;
 }
+
 :deep(.custom-calendar.vc-container) {
   --day-border: 1px solid #b8c2cc;
   --day-border-highlight: 1px solid #b8c2cc;
@@ -137,41 +145,51 @@ defineExpose({
   --day-height: 90px;
   --weekday-bg: #f8fafc;
   --weekday-border: 1px solid #eaeaea;
-  border-radius: 0;
+
   width: 100%;
+  border-radius: 0;
+
   & .vc-header {
-    background-color: #f1f5f8;
     padding: 10px 0;
+    background-color: #f1f5f8;
   }
+
   & .vc-weeks {
     padding: 0;
   }
+
   & .vc-weekday {
-    background-color: var(--weekday-bg);
-    border-bottom: var(--weekday-border);
-    border-top: var(--weekday-border);
     padding: 5px 0;
+    background-color: var(--weekday-bg);
+    border-top: var(--weekday-border);
+    border-bottom: var(--weekday-border);
   }
+
   & .vc-day {
-    padding: 0 5px 3px 5px;
-    text-align: left;
-    height: var(--day-height);
     min-width: var(--day-width);
+    height: var(--day-height);
+    padding: 0 5px 3px;
+    text-align: left;
     background-color: white;
+
     &.weekday-1,
     &.weekday-7 {
       background-color: #eff8ff;
     }
+
     &:not(.on-bottom) {
       border-bottom: var(--day-border);
+
       &.weekday-1 {
         border-bottom: var(--day-border-highlight);
       }
     }
+
     &:not(.on-right) {
       border-right: var(--day-border);
     }
   }
+
   & .vc-day-dots {
     margin-bottom: 5px;
   }

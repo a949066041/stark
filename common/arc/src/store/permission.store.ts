@@ -1,13 +1,13 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-09 09:46:23
- * @LastEditTime: 2022-12-13 21:29:36
+ * @LastEditTime: 2022-12-23 19:05:32
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\permission.store.ts
  */
 import { defineStore } from "pinia";
-import { reactive, ref } from "vue";
+import { reactive } from "vue";
 
 export const usePermissionStore = defineStore("arc_permission", () => {
   const permission_list = reactive({

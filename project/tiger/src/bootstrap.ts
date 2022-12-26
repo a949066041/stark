@@ -8,10 +8,12 @@
  */
 import "./styles/tailwind.less";
 
-import { createApp } from "vue";
 import { App, router, useMenuStore } from "@stark/common-arc";
 import { createPinia } from "pinia";
+import { createApp } from "vue";
+
 import { router_list } from "./router";
+
 const app = createApp(App);
 const pinia = createPinia();
 const menuStore = useMenuStore(pinia);

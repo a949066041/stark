@@ -1,13 +1,13 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-15 16:25:57
- * @LastEditTime: 2022-12-08 11:14:50
+ * @LastEditTime: 2022-12-23 22:24:47
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\cache.store.ts
  */
 
-import { defineStore, _GettersTree } from "pinia";
+import { _GettersTree, defineStore } from "pinia";
 import { computed, ref } from "vue";
 import { RouteLocationNormalizedLoaded, Router } from "vue-router";
 
@@ -35,22 +35,23 @@ export const useCacheStore = defineStore("arc_cache", () => {
     _cache.value[name] = cache;
     if (route.meta["title"]) {
       const tagIndex = _tags.value.findIndex((item) => item.name === name);
-      if (tagIndex !== -1) {
-        _tags.value[tagIndex].link = route.fullPath;
-      } else {
+      if (tagIndex === -1) {
         _tags.value.push({
           name,
           link: route.fullPath,
           title: route.meta["title"] as string
         });
+      } else {
+        _tags.value[tagIndex].link = route.fullPath;
       }
     }
   }
 
-  function deleteCache<T>(name: string, router: Router) {
+  function deleteCache(name: string, router: Router) {
     if (_cache.value[name]) {
       const cacheList = Object.keys(_cache.value);
       if (cacheList.length === 1) {
+        //
       } else {
         const cacheIndex = cacheList.indexOf(name);
         if (cacheIndex === 0) {
@@ -61,6 +62,9 @@ export const useCacheStore = defineStore("arc_cache", () => {
       }
       delete _cache.value[name];
       _tags.value = _tags.value.filter((item) => item.name !== name);
+      if (_tags.value.length === 0) {
+        router.push("/view");
+      }
     }
   }
 
