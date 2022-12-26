@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@microsoft/eslint-formatter-sarif': ^3.0.0
       '@stark/jarvis': workspace:^1.0.0
       '@typescript-eslint/eslint-plugin': ^5.47.0
       '@typescript-eslint/parser': ^5.47.0
@@ -34,6 +35,7 @@ importers:
       vue-eslint-parser: ^9.1.0
       wireit: ^0.7.2
     devDependencies:
+      '@microsoft/eslint-formatter-sarif': 3.0.0
       '@stark/jarvis': link:jarvis
       '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
       '@typescript-eslint/parser': 5.47.0_lzzuuodtsqwxnvqeq4g4likcqa
@@ -3136,6 +3138,18 @@ packages:
 
   /@mdx-js/util/1.6.22:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
+
+  /@microsoft/eslint-formatter-sarif/3.0.0:
+    resolution: {integrity: sha512-KIKkT44hEqCzqxODYwFMUvYEK0CrdHx/Ll9xiOWgFbBSRuzbxmVy4d/tzfgoucGz72HJZNOMjuyzFTBKntRK5Q==}
+    engines: {node: '>= 14'}
+    dependencies:
+      eslint: 8.30.0
+      jschardet: 3.0.0
+      lodash: 4.17.21
+      utf8: 3.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@milkdown/core/6.5.4_6c63lmpqk5eqlspcoimzsuubvy:
     resolution: {integrity: sha512-OGdpNT/IKljYErB1kVp83GTjGBQ9uGePFdV/tj99p6R4gqW7NEhml+BVn95+0XXjf/ey+R8Fh5ISW4x1c7Rg0A==}
@@ -9890,6 +9904,11 @@ packages:
     dependencies:
       argparse: 2.0.1
 
+  /jschardet/3.0.0:
+    resolution: {integrity: sha512-lJH6tJ77V8Nzd5QWRkFYCLc13a3vADkh3r/Fi8HupZGWk2OVVDfnZP8V/VgQgZ+lzW0kG2UGb5hFgt3V3ndotQ==}
+    engines: {node: '>=0.1.90'}
+    dev: true
+
   /jsesc/0.5.0:
     resolution: {integrity: sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA==}
     hasBin: true
@@ -14757,6 +14776,10 @@ packages:
   /use/3.1.1:
     resolution: {integrity: sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /utf8/3.0.0:
+    resolution: {integrity: sha512-E8VjFIQ/TyQgp+TZfS6l8yp/xWppSAHzidGiRrqe4bK4XP9pTRyKFgGJpO3SN7zdX4DeomTrwaseCHovfpFcqQ==}
     dev: true
 
   /util-deprecate/1.0.2:
