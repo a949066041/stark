@@ -11,7 +11,7 @@
     "prepare": "turbo prepare:build",
     "plop": "pnpm --filter @stark/friday generate",
     "lint": "eslint . --ext .js --ext .vue --ext .ts --cache",
-    "lint:stylelint": "pnpm --filter @stark/jarvis prepare:build  && stylelint \"**/*.{less,vue}\""
+    "lint:stylelint": "stylelint \"**/*.{less,vue}\" --custom-formatter=node_modules/stylelint-sarif-formatter -o stylelint-results.sarif"
   },
   "keywords": [],
   "author": "",
