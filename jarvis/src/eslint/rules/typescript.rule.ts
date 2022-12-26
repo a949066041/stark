@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-23 18:27:52
- * @LastEditTime: 2022-12-23 22:36:57
+ * @LastEditTime: 2022-12-26 21:14:31
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\eslint\rules\typescript.rule.ts
@@ -23,6 +23,7 @@ export const typescript_rule: Linter.RulesRecord = {
   "unicorn/prevent-abbreviations": "off",
   "unicorn/prefer-node-protocol": "off",
   "unicorn/prefer-module": "off",
+  "unicorn/no-null": "off",
   "unicorn/import-style": [
     "error",
     {

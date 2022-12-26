@@ -1,8 +1,7 @@
-/* eslint-disable unicorn/no-null */
 /*
  * @Author: Rikka
  * @Date: 2022-12-26 18:33:21
- * @LastEditTime: 2022-12-26 19:41:16
+ * @LastEditTime: 2022-12-26 21:17:49
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\stylelint\rules\common.rule.ts

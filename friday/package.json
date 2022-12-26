@@ -8,7 +8,8 @@
     "generate": "plop --plopfile src/plopfile.js && pnpm install",
     "g": "plop --plopfile src/plopfile.js ",
     "prepare:build": "tsc",
-    "generate:dist": "node ./src/dist.js"
+    "generate:dist": "node ./src/dist.js",
+    "format-sarif": "tsc && node ./src/format-sarif.js"
   },
   "keywords": [],
   "author": "",
