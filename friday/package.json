@@ -15,14 +15,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/fs-extra": "^9.0.13",
-    "@types/node": "^16",
     "@stark/project-cassanova": "workspace:^1.0.0",
     "@stark/project-heartbreaker": "workspace:^1.0.0",
+    "@stark/project-midas": "workspace:^1.0.0",
     "@stark/project-nightclub": "workspace:^1.0.0",
     "@stark/project-sneaky": "workspace:^1.0.0",
     "@stark/project-tiger": "workspace:^1.0.0",
-    "@stark/project-midas": "workspace:^1.0.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^16",
+    "@types/sarif": "^2.1.4",
     "plop": "^3.1.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3"

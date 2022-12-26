@@ -136,6 +136,7 @@ importers:
       '@stark/project-tiger': workspace:^1.0.0
       '@types/fs-extra': ^9.0.13
       '@types/node': ^16
+      '@types/sarif': ^2.1.4
       fs-extra: ^11.1.0
       plop: ^3.1.1
       tslib: ^2.4.1
@@ -152,6 +153,7 @@ importers:
       '@stark/project-tiger': link:../project/tiger
       '@types/fs-extra': 9.0.13
       '@types/node': 16.18.3
+      '@types/sarif': 2.1.4
       plop: 3.1.1
       tslib: 2.4.1
       typescript: 4.9.3
@@ -3807,6 +3809,10 @@ packages:
 
   /@types/retry/0.12.0:
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
+
+  /@types/sarif/2.1.4:
+    resolution: {integrity: sha512-4xKHMdg3foh3Va1fxTzY1qt8QVqmaJpGWsVvtjQrJBn+/bkig2pWFKJ4FPI2yLI4PAj0SUKiPO4Vd7ggYIMZjQ==}
+    dev: true
 
   /@types/sax/1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
