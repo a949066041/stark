@@ -22,6 +22,7 @@
     "@stark/project-nightclub": "workspace:^1.0.0",
     "@stark/project-sneaky": "workspace:^1.0.0",
     "@stark/project-tiger": "workspace:^1.0.0",
+    "@stark/project-midas": "workspace:^1.0.0",
     "plop": "^3.1.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3"

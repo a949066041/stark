@@ -30,6 +30,7 @@ importers:
       stylelint-config-standard: ^29.0.0
       stylelint-less: ^1.0.6
       stylelint-prettier: ^2.0.0
+      stylelint-sarif-formatter: ^1.0.7
       turbo: ^1.6.3
       typescript: ^4.9.4
       vue-eslint-parser: ^9.1.0
@@ -61,6 +62,7 @@ importers:
       stylelint-config-standard: 29.0.0_stylelint@14.16.0
       stylelint-less: 1.0.6_stylelint@14.16.0
       stylelint-prettier: 2.0.0_lzrral356zwd7lm6e3scl4w4om
+      stylelint-sarif-formatter: 1.0.7
       turbo: 1.6.3
       typescript: 4.9.4
       vue-eslint-parser: 9.1.0_eslint@8.30.0
@@ -128,6 +130,7 @@ importers:
       '@pnpm/find-workspace-dir': ^5.0.0
       '@stark/project-cassanova': workspace:^1.0.0
       '@stark/project-heartbreaker': workspace:^1.0.0
+      '@stark/project-midas': workspace:^1.0.0
       '@stark/project-nightclub': workspace:^1.0.0
       '@stark/project-sneaky': workspace:^1.0.0
       '@stark/project-tiger': workspace:^1.0.0
@@ -143,6 +146,7 @@ importers:
     devDependencies:
       '@stark/project-cassanova': link:../project/cassanova
       '@stark/project-heartbreaker': link:../project/heartbreaker
+      '@stark/project-midas': link:../project/midas
       '@stark/project-nightclub': link:../project/nightclub
       '@stark/project-sneaky': link:../project/sneaky
       '@stark/project-tiger': link:../project/tiger
@@ -4658,7 +4662,7 @@ packages:
       source-map: 0.6.1
       vue-template-es2015-compiler: 1.9.1
     optionalDependencies:
-      prettier: 2.8.0
+      prettier: 2.8.1
     transitivePeerDependencies:
       - arc-templates
       - atpl
@@ -4727,7 +4731,7 @@ packages:
       source-map: 0.6.1
       vue-template-es2015-compiler: 1.9.1
     optionalDependencies:
-      prettier: 2.8.0
+      prettier: 2.8.1
     transitivePeerDependencies:
       - arc-templates
       - atpl
@@ -13848,6 +13852,12 @@ packages:
       prettier: 2.8.1
       prettier-linter-helpers: 1.0.0
       stylelint: 14.16.0
+    dev: true
+
+  /stylelint-sarif-formatter/1.0.7:
+    resolution: {integrity: sha512-g6f5rOQVPBdWbvePAXV+vWomb38Lkw3/lNN9a/Uj92pvwNesm+/fKfX+g7RxhRJhvhOj+In8K2LRVFq3rcCbtQ==}
+    dependencies:
+      tslib: 2.4.1
     dev: true
 
   /stylelint/14.16.0:

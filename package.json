@@ -10,7 +10,7 @@
     "serve:website": "wireit",
     "prepare": "turbo prepare:build",
     "plop": "pnpm --filter @stark/friday generate",
-    "lint": "eslint . --ext .js --ext .vue --ext .ts",
+    "lint": "eslint . --ext .js --ext .vue --ext .ts --cache",
     "lint:stylelint": "pnpm --filter @stark/jarvis prepare:build  && stylelint \"**/*.{less,vue}\""
   },
   "keywords": [],
@@ -43,6 +43,7 @@
     "stylelint-config-standard": "^29.0.0",
     "stylelint-less": "^1.0.6",
     "stylelint-prettier": "^2.0.0",
+    "stylelint-sarif-formatter": "^1.0.7",
     "turbo": "^1.6.3",
     "typescript": "^4.9.4",
     "vue-eslint-parser": "^9.1.0",
