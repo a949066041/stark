@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 21:00:20
- * @LastEditTime: 2022-12-23 22:21:57
+ * @LastEditTime: 2022-12-26 19:22:50
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\icon.vue
@@ -68,7 +68,9 @@ export default {
 <style lang="less" scoped>
 .icon-item {
   @apply w-28 h-20 outline outline-1 outline-gray-300 flex flex-col justify-center items-center cursor-pointer;
+
   margin: 1px;
+
   &:hover {
     @apply bg-gray-100 dark:bg-zinc-900;
   }

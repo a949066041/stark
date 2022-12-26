@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-23 14:23:51
- * @LastEditTime: 2022-12-23 18:04:32
+ * @LastEditTime: 2022-12-26 19:22:12
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-code.vue
@@ -40,13 +40,15 @@ defineExpose({
 <style lang="less" scoped>
 .avatar {
   @apply w-20 h-20 rounded-full bg-red-200 absolute -top-10 left-3;
+
   background-image: url("@stark/common-arc/src/assets/avatar.png");
   background-size: contain;
 }
+
 .card-image {
   background-image: url("@stark/common-copper/assets/image.webp");
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 </style>

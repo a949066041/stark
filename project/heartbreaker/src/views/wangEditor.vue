@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-29 21:59:33
- * @LastEditTime: 2022-12-23 22:22:42
+ * @LastEditTime: 2022-12-26 19:22:54
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\wangEditor.vue
@@ -90,6 +90,7 @@ defineExpose({
   --w-e-modal-button-bg-color: #fafafa;
   --w-e-modal-button-border-color: #d9d9d9;
 }
+
 .private-container {
   @apply p-4;
 }

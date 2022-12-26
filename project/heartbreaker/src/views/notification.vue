@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-02 21:09:49
- * @LastEditTime: 2022-12-04 11:21:54
+ * @LastEditTime: 2022-12-26 19:23:03
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\notification.vue
@@ -130,120 +130,140 @@ defineExpose({
 <style lang="less" scoped>
 h2 {
   font-weight: 300;
+
   a {
-    color: black;
     font-size: 12px;
+    color: black;
   }
 }
+
 button {
-  display: inline-block;
   box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  vertical-align: top;
+  cursor: pointer;
+  background: #02ccba;
   border: 0;
   border-radius: 3px;
-  color: white;
-  vertical-align: top;
-  text-decoration: none;
-  font-size: 12px;
-  font-family: inherit;
-  cursor: pointer;
   outline: none;
-  transition: all 500ms;
-  padding: 12px;
   box-shadow: none;
-  background: #02ccba;
-  font-weight: 600;
-  width: 100%;
-  letter-spacing: 1px;
-  box-shadow: 0 5px 15px 0px rgba(46, 61, 73, 0.1);
+  box-shadow: 0 5px 15px 0 rgb(46 61 73 / 10%);
+  transition: all 500ms;
+
   &.success {
     background: #68cd86;
   }
+
   &.warn {
     background: #ffb648;
   }
+
   &.error {
     background: #e54d42;
   }
+
   &:active {
     opacity: 0.8;
   }
 }
+
 .sub-button {
   display: inline-block;
-  background: #e54d42;
   padding: 4px;
-  box-shadow: 0 5px 15px 0px rgba(46, 61, 73, 0.1);
+  background: #e54d42;
+  box-shadow: 0 5px 15px 0 rgb(46 61 73 / 10%);
 }
+
 /*
   EXAMPLES
 */
 .notification.n-light {
+  padding: 10px 20px;
   margin: 10px;
   margin-bottom: 0;
-  border-radius: 3px;
   font-size: 13px;
-  padding: 10px 20px;
   color: #495061;
   background: #eaf4fe;
   border: 1px solid #d4e8fd;
+  border-radius: 3px;
+
   .notification-title {
-    letter-spacing: 1px;
-    text-transform: uppercase;
     font-size: 10px;
     color: #2589f3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 }
+
 .custom-template {
   display: flex;
   flex-direction: row;
+  /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
   flex-wrap: nowrap;
-  text-align: left;
-  font-size: 13px;
-  margin: 5px;
-  margin-bottom: 0;
   align-items: center;
   justify-content: center;
+  margin: 5px;
+  margin-bottom: 0;
+  font-size: 13px;
+  text-align: left;
+  background: #e8f9f0;
+  border: 2px solid #d0f2e1;
+
   &,
   & > div {
     box-sizing: border-box;
   }
-  background: #e8f9f0;
-  border: 2px solid #d0f2e1;
+
   .custom-template-icon {
     flex: 0 1 auto;
-    color: #15c371;
-    font-size: 32px;
     padding: 0 10px;
+    font-size: 32px;
+    color: #15c371;
   }
+
   .custom-template-close {
     flex: 0 1 auto;
     padding: 0 20px;
     font-size: 16px;
-    opacity: 0.2;
     cursor: pointer;
+    opacity: 0.2;
+
     &:hover {
       opacity: 0.8;
     }
   }
+
   .custom-template-content {
-    padding: 10px;
     flex: 1 0 auto;
+    padding: 10px;
+
     .custom-template-title {
-      letter-spacing: 1px;
-      text-transform: uppercase;
       font-size: 10px;
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
   }
 }
+
 .block {
   display: flex;
 }
+
 .v-fade-left-enter-active,
 .v-fade-left-leave-active,
 .v-fade-left-move {
   transition: all 0.5s;
 }
+
 .v-fade-left-enter,
 .v-fade-left-leave-to {
   opacity: 0;

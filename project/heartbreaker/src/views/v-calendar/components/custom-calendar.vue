@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-02 00:05:09
- * @LastEditTime: 2022-12-23 22:22:59
+ * @LastEditTime: 2022-12-26 19:22:30
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\custom-calendar.vue
@@ -131,11 +131,13 @@ defineExpose({
 </script>
 <style lang="less" scoped>
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
 }
+
 ::-webkit-scrollbar-track {
   display: none;
 }
+
 :deep(.custom-calendar.vc-container) {
   --day-border: 1px solid #b8c2cc;
   --day-border-highlight: 1px solid #b8c2cc;
@@ -143,41 +145,51 @@ defineExpose({
   --day-height: 90px;
   --weekday-bg: #f8fafc;
   --weekday-border: 1px solid #eaeaea;
-  border-radius: 0;
+
   width: 100%;
+  border-radius: 0;
+
   & .vc-header {
-    background-color: #f1f5f8;
     padding: 10px 0;
+    background-color: #f1f5f8;
   }
+
   & .vc-weeks {
     padding: 0;
   }
+
   & .vc-weekday {
-    background-color: var(--weekday-bg);
-    border-bottom: var(--weekday-border);
-    border-top: var(--weekday-border);
     padding: 5px 0;
+    background-color: var(--weekday-bg);
+    border-top: var(--weekday-border);
+    border-bottom: var(--weekday-border);
   }
+
   & .vc-day {
-    padding: 0 5px 3px 5px;
-    text-align: left;
-    height: var(--day-height);
     min-width: var(--day-width);
+    height: var(--day-height);
+    padding: 0 5px 3px;
+    text-align: left;
     background-color: white;
+
     &.weekday-1,
     &.weekday-7 {
       background-color: #eff8ff;
     }
+
     &:not(.on-bottom) {
       border-bottom: var(--day-border);
+
       &.weekday-1 {
         border-bottom: var(--day-border-highlight);
       }
     }
+
     &:not(.on-right) {
       border-right: var(--day-border);
     }
   }
+
   & .vc-day-dots {
     margin-bottom: 5px;
   }

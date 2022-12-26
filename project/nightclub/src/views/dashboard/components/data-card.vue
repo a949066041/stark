@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 21:05:58
- * @LastEditTime: 2022-12-23 19:56:28
+ * @LastEditTime: 2022-12-26 19:22:22
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-card.vue
@@ -42,13 +42,16 @@ export default {
 <style lang="less" scoped>
 .card-container {
   @apply h-full bg-white flex flex-row cursor-pointer justify-between items-center p-2 rounded-md dark:bg-zinc-900;
+
   width: 24%;
+
   &:hover {
     .card-icon {
-      fill: white;
       background-color: v-bind(color);
+      fill: white;
     }
   }
+
   .card-icon {
     @apply h-16 p-2 w-16 rounded-md;
 
