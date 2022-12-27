@@ -8,7 +8,7 @@
       "inputs": ["src/svg/**/*.svg", "latte.config.json", "src/**/*.ts", "src/**/*.hbs", "src/**/*.ts"]
     },
     "build:dev": {
-      "cache": false,
+      "inputs": ["src/**/*.ts", "src/**/*.js", "src/**/*.vue", "src/**/*.less", "src/**/*.css", "src/**/*.json"],
       "dependsOn": ["prepare:build", "^build:dev"]
     },
     "generate:dist": {
