@@ -13,6 +13,7 @@ const router_list: EnhanceRouter[] = [
     is_router: false,
     parent_name: "root",
     name: "[heartbreaker]Components",
+    path: "",
     meta: {
       title: "Component",
       permission: ["component"],

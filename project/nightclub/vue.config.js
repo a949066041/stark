@@ -18,6 +18,9 @@ module.exports = defineConfig({
   publicPath: webpack_config.get_public_path(),
   chainWebpack: webpack_config.get_chain_config,
   configureWebpack: {
+    devServer: {
+      historyApiFallback: true
+    },
     optimization: {
       usedExports: true,
       splitChunks: false

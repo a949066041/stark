@@ -16,7 +16,8 @@ const app = createApp(App);
 const pinia = createPinia();
 const menuStore = useMenuStore(pinia);
 app.use(pinia);
+app.use(router);
 
-menuStore.set_menu(router_list);
-app.use(router(menuStore.router));
+menuStore.setMenu("midas", router_list);
+
 app.mount("#app");
