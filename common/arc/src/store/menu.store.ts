@@ -8,8 +8,9 @@
  */
 import { defineStore } from "pinia";
 import { ref, watchEffect } from "vue";
+import { RouteMeta, RouteRecordRaw } from "vue-router";
+
 import { EnhanceRouter, router, usePermissionStore } from "..";
-import { RouteMeta } from "vue-router";
 
 export interface IMenu {
   name: string;
@@ -55,20 +56,12 @@ export const useMenuStore = defineStore("arc_menu", () => {
   function registryRoute() {
     const menuFlat = Object.values(menu.value).flat();
     const permission_list = permissionStore.permission_list;
-    const registry = menuFlat.reduce(
-      (base, item) => {
-        if (!item.meta || (item.meta.permission as string[]).some((p) => permission_list.data.includes(p))) {
-          base.reserveRoute.push(item);
-          item.is_router && router.addRoute("View", item as any);
-        } else {
-          base.removeRoute.push(item.name);
-          router.removeRoute(item.name);
-        }
-        return base;
-      },
-      { reserveRoute: [] as EnhanceRouter[], removeRoute: [] as string[] }
-    );
-    menuList.value = cycleMenu(registry.reserveRoute, "root");
+    const reserveRoute = menuFlat.filter((item) => {
+      const hasAuth = !item.meta || (item.meta.permission as string[]).some((p) => permission_list.data.includes(p));
+      hasAuth ? item.is_router && router.addRoute("View", item as RouteRecordRaw) : router.removeRoute(item.name);
+      return hasAuth;
+    });
+    menuList.value = cycleMenu(reserveRoute, "root");
   }
 
   function setMenu(key: string, menuList: EnhanceRouter[]) {

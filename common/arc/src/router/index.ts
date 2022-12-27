@@ -7,9 +7,10 @@
  * @FilePath: \stark\common\arc\src\router\index.ts
  */
 import { createRouter, createWebHistory } from "vue-router";
-import Login from "../components/login/login.vue";
-import Layout from "../components/layout/layout.vue";
+
 import { useMenuStore } from "..";
+import Layout from "../components/layout/layout.vue";
+import Login from "../components/login/login.vue";
 
 const router = createRouter({
   history: createWebHistory(),

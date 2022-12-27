@@ -32,7 +32,7 @@ export interface IEnhanceRouter extends _RouteRecordBase {
  * @export
  * @interface EnhanceMenu
  */
-export interface EnhanceMenu {
+export interface EnhanceMenu extends _RouteRecordBase {
   name: string; // 元素名称
   parent_name: string; // 父元素名称 强制填写
   is_router: false; // 是否是路由: 否
