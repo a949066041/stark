@@ -1,14 +1,14 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-22 22:04:00
- * @LastEditTime: 2022-11-22 22:54:18
+ * @LastEditTime: 2022-12-23 22:22:10
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\nightclub\src\views\dashboard\components\data-line-chart.vue
 -->
 <template>
   <div class="w-full h-96 px-8">
-    <div class="h-full w-full bg-white rounded-md" ref="chart"></div>
+    <div class="h-full w-full bg-white rounded-md" ref="chart" />
   </div>
 </template>
 <script lang="ts">
@@ -17,12 +17,13 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import * as echarts from "echarts/core";
-import { TitleComponent, ToolboxComponent, TooltipComponent, GridComponent, LegendComponent } from "echarts/components";
 import { LineChart } from "echarts/charts";
+import { GridComponent, LegendComponent, TitleComponent, ToolboxComponent, TooltipComponent } from "echarts/components";
+import * as echarts from "echarts/core";
 import { UniversalTransition } from "echarts/features";
 import { CanvasRenderer } from "echarts/renderers";
 import { nextTick, onMounted, ref } from "vue";
+
 echarts.use([
   TitleComponent,
   ToolboxComponent,
@@ -68,7 +69,7 @@ function handleSetOption() {
           lineStyle: {
             color: "#F4516C"
           },
-          data: Array(7)
+          data: Array.from({ length: 7 })
             .fill("")
             .map(() => Math.round(Math.random() * (150 - 100)) + 100)
         },
@@ -79,7 +80,7 @@ function handleSetOption() {
           showSymbol: false,
           stack: "Total",
           lineStyle: { color: "#36A3F7" },
-          data: Array(7)
+          data: Array.from({ length: 7 })
             .fill("")
             .map(() => Math.round(Math.random() * (300 - 20)) + 20)
         }

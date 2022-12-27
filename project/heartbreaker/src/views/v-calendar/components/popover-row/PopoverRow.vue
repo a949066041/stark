@@ -1,10 +1,10 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 22:42:56
- * @LastEditTime: 2022-12-01 22:45:48
+ * @LastEditTime: 2022-12-26 21:17:43
  * @LastEditors: Rikka
  * @Description: 
- * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\PopoverRow.vue
+ * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\popover-row\PopoverRow.vue
 -->
 <template>
   <!-- Content row -->
@@ -27,6 +27,7 @@ export default {
   name: "PopoverRow",
   mixins: [childMixin],
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     attribute: Object
   },
   computed: {
@@ -82,29 +83,34 @@ export default {
 <style lang="less">
 .vc-day-popover-row {
   --day-content-transition-time: 0.13s ease-in;
+
   display: flex;
   align-items: center;
   transition: all var(--day-content-transition-time);
+
   &:not(:first-child) {
     margin-top: 3px;
   }
 }
+
 .vc-day-popover-row-indicator {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-grow: 0;
+  align-items: center;
+  justify-content: center;
   width: 15px;
   margin-right: 3px;
+
   & span {
     transition: all var(--day-content-transition-time);
   }
 }
+
 .vc-day-popover-row-content {
   display: flex;
-  align-items: center;
-  flex-wrap: none;
   flex-grow: 1;
+  flex-wrap: none;
+  align-items: center;
   width: max-content;
 }
 </style>

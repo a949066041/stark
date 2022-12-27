@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 20:05:58
- * @LastEditTime: 2022-12-01 20:46:25
+ * @LastEditTime: 2022-12-23 22:23:03
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\ag-grid.vue
@@ -21,11 +21,11 @@
     <ag-grid-vue
       class="ag-theme-material"
       style="height: 500px"
-      :columnDefs="columnDefs.value"
-      :rowData="rowData"
-      :defaultColDef="defaultColDef"
-      rowSelection="multiple"
-      animateRows="true"
+      :column-defs="columnDefs.value"
+      :row-data="rowData"
+      :default-col-def="defaultColDef"
+      row-selection="multiple"
+      animate-rows="true"
       @cell-clicked="cellWasClicked"
       @grid-ready="onGridReady"
     >
@@ -38,22 +38,22 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { GridReadyEvent, GridApi, CellClickedEvent } from "ag-grid-community";
-import { AgGridVue } from "ag-grid-vue3"; // the AG Grid Vue Component
-import { reactive, onMounted, ref } from "vue";
-import { Description } from "@stark/common-silver";
-
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-material.min.css"; // Optional theme CSS
 
-const gridApi = ref<GridApi | null>(null); // Optional - for accessing Grid's API
+import { Description } from "@stark/common-silver";
+import { CellClickedEvent, GridApi, GridReadyEvent } from "ag-grid-community";
+import { AgGridVue } from "ag-grid-vue3"; // the AG Grid Vue Component
+import { onMounted, reactive, ref } from "vue";
+
+const gridApi = ref<GridApi | null>(); // Optional - for accessing Grid's API
 
 // Obtain API from grid's onGridReady event
 const onGridReady = (params: GridReadyEvent) => {
   gridApi.value = params.api;
 };
 
-const rowData = reactive<any>([]); // Set rowData to Array of Objects, one Object per Row
+const rowData = reactive<Array<unknown>>([]); // Set rowData to Array of Objects, one Object per Row
 
 // Each Column Definition results in one Column.
 const columnDefs = reactive({
@@ -61,6 +61,7 @@ const columnDefs = reactive({
 });
 
 // DefaultColDef sets props common to all Columns
+// eslint-disable-next-line unicorn/prevent-abbreviations
 const defaultColDef = {
   sortable: true,
   filter: true,

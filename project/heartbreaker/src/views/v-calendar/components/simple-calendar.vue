@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 21:55:51
- * @LastEditTime: 2022-12-01 23:36:19
+ * @LastEditTime: 2022-12-23 22:22:49
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\simple-calendar.vue
@@ -30,7 +30,7 @@
       <div class="mb-6">
         <h3 class="text-base semibold text-gray-700 mb-3">Popovers</h3>
         <calendar :attributes="popovers()">
-          <template v-slot:day-popover="{ day, format, masks, attributes, updateLayout }">
+          <template #day-popover="{ day, format, masks, attributes, updateLayout }">
             <div>
               <!--Day Header-->
               <span class="text-xs text-gray-3 font-semibold">{{ format(day.date, masks.dayPopover) }}</span>
@@ -74,11 +74,11 @@
                       width="12"
                       height="12"
                     >
-                      <path d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"></path>
+                      <path d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z" />
                     </svg>
                     <!--Done button-->
                     <svg v-else class="fill-current text-green-300" viewBox="0 0 20 20" width="12" height="12">
-                      <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"></path>
+                      <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
                     </svg>
                   </a>
                   <!--Delete button-->
@@ -90,7 +90,7 @@
                     <svg class="fill-current text-red-300" viewBox="0 0 20 20" width="12" height="12">
                       <path
                         d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
-                      ></path>
+                      />
                     </svg>
                   </a>
                 </div>
@@ -129,10 +129,11 @@ export default {
 };
 </script>
 <script lang="ts" setup>
-import { Calendar } from "v-calendar";
-import { Locale } from "../utils/locale";
 import { Description } from "@stark/common-silver";
+import { Calendar } from "v-calendar";
 import { nextTick, ref } from "vue";
+
+import { Locale } from "../utils/locale";
 import { PopoverRow } from "./popover-row";
 
 interface TodoItem {
@@ -360,6 +361,7 @@ const popovers = () => {
   ];
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function addTodo(day: any) {
   editId.value = ++incId.value;
   todos.value = [
@@ -376,11 +378,11 @@ function addTodo(day: any) {
 function toggleTodoComplete(todo: TodoItem) {
   todo.isComplete = !todo.isComplete;
 }
-function toggleTodoEdit(todo: TodoItem, updateLayout: Function) {
+function toggleTodoEdit(todo: TodoItem, updateLayout: () => void) {
   editId.value = editId.value === todo.id ? 0 : todo.id;
   nextTick(() => updateLayout());
 }
-function deleteTodo(todo: TodoItem, updateLayout: Function) {
+function deleteTodo(todo: TodoItem, updateLayout: () => void) {
   todos.value = todos.value.filter((t) => t !== todo);
 }
 

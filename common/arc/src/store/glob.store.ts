@@ -1,8 +1,17 @@
-import { defineStore } from "pinia";
-import { ref, watch } from "vue";
+/*
+ * @Author: Rikka
+ * @Date: 2022-12-13 21:08:27
+ * @LastEditTime: 2022-12-23 22:23:41
+ * @LastEditors: Rikka
+ * @Description:
+ * @FilePath: \stark\common\arc\src\store\glob.store.ts
+ */
+import "dayjs/locale/zh-cn";
+
 import { useStorage } from "@vueuse/core";
 import dayjs from "dayjs";
-import "dayjs/locale/zh-cn";
+import { defineStore } from "pinia";
+import { ref, watch } from "vue";
 
 export enum LANGS {
   "zh" = "中文",
@@ -27,7 +36,7 @@ export const useGlobStore = defineStore("arc_glob", () => {
   watch(
     theme,
     (value) => {
-      document.querySelector("html")!.classList[value === "dark" ? "add" : "remove"]("dark");
+      document.querySelector("html")?.classList[value === "dark" ? "add" : "remove"]("dark");
     },
     { immediate: true }
   );

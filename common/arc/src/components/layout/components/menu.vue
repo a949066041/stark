@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 17:17:18
- * @LastEditTime: 2022-12-13 21:51:45
+ * @LastEditTime: 2022-12-23 22:23:59
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\menu.vue
@@ -16,6 +16,7 @@ import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useGlobStore, useMenuStore } from "../../../store";
 import MenuTree from "./menu-tree";
+
 const globStore = useGlobStore();
 const menuStore = useMenuStore();
 const route = useRoute();

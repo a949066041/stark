@@ -14,9 +14,12 @@ export const pad = (val: string, len: number, char = "0") => {
   return val;
 };
 
+// eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/no-explicit-any
 export const evalFn = (fn: Function, args: any) => (isFunction(fn) ? fn(args) : fn);
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const mergeEvents = (...args: Array<any>) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const result: any = {};
   args.forEach((e) =>
     Object.entries(e).forEach(([key, value]) => {
@@ -84,6 +87,7 @@ export const pageRangeToArray = (from: Page, to: Page) => {
   return result;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function datesAreEqual(a: any, b: any): boolean {
   const aIsDate = isDate(a);
   const bIsDate = isDate(b);
@@ -92,6 +96,7 @@ export function datesAreEqual(a: any, b: any): boolean {
   return a.getTime() === b.getTime();
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const arrayHasItems = (array: Array<any>): boolean => isArray(array) && array.length > 0;
 
 export interface ElementPosition {
@@ -99,6 +104,7 @@ export interface ElementPosition {
   left: number;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const mixinOptionalProps = (source: any, target: any, props: [any]) => {
   const assigned: Array<string> = [];
   props.forEach((p) => {
@@ -144,6 +150,7 @@ export const elementContains = (element: Element, child: Element) =>
 
 export const onSpaceOrEnter = (
   event: KeyboardEvent,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   handler: EventHandlerNonNull
 ) => {

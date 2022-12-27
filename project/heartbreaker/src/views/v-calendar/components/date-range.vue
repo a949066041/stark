@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-12-01 23:59:05
- * @LastEditTime: 2022-12-02 00:02:45
+ * @LastEditTime: 2022-12-23 22:24:40
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\v-calendar\components\date-range.vue
@@ -16,7 +16,7 @@
         <div class="mb-4">
           <span class="block text-gray-600 text-sm text-left font-bold mb-2">Select Range</span>
           <date-picker v-model="range" mode="dateTime" :masks="masks" is-range>
-            <template v-slot="{ inputValue, inputEvents, isDragging }">
+            <template #default="{ inputValue, inputEvents, isDragging }">
               <div class="flex flex-col sm:flex-row justify-start items-center">
                 <div class="relative flex-grow">
                   <svg
@@ -28,9 +28,7 @@
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    ></path>
+                    <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   <input
                     class="flex-grow pl-8 pr-2 py-1 bg-gray-100 border rounded w-full"
@@ -59,9 +57,7 @@
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    ></path>
+                    <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   <input
                     class="flex-grow pl-8 pr-2 py-1 bg-gray-100 border rounded w-full"
@@ -85,6 +81,7 @@ export default {
 </script>
 <script lang="ts" setup>
 import { DatePicker } from "v-calendar";
+
 const range = {
   start: new Date(2020, 0, 6),
   end: new Date(2020, 0, 23)

@@ -1,7 +1,7 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-29 22:42:31
- * @LastEditTime: 2022-12-01 20:46:04
+ * @LastEditTime: 2022-12-23 22:23:01
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\project\heartbreaker\src\views\milkdown.vue
@@ -25,11 +25,12 @@ export default {
 </script>
 <script lang="ts" setup>
 import { Editor, rootCtx } from "@milkdown/core";
-import { nord } from "@milkdown/theme-nord";
-import { VueEditor, useEditor } from "@milkdown/vue";
-import { commonmark } from "@milkdown/preset-commonmark";
 import { menu } from "@milkdown/plugin-menu";
+import { commonmark } from "@milkdown/preset-commonmark";
+import { nord } from "@milkdown/theme-nord";
+import { useEditor, VueEditor } from "@milkdown/vue";
 import { Description } from "@stark/common-silver";
+
 const { editor } = useEditor((root) =>
   Editor.make()
     .config((ctx) => {
