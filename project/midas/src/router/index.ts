@@ -11,6 +11,7 @@ import { EnhanceRouter } from "@stark/common-arc";
 const router_list: EnhanceRouter[] = [
   {
     is_router: false,
+    path: "",
     parent_name: "root",
     name: "[midas]Project",
     meta: {
