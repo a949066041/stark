@@ -13,6 +13,7 @@ const router_list: EnhanceRouter[] = [
     is_router: false,
     parent_name: "root",
     name: "[tiger]Project",
+    path: "",
     meta: {
       title: "Feature",
       permission: ["feature"],
@@ -23,6 +24,7 @@ const router_list: EnhanceRouter[] = [
     is_router: false,
     parent_name: "[tiger]Project",
     name: "[tiger]CacheMenu",
+    path: "",
     meta: {
       title: "缓存测试",
       permission: ["feature-cache"],
@@ -44,6 +46,7 @@ const router_list: EnhanceRouter[] = [
     is_router: false,
     parent_name: "[tiger]CacheMenu",
     name: "[tiger]CacheMenuDeep",
+    path: "",
     meta: {
       title: "二级菜单",
       permission: ["feature-cache-second"]
@@ -64,6 +67,7 @@ const router_list: EnhanceRouter[] = [
     is_router: false,
     parent_name: "[tiger]Project",
     name: "[tiger]OperateMenu",
+    path: "",
     meta: {
       title: "跨页操作",
       permission: ["feature-operate"],
@@ -96,6 +100,7 @@ const router_list: EnhanceRouter[] = [
     is_router: false,
     parent_name: "[tiger]Project",
     name: "[tiger]Permission",
+    path: "",
     meta: {
       title: "权限",
       permission: ["feature-permission"],
