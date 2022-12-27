@@ -12,6 +12,7 @@ const router_list: EnhanceRouter[] = [
   {
     is_router: false,
     parent_name: "root",
+    path: "",
     name: "[cassanova]Project",
     meta: {
       title: "Form",

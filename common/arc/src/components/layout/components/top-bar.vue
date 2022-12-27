@@ -28,7 +28,7 @@
         <template #overlay>
           <a-menu>
             <a-menu-item>
-              <a href="javascript:;">退出</a>
+              <a @click="$router.push('/login')">退出</a>
             </a-menu-item>
           </a-menu>
         </template>

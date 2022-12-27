@@ -24,7 +24,11 @@ zip([
   import("tiger/remote"),
   import("midas/remote")
 ]).subscribe((item) => {
-  menuStore.set_menu(item.flatMap(({ router_list }) => router_list));
+  app.use(router);
+  menuStore.setMenu(
+    "main",
+    item.flatMap(({ router_list }) => router_list)
+  );
   item.some((remote) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
@@ -34,6 +38,6 @@ zip([
       register(app);
     }
   });
-  app.use(router(menuStore.router));
+
   app.mount("#app");
 });
