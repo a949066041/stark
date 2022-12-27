@@ -6,7 +6,7 @@
  * @Description:
  * @FilePath: \stark\common\arc\src\router\util.ts
  */
-import { RouteMeta, _RouteRecordBase } from "vue-router";
+import { RouteMeta, RouteRecordRaw, _RouteRecordBase } from "vue-router";
 
 /**
  * 路由项

@@ -22,7 +22,11 @@ zip([
   import("cassanova/remote"),
   import("tiger/remote")
 ]).subscribe((item) => {
-  menuStore.set_menu(item.flatMap(({ router_list }) => router_list));
+  app.use(router);
+  menuStore.setMenu(
+    "main",
+    item.flatMap(({ router_list }) => router_list)
+  );
   item.some((remote) => {
     // @ts-ignore
     const register = remote["register"] as Function;
@@ -30,6 +34,6 @@ zip([
       register(app);
     }
   });
-  app.use(router(menuStore.router));
+
   app.mount("#app");
 });

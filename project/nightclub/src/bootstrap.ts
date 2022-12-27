@@ -9,6 +9,6 @@ const pinia = createPinia();
 const menuStore = useMenuStore(pinia);
 app.use(pinia);
 
-menuStore.set_menu(router_list);
-app.use(router(menuStore.router));
+menuStore.setMenu("nightclub", router_list);
+app.use(router);
 app.mount("#app");

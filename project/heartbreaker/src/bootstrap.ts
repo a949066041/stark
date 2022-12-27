@@ -19,7 +19,7 @@ const pinia = createPinia();
 const menuStore = useMenuStore(pinia);
 app.use(pinia);
 
-menuStore.set_menu(router_list);
-app.use(router(menuStore.router));
+menuStore.setMenu("heartbreaker", router_list);
+app.use(router);
 register(app);
 app.mount("#app");
