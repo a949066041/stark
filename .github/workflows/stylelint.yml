@@ -31,7 +31,7 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: Run ESLint
+      - name: Run StyleLint
         run: pnpm lint:stylelint
         continue-on-error: true
       - name: Upload analysis results to GitHub
