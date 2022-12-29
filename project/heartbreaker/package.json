@@ -29,7 +29,7 @@
     "lodash": "^4.17.21",
     "pinia": "^2.0.28",
     "v-calendar": "3.0.0-alpha.8",
-    "velocity-animate": "^1.5.2",
+    "velocity-animate": "^2.0.6",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
@@ -37,7 +37,6 @@
     "@babel/core": "^7.20.7",
     "@stark/jarvis": "workspace:^1.0.0",
     "@types/lodash": "^4.14.191",
-    "@types/velocity-animate": "1.2.33",
     "@types/webpack-env": "^1.18.0",
     "@vue/cli-plugin-babel": "~5.0.8",
     "@vue/cli-plugin-router": "~5.0.8",
@@ -49,8 +48,8 @@
     "less-loader": "^11.1.0",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4",
-    "typescript": "~4.5.5",
-    "unplugin-auto-import": "^0.11.5",
+    "typescript": "~4.9.4",
+    "unplugin-auto-import": "^0.12.1",
     "unplugin-vue-components": "^0.22.12",
     "webpack": "^5.75.0",
     "webpack-env": "^0.8.0"
