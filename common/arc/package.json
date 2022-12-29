@@ -7,15 +7,15 @@
   "scripts": {},
   "devDependencies": {
     "@kaffee/latte": "^1.1.4",
-    "core-js": "^3.8.3",
-    "pinia": "^2.0.23",
+    "core-js": "^3.27.0",
+    "pinia": "^2.0.28",
     "typescript": "~4.5.5",
-    "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
   },
   "dependencies": {
     "@stark/common-iron": "workspace:^1.0.0",
-    "@vueuse/core": "^9.6.0",
+    "@vueuse/core": "^9.9.0",
     "ant-design-vue": "^3.2.15",
     "dayjs": "^1.11.7",
     "vue3-lottie": "^2.4.0"
