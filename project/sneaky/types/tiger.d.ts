@@ -11,6 +11,7 @@ declare module "tiger/remote" {
   import { EnhanceRouter } from "@stark/common-arc";
 
   const router_list: EnhanceRouter[];
+  function register(app: App<Element>): void;
 
-  export { router_list };
+  export { router_list, register };
 }

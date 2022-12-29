@@ -30,12 +30,8 @@ zip([
     item.flatMap(({ router_list }) => router_list)
   );
   item.some((remote) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    const register = remote["register"] as Function;
-    if (register) {
-      register(app);
+    if (remote.register) {
+      remote.register(app);
     }
   });
 
