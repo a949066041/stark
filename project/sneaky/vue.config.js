@@ -14,7 +14,16 @@ const webpack_config = new WebpackConfig(sneaky_config, "http://localhost", __di
 module.exports = defineConfig({
   css: webpack_config.getCssOptions(),
   transpileDependencies: true,
-  devServer: webpack_config.get_dev_server(),
+  devServer: {
+    ...webpack_config.get_dev_server(),
+    proxy: {
+      "/remote": {
+        target: "https://stark.rikka.cc",
+        secure: false,
+        changeOrigin: true
+      }
+    }
+  },
   chainWebpack: webpack_config.get_chain_config,
   configureWebpack: {
     plugins: [

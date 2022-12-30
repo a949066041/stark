@@ -8,19 +8,19 @@ interface RemoteType {
   register?: (app: App) => void;
 }
 
-const getRemoteUrl = (port: number, name: string) => {
-  return window.location.host === "stark.rikka.cc"
-    ? [`https://stark.rikka.cc/remote/${name}/remote-entry.js`, name, ".remote"]
+const getRemoteUrl = (port: number, name: string, online = true) => {
+  return window.location.host === "stark.rikka.cc" || online
+    ? [`/remote/${name}/remote-entry.js`, name, ".remote"]
     : [`http://localhost:${port}/remote-entry.js`, name, ".remote"];
 };
 
 const allRemote = zip(
   [
-    getRemoteUrl(4401, "nightclub"),
-    getRemoteUrl(4402, "heartbreaker"),
-    getRemoteUrl(4403, "cassanova"),
-    getRemoteUrl(4404, "tiger"),
-    getRemoteUrl(4405, "midas")
+    getRemoteUrl(4401, "nightclub", false),
+    getRemoteUrl(4402, "heartbreaker", false),
+    getRemoteUrl(4403, "cassanova", false),
+    getRemoteUrl(4404, "tiger", false),
+    getRemoteUrl(4405, "midas", false)
   ].map(([remoteEntry, scope, module]) => loadRemote<RemoteType>(remoteEntry, scope, module))
 );
 
