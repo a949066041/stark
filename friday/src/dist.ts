@@ -38,5 +38,9 @@ findWorkspaceDir(cwd()).then((root) => {
     const _redirects = `/login    /index.html   200
 /view/*    /index.html   200`;
     writeFileSync(resolve(distDir, "_redirects"), _redirects);
+    const _headers = `/remote/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Origin: GET,OPTIONS,POST,HEAD`;
+    writeFileSync(resolve(distDir, "_headers"), _headers);
   }
 });

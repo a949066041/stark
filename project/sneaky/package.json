@@ -9,6 +9,7 @@
   "dependencies": {
     "@kaffee/latte": "^1.1.4",
     "@stark/common-arc": "workspace:^1.0.0",
+    "@stark/common-gold": "workspace:^1.0.0",
     "ant-design-vue": "^3.2.15",
     "core-js": "^3.27.0",
     "pinia": "^2.0.28",

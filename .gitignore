@@ -8,3 +8,5 @@ components.d.ts
 eslint-results.sarif
 .eslintcache
 stylelint-results.sarif
+.dccache
+.iac-data

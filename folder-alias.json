@@ -22,5 +22,32 @@
     },
     "project/midas": {
         "description": "麦得斯"
+    },
+    "friday": {
+        "description": "星期五"
+    },
+    "environment": {
+        "description": "环境变量"
+    },
+    "common/copper": {
+        "description": "静态资源"
+    },
+    "common/iron": {
+        "description": "图标库"
+    },
+    "common/silver": {
+        "description": "通用组件"
+    },
+    "public": {
+        "description": "静态资源目录"
+    },
+    "website": {
+        "description": "文档网站"
+    },
+    "tsconfig.app.json": {
+        "description": "project用"
+    },
+    "tsconfig.vue.json": {
+        "description": "vue-tsc用"
     }
 }

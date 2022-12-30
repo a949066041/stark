@@ -8,20 +8,28 @@
  */
 const { defineConfig } = require("@vue/cli-service");
 const { ModuleFederationPlugin } = require("webpack").container;
-const { WebpackConfig, sneaky_config, all_router } = require("@stark/jarvis");
+const { WebpackConfig, sneaky_config } = require("@stark/jarvis");
 
 const webpack_config = new WebpackConfig(sneaky_config, "http://localhost", __dirname);
 module.exports = defineConfig({
   css: webpack_config.getCssOptions(),
   transpileDependencies: true,
-  devServer: webpack_config.get_dev_server(),
+  devServer: {
+    ...webpack_config.get_dev_server(),
+    proxy: {
+      "/remote": {
+        target: "https://stark.rikka.cc",
+        secure: false,
+        changeOrigin: true
+      }
+    }
+  },
   chainWebpack: webpack_config.get_chain_config,
   configureWebpack: {
     plugins: [
       ...webpack_config.get_plugins(),
       new ModuleFederationPlugin({
         name: "sneaky",
-        remotes: all_router("http://localhost"),
         shared: {
           vue: { requiredVersion: "^3.0.0", singleton: true },
           pinia: { singleton: true },
