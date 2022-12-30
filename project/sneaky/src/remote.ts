@@ -10,8 +10,8 @@ interface RemoteType {
 
 const getRemoteUrl = (port: number, name: string, online = true) => {
   return window.location.host === "stark.rikka.cc" || online
-    ? [`/remote/${name}/remote-entry.js`, name, ".remote"]
-    : [`http://localhost:${port}/remote-entry.js`, name, ".remote"];
+    ? [`/remote/${name}/remote-entry.js`, name, "./remote"]
+    : [`http://localhost:${port}/remote-entry.js`, name, "./remote"];
 };
 
 const allRemote = zip(
