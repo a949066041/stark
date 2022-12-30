@@ -8,7 +8,7 @@
  */
 const { defineConfig } = require("@vue/cli-service");
 const { ModuleFederationPlugin } = require("webpack").container;
-const { WebpackConfig, sneaky_config, all_router } = require("@stark/jarvis");
+const { WebpackConfig, sneaky_config } = require("@stark/jarvis");
 
 const webpack_config = new WebpackConfig(sneaky_config, "http://localhost", __dirname);
 module.exports = defineConfig({
@@ -21,7 +21,6 @@ module.exports = defineConfig({
       ...webpack_config.get_plugins(),
       new ModuleFederationPlugin({
         name: "sneaky",
-        remotes: all_router("http://localhost"),
         shared: {
           vue: { requiredVersion: "^3.0.0", singleton: true },
           pinia: { singleton: true },

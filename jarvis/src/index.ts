@@ -13,7 +13,6 @@ export * from "./config/nightclub.config";
 export * from "./config/sneaky.config";
 export * from "./config/tiger.config";
 export * from "./eslint";
-export * from "./remote.util";
 export * from "./stylelint";
 export * from "./tailwind.config";
 export * from "./webpack.config";
