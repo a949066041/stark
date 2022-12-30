@@ -10,17 +10,17 @@ interface RemoteType {
 
 const getRemoteUrl = (port: number, name: string, online = true) => {
   return window.location.host === "stark.rikka.cc" || online
-    ? [`/remote/${name}/remote-entry.js`, name, "./remote"]
+    ? [`https://stark.rikka.cc/remote/${name}/remote-entry.js`, name, "./remote"]
     : [`http://localhost:${port}/remote-entry.js`, name, "./remote"];
 };
 
 const allRemote = zip(
   [
-    getRemoteUrl(4401, "nightclub", false),
-    getRemoteUrl(4402, "heartbreaker", false),
-    getRemoteUrl(4403, "cassanova", false),
-    getRemoteUrl(4404, "tiger", false),
-    getRemoteUrl(4405, "midas", false)
+    getRemoteUrl(4401, "nightclub", true),
+    getRemoteUrl(4402, "heartbreaker", true),
+    getRemoteUrl(4403, "cassanova", true),
+    getRemoteUrl(4404, "tiger", true),
+    getRemoteUrl(4405, "midas", true)
   ].map(([remoteEntry, scope, module]) => loadRemote<RemoteType>(remoteEntry, scope, module))
 );
 
