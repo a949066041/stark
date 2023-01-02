@@ -76,10 +76,12 @@ importers:
     specifiers:
       '@kaffee/latte': ^1.1.4
       '@stark/common-iron': workspace:^1.0.0
+      '@types/lodash-es': ^4.17.6
       '@vueuse/core': ^9.9.0
       ant-design-vue: ^3.2.15
       core-js: ^3.27.0
       dayjs: ^1.11.7
+      lodash-es: ^4.17.21
       pinia: ^2.0.28
       typescript: ~4.9.4
       vue: ^3.2.45
@@ -90,9 +92,11 @@ importers:
       '@vueuse/core': 9.9.0_vue@3.2.45
       ant-design-vue: 3.2.15_vue@3.2.45
       dayjs: 1.11.7
+      lodash-es: 4.17.21
       vue3-lottie: 2.4.0_vue@3.2.45
     devDependencies:
       '@kaffee/latte': 1.1.4
+      '@types/lodash-es': 4.17.6
       core-js: 3.27.0
       pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
       typescript: 4.9.4
@@ -3992,6 +3996,12 @@ packages:
     dependencies:
       '@types/fined': 1.1.3
       '@types/node': 18.11.9
+    dev: true
+
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.191
     dev: true
 
   /@types/lodash/4.14.191:

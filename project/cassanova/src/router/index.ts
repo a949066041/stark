@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-29 20:54:41
- * @LastEditTime: 2022-12-09 16:58:29
+ * @LastEditTime: 2023-01-02 23:37:02
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\cassanova\src\router\index.ts
@@ -18,7 +18,8 @@ const router_list: EnhanceRouter[] = [
       title: "Form",
       permission: ["form"],
       menu_icon: ["iron", "form"]
-    }
+    },
+    group: "BASE"
   },
   {
     is_router: true,

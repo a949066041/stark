@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-05 10:37:34
- * @LastEditTime: 2022-12-18 10:32:30
+ * @LastEditTime: 2023-01-02 23:37:15
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\tiger\src\router\index.ts
@@ -18,7 +18,8 @@ const router_list: EnhanceRouter[] = [
       title: "Feature",
       permission: ["feature"],
       menu_icon: ["iron", "feature"]
-    }
+    },
+    group: "BASE"
   },
   {
     is_router: false,

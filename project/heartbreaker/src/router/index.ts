@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 13:25:33
- * @LastEditTime: 2022-12-09 16:11:17
+ * @LastEditTime: 2023-01-02 23:36:49
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\heartbreaker\src\router\index.ts
@@ -18,7 +18,8 @@ const router_list: EnhanceRouter[] = [
       title: "Component",
       permission: ["component"],
       menu_icon: ["iron", "component"]
-    }
+    },
+    group: "BASE"
   },
   {
     is_router: true,

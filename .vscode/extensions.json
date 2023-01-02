@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "vue.volar",
+    "dbaeumer.vscode-eslint",
+    "rikka.folder-alias",
+    "esbenp.prettier-vscode"
+  ]
+}

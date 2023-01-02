@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 15:36:21
- * @LastEditTime: 2022-12-23 19:05:58
+ * @LastEditTime: 2023-01-02 23:35:32
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\router\util.ts
@@ -23,6 +23,7 @@ export interface IEnhanceRouter extends _RouteRecordBase {
   sort?: number; // 菜单排序
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component: any; // 组件
+  group?: string;
 }
 
 /**
@@ -42,6 +43,7 @@ export interface EnhanceMenu extends _RouteRecordBase {
     permission: string[]; // 权限
     menu_icon?: [string, string];
   };
+  group?: string;
 }
 
 export type EnhanceRouter = IEnhanceRouter | EnhanceMenu;

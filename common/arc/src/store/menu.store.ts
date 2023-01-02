@@ -1,11 +1,12 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-11 16:35:07
- * @LastEditTime: 2022-12-23 22:23:38
+ * @LastEditTime: 2023-01-02 23:46:45
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\menu.store.ts
  */
+import { groupBy } from "lodash-es";
 import { defineStore } from "pinia";
 import { ref, watchEffect } from "vue";
 import { RouteMeta, RouteRecordRaw } from "vue-router";
@@ -20,6 +21,7 @@ export interface IMenu {
   hidden?: boolean;
   children: IMenu[];
   path?: string;
+  group?: string;
 }
 
 type IMenuType = { title: string; permission: string[]; menu_icon: [string, string]; parent_name: string } & RouteMeta;
@@ -38,7 +40,8 @@ export function cycleMenu(menu: EnhanceRouter[], find_name: string): IMenu[] {
         meta: item.meta ? (item.meta as IMenuType) : undefined,
         is_router: item.is_router,
         children: child_menu,
-        path: item.is_router ? item.path : undefined
+        path: item.is_router ? item.path : undefined,
+        group: item.group ?? "other"
       };
 
       return _menu;
@@ -50,7 +53,7 @@ export function cycleMenu(menu: EnhanceRouter[], find_name: string): IMenu[] {
 export const useMenuStore = defineStore("arc_menu", () => {
   const menu = ref<Record<string, EnhanceRouter[]>>({});
   const permissionStore = usePermissionStore();
-  const menuList = ref<IMenu[]>([]);
+  const menuList = ref<Record<string, IMenu[]>>({});
   watchEffect(registryRoute);
 
   function registryRoute() {
@@ -61,7 +64,7 @@ export const useMenuStore = defineStore("arc_menu", () => {
       hasAuth ? item.is_router && router.addRoute("View", item as RouteRecordRaw) : router.removeRoute(item.name);
       return hasAuth;
     });
-    menuList.value = cycleMenu(reserveRoute, "root");
+    menuList.value = groupBy(cycleMenu(reserveRoute, "root"), "group");
   }
 
   function setMenu(key: string, menuList: EnhanceRouter[]) {
