@@ -11,7 +11,7 @@
     "@stark/common-copper": "workspace:^1.0.0",
     "@stark/common-iron": "workspace:^1.0.0",
     "ant-design-vue": "^3.2.15",
-    "core-js": "^3.27.0",
+    "core-js": "^3.27.1",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"

@@ -11,7 +11,7 @@
     "@stark/common-arc": "workspace:^1.0.0",
     "@stark/common-gold": "workspace:^1.0.0",
     "ant-design-vue": "^3.2.15",
-    "core-js": "^3.27.0",
+    "core-js": "^3.27.1",
     "pinia": "^2.0.28",
     "rxjs": "^7.8.0",
     "vue": "^3.2.45",
