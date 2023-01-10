@@ -21,8 +21,8 @@ const getRemoteUrl = (port: number, name: string, online = true) => {
     ? [`https://stark.rikka.cc/remote/${name}/remote-entry.js`, name, "./remote"]
     : [`http://localhost:${port}/remote-entry.js`, name, "./remote"];
 };
-const dev = true;
-const onlineList = new Set(dev ? [] : ["nightclub", "heartbreaker", "cassanova", "tiger", "midas"]);
+const dev = false;
+const onlineList = new Set(dev ? [] : ["nightclub", "heartbreaker", "cassanova", "tiger"]);
 const allRemote = zip(
   [
     getRemoteUrl(4401, "nightclub", onlineList.has("nightclub")),

@@ -372,11 +372,14 @@ importers:
 
   project/midas:
     specifiers:
+      '@amap/amap-jsapi-types': ^0.0.10
       '@babel/core': ^7.20.12
       '@stark/common-arc': workspace:^1.0.0
       '@stark/common-copper': workspace:^1.0.0
+      '@stark/common-gold': workspace:^1.0.0
       '@stark/common-iron': workspace:^1.0.0
       '@stark/jarvis': workspace:^1.0.0
+      '@types/geojson': ^7946.0.10
       '@types/webpack-env': ^1.18.0
       '@vue/cli-plugin-babel': ~5.0.8
       '@vue/cli-plugin-router': ~5.0.8
@@ -401,6 +404,7 @@ importers:
     dependencies:
       '@stark/common-arc': link:../../common/arc
       '@stark/common-copper': link:../../common/copper
+      '@stark/common-gold': link:../../common/gold
       '@stark/common-iron': link:../../common/iron
       ant-design-vue: 3.2.15_vue@3.2.45
       core-js: 3.27.1
@@ -408,8 +412,10 @@ importers:
       vue: 3.2.45
       vue-router: 4.1.6_vue@3.2.45
     devDependencies:
+      '@amap/amap-jsapi-types': 0.0.10
       '@babel/core': 7.20.12
       '@stark/jarvis': link:../../jarvis
+      '@types/geojson': 7946.0.10
       '@types/webpack-env': 1.18.0
       '@vue/cli-plugin-babel': 5.0.8_ztq44ko2lhov3gygcx3m3fbrkm
       '@vue/cli-plugin-router': 5.0.8_@vue+cli-service@5.0.8
@@ -789,6 +795,10 @@ packages:
       '@algolia/cache-common': 4.14.3
       '@algolia/logger-common': 4.14.3
       '@algolia/requester-common': 4.14.3
+
+  /@amap/amap-jsapi-types/0.0.10:
+    resolution: {integrity: sha512-znvqLGPBy9NRCr1/3650o9vL1aYl/f1YK0+UGn8lBUvHJXND6uMDJGJsl43cEYglw9/tblwIRxjm4pIotOvSCQ==}
+    dev: true
 
   /@ampproject/remapping/2.2.0:
     resolution: {integrity: sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w==}
@@ -3939,6 +3949,10 @@ packages:
     dependencies:
       '@types/jsonfile': 6.1.1
       '@types/node': 18.11.9
+    dev: true
+
+  /@types/geojson/7946.0.10:
+    resolution: {integrity: sha512-Nmh0K3iWQJzniTuPRcJn5hxXkfB1T1pgB89SBig5PlJQU5yocazeu4jATJlaA0GYFKWMqDdvYemoSnF2pXgLVA==}
     dev: true
 
   /@types/hast/2.3.4:

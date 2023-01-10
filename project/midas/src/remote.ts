@@ -7,4 +7,5 @@
  * @FilePath: \stark\project\midas\src\remote.ts
  */
 
+export { register } from "./register";
 export { router_list } from "./router";

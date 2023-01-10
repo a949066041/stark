@@ -19,6 +19,18 @@ const router_list: EnhanceRouter[] = [
       permission: ["stark"]
     },
     group: "Real world"
+  },
+  {
+    is_router: true,
+    path: "map-down",
+    parent_name: "[midas]Project",
+    name: "[midas]MapDown",
+    meta: {
+      title: "地图下钻",
+      permission: ["stark"]
+    },
+    group: "Real world",
+    component: () => import("../views/map-down.vue")
   }
 ];
 
