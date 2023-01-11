@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-14 20:09:46
- * @LastEditTime: 2022-12-23 22:23:25
+ * @LastEditTime: 2023-01-03 21:01:59
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\jarvis\src\webpack.config.ts
@@ -110,19 +110,57 @@ class WebpackConfig {
       });
   };
 
-  public get_plugins = () => {
+  public get_plugins = (resolver?: "antdv" | "elementplus" | "naiveui" | "quasar" | "varlet" | "vuetify") => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const AutoImport = require("unplugin-auto-import/webpack");
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const Components = require("unplugin-vue-components/webpack");
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { AntDesignVueResolver } = require("unplugin-vue-components/resolvers");
+    let resolvers = [];
+    switch (resolver) {
+      case "elementplus": {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
+        resolvers = [ElementPlusResolver()];
+        break;
+      }
+      case "naiveui": {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { NaiveUiResolver } = require("unplugin-vue-components/resolvers");
+        resolvers = [NaiveUiResolver()];
+        break;
+      }
+      case "quasar": {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { VarletUIResolver } = require("unplugin-vue-components/resolvers");
+        resolvers = [VarletUIResolver()];
+        break;
+      }
+      case "varlet": {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { QuasarResolver } = require("unplugin-vue-components/resolvers");
+        resolvers = [QuasarResolver()];
+        break;
+      }
+      case "vuetify": {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { Vuetify3Resolver } = require("unplugin-vue-components/resolvers");
+        resolvers = [Vuetify3Resolver()];
+        break;
+      }
+      default: {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const { AntDesignVueResolver } = require("unplugin-vue-components/resolvers");
+        resolvers = [AntDesignVueResolver()];
+        break;
+      }
+    }
+
     return [
       AutoImport({
-        resolvers: [AntDesignVueResolver()]
+        resolvers
       }),
       Components({
-        resolvers: [AntDesignVueResolver()]
+        resolvers
       })
     ];
   };

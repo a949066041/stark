@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-11-12 13:25:33
- * @LastEditTime: 2022-12-09 16:08:51
+ * @LastEditTime: 2023-01-02 23:36:28
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\nightclub\src\router\index.ts
@@ -19,7 +19,8 @@ const router_list: EnhanceRouter[] = [
       title: "Dashboard",
       permission: ["dashboard"],
       menu_icon: ["iron", "dashboard"]
-    }
+    },
+    group: "BASE"
   },
   {
     is_router: true,
@@ -31,7 +32,8 @@ const router_list: EnhanceRouter[] = [
       title: "Icon",
       permission: ["icon"],
       menu_icon: ["iron", "star"]
-    }
+    },
+    group: "BASE"
   }
 ];
 

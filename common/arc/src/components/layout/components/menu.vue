@@ -1,16 +1,16 @@
 <!--
  * @Author: Rikka
  * @Date: 2022-11-11 17:17:18
- * @LastEditTime: 2022-12-29 21:52:13
+ * @LastEditTime: 2023-01-02 23:48:27
  * @LastEditors: Rikka
  * @Description: 
  * @FilePath: \stark\common\arc\src\components\layout\components\menu.vue
 -->
 <template>
   <a-menu class="a-menu" v-model:selectedKeys="selectedKeys" mode="inline" :inline-collapsed="globStore.collapse">
-    <a-menu-item-group key="g1">
-      <template #title>Item 1</template>
-      <menu-tree v-for="item of menuStore.menuList" :key="item.name" :config="item" />
+    <a-menu-item-group v-for="group in menu_group" :key="group">
+      <template #title>{{ group }}</template>
+      <menu-tree v-for="item of menuStore.menuList[group]" :key="item.name" :config="item" />
     </a-menu-item-group>
   </a-menu>
 </template>
@@ -24,6 +24,8 @@ import MenuTree from "./menu-tree";
 const globStore = useGlobStore();
 const menuStore = useMenuStore();
 const route = useRoute();
+
+const menu_group = Object.keys(menuStore.menuList);
 
 const selectedKeys = ref<string[]>([]);
 watch(

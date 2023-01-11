@@ -40,3 +40,4 @@ function loadComponent(scope: string, module: string) {
 export function loadRemote<T>(remoteEntry: string, scope: string, module: string): Observable<T> {
   return from(loadScript(remoteEntry)).pipe(concatMap(() => from(loadComponent(scope, module)())));
 }
+export { loadScript };

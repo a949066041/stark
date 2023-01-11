@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-09 09:46:23
- * @LastEditTime: 2022-12-23 19:05:32
+ * @LastEditTime: 2023-01-02 23:49:49
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\common\arc\src\store\permission.store.ts
@@ -12,6 +12,7 @@ import { reactive } from "vue";
 export const usePermissionStore = defineStore("arc_permission", () => {
   const permission_list = reactive({
     data: [
+      "stark",
       "dashboard",
       "component",
       "component-wangeditor",

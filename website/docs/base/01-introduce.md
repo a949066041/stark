@@ -22,7 +22,7 @@ pnpm install
 pnpm install --registry=https://registry.npm.taobao.org
 
 # 本地开发 启动项目
-pnpm serve:all
+pnpm serve:dev:all
 ```
 
 > TIP

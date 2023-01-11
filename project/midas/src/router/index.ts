@@ -1,7 +1,7 @@
 /*
  * @Author: Rikka
  * @Date: 2022-12-18 12:39:09
- * @LastEditTime: 2022-12-18 12:45:44
+ * @LastEditTime: 2023-01-02 23:50:11
  * @LastEditors: Rikka
  * @Description:
  * @FilePath: \stark\project\midas\src\router\index.ts
@@ -15,9 +15,24 @@ const router_list: EnhanceRouter[] = [
     parent_name: "root",
     name: "[midas]Project",
     meta: {
-      title: "midas project",
-      permission: ["stark"]
-    }
+      title: "高德地图",
+      permission: ["stark"],
+      menu_icon: ["iron", "amap"]
+    },
+    group: "Real world"
+  },
+  {
+    is_router: true,
+    path: "map-down",
+    parent_name: "[midas]Project",
+    name: "[midas]MapDown",
+    meta: {
+      title: "地图下钻",
+      permission: ["stark"],
+      menu_icon: ["iron", "down_o"]
+    },
+    group: "Real world",
+    component: () => import("../views/map-down.vue")
   }
 ];
 
