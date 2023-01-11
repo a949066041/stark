@@ -7,7 +7,9 @@ export function china_full() {
 export function china_boundary() {
   return getGEOJson("https://geo.datav.aliyun.com/areas_v3/bound/100000_boundary.json");
 }
-
+export function china_country(adcode: string | number) {
+  return getGEOJson(`https://geo.datav.aliyun.com/areas_v3/bound/geojson?code=${adcode}_full`);
+}
 function getGEOJson(url: string) {
   return new Promise<Feature>((resolve) => {
     fetch(url, {
