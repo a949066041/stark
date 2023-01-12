@@ -12,7 +12,7 @@
     "prepare": "turbo prepare:build",
     "plop": "pnpm --filter @stark/friday generate",
     "lint": "eslint . --ext .js --ext .vue --ext .ts --cache",
-    "lint:stylelint": "stylelint \"**/*.{less,vue}\" --custom-formatter=node_modules/stylelint-sarif-formatter -o stylelint-results.sarif",
+    "lint:stylelint": "stylelint \"**/*.{less,vue}\" --cache --custom-formatter=node_modules/stylelint-sarif-formatter -o stylelint-results.sarif",
     "lint:vue-tsc": "vue-tsc  --noEmit --skipLibCheck --pretty -p tsconfig.vue.json"
   },
   "keywords": [],
