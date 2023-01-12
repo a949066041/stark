@@ -40,7 +40,10 @@ findWorkspaceDir(cwd()).then((root) => {
     writeFileSync(resolve(distDir, "_redirects"), _redirects);
     const _headers = `/remote/*
   Access-Control-Allow-Origin: *
-  Access-Control-Allow-Origin: GET,OPTIONS,POST,HEAD`;
+  Access-Control-Allow-Origin: GET,OPTIONS,POST,HEAD
+/geo/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Origin: GET`;
     writeFileSync(resolve(distDir, "_headers"), _headers);
     copySync(resolve(root, "static"), distDir);
   }
