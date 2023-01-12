@@ -10,3 +10,4 @@ eslint-results.sarif
 stylelint-results.sarif
 .dccache
 .iac-data
+.stylelintcache

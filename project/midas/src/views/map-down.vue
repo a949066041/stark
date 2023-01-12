@@ -11,12 +11,12 @@ import { Feature, GeoJsonProperties, Geometry, Position } from "geojson";
 import { onMounted, ref } from "vue";
 
 import { useAMapStore } from "../store/amap.store";
-import { china_boundary, china_country, china_full } from "./map.api";
+import { china_boundary, china_full, china_province } from "./map.api";
 
 type AMap = typeof window.AMap;
 const $AMapStore = useAMapStore();
 const mapDownRef = ref<HTMLDivElement>();
-const country_polygon: Record<number | string, AMap.Polygon> = {};
+const province_polygon: Record<number | string, AMap.Polygon> = {};
 let city_polygon: Record<string | number, Record<number | string, AMap.Polygon>> = {};
 let marker: AMap.Marker | null = null;
 onMounted(() => {
@@ -29,7 +29,7 @@ onMounted(() => {
       map.on("click", (c) => {
         if (Object.keys(city_polygon).length === 1) {
           loadMap(amap, map);
-          clearCountry();
+          clearProvince();
         }
       });
     }
@@ -81,7 +81,7 @@ function loadMap(amap: AMap, map: AMap.Map) {
             polygon.on("click", () => {
               map.setZoomAndCenter(6, _geojson.properties?.center);
               if (_geojson.properties?.adcode) {
-                loadCountry(amap, map, _geojson.properties.adcode);
+                loadProvince(amap, map, _geojson.properties.adcode);
               }
             });
             polygon.on("mouseover", () => {
@@ -99,7 +99,7 @@ function loadMap(amap: AMap, map: AMap.Map) {
               });
               marker?.hide();
             });
-            if (_geojson.properties?.adcode) country_polygon[_geojson.properties.adcode] = polygon;
+            if (_geojson.properties?.adcode) province_polygon[_geojson.properties.adcode] = polygon;
             return polygon;
           }
         }
@@ -127,13 +127,13 @@ function loadMap(amap: AMap, map: AMap.Map) {
       map.add(geo);
     });
   } else {
-    Object.keys(country_polygon).some((item) => {
-      country_polygon[item].show();
+    Object.keys(province_polygon).some((item) => {
+      province_polygon[item].show();
     });
     map.setZoomAndCenter(4, [104.188_488, 34.302_032]);
   }
 }
-function clearCountry() {
+function clearProvince() {
   Object.keys(city_polygon).some((key) => {
     Object.keys(city_polygon[key]).some((city_key) => {
       city_polygon[key][city_key].destroy();
@@ -141,12 +141,12 @@ function clearCountry() {
   });
   city_polygon = {};
 }
-function loadCountry(amap: AMap, map: AMap.Map, adcode: number) {
-  clearCountry();
-  china_country(adcode).then((geoJSON) => {
+function loadProvince(amap: AMap, map: AMap.Map, adcode: number) {
+  clearProvince();
+  china_province(adcode).then((geoJSON) => {
     city_polygon[adcode] = {};
-    Object.keys(country_polygon).some((item) => {
-      country_polygon[item].hide();
+    Object.keys(province_polygon).some((item) => {
+      province_polygon[item].hide();
     });
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
