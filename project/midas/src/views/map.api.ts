@@ -1,18 +1,18 @@
 import { Feature } from "geojson";
 
 export function china_full() {
-  return getGEOJson("https://geo.datav.aliyun.com/areas_v3/bound/geojson?code=100000_full");
+  return getGEOJson("china.json");
 }
 
 export function china_boundary() {
-  return getGEOJson("https://geo.datav.aliyun.com/areas_v3/bound/100000_boundary.json");
+  return getGEOJson("1000000_boundary.json");
 }
-export function china_country(adcode: string | number) {
-  return getGEOJson(`https://geo.datav.aliyun.com/areas_v3/bound/geojson?code=${adcode}_full`);
+export function china_province(adcode: string | number) {
+  return getGEOJson(`province/${adcode}.json`);
 }
 function getGEOJson(url: string) {
   return new Promise<Feature>((resolve) => {
-    fetch(url, {
+    fetch("https://stark.rikka.cc/geo/" + url, {
       method: "GET",
       mode: "cors"
     }).then((response) => {
