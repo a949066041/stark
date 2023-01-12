@@ -42,5 +42,6 @@ findWorkspaceDir(cwd()).then((root) => {
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Origin: GET,OPTIONS,POST,HEAD`;
     writeFileSync(resolve(distDir, "_headers"), _headers);
+    copySync(resolve(root, "static"), distDir);
   }
 });
