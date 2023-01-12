@@ -80,6 +80,7 @@ jobs:
           wait-for-processing: true
   publish:
     runs-on: ubuntu-latest
+    needs: [eslint, stylelint]
     strategy:
       matrix:
         node-version: [16]
