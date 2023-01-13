@@ -5,7 +5,7 @@ export function china_full() {
 }
 
 export function china_boundary() {
-  return getGEOJson("1000000_boundary.json");
+  return getGEOJson("100000_boundary.json");
 }
 export function china_province(adcode: string | number) {
   return getGEOJson(`province/${adcode}.json`);
