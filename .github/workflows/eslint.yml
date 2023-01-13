@@ -39,11 +39,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run ESLint
-        run: pnpm eslint . --ext .js --ext .vue --ext .ts
-          --config .eslintrc.js
-          --format @microsoft/eslint-formatter-sarif
-          --output-file eslint-results.sarif
-          --cache
+        run: pnpm eslint . --ext .js --ext .vue --ext .ts --config .eslintrc.js --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif --cache
         continue-on-error: true
       - name: Format Sarif
         run: pnpm --filter @stark/friday format-sarif
