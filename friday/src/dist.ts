@@ -44,7 +44,7 @@ findWorkspaceDir(cwd()).then((root) => {
   
 /geo/*
   Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: GET`;
+  Access-Control-Allow-Methods: GET,OPTIONS,HEAD`;
     writeFileSync(resolve(distDir, "_headers"), _headers);
     copySync(resolve(root, "static"), distDir);
   }
