@@ -35,10 +35,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Run ESLint
-        run: pnpm eslint . --ext .js --ext .vue --ext .ts
-          --config .eslintrc.js
-          --format @microsoft/eslint-formatter-sarif
-          --output-file eslint-results.sarif
+        run: pnpm eslint . --ext .js --ext .vue --ext .ts --config .eslintrc.js --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif --cache
         continue-on-error: true
       - name: Format Sarif
         run: pnpm --filter @stark/friday format-sarif
@@ -80,6 +77,9 @@ jobs:
           wait-for-processing: true
   publish:
     runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      # TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     needs: [eslint, stylelint]
     strategy:
       matrix:

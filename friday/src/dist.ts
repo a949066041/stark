@@ -41,6 +41,7 @@ findWorkspaceDir(cwd()).then((root) => {
     const _headers = `/remote/*
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET,OPTIONS,POST,HEAD
+  
 /geo/*
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET`;
